@@ -1,0 +1,195 @@
+<a class="back" routerLink="/routes">← Маршруты</a>
+
+@if (route(); as r) {
+  <header class="hero">
+    <span class="icon" aria-hidden="true">{{ r.icon ?? '🗺️' }}</span>
+    <div class="titles">
+      <h2>{{ r.title }}</h2>
+      @if (cities()) {
+        <span class="muted small">{{ cities() }}</span>
+      }
+    </div>
+  </header>
+
+  @if (r.description) {
+    <p class="desc">{{ r.description }}</p>
+  }
+
+  <div class="badges">
+    @for (t of tags(); track t) {
+      <span class="badge">{{ t }}</span>
+    }
+    @if (r.weatherDependent) {
+      <span class="badge must">☂️ от погоды</span>
+    }
+    @if (r.recommendedStartTime) {
+      <span class="badge">{{ r.recommendedStartTime }}–{{ r.recommendedEndTime }}</span>
+    }
+  </div>
+
+  @if (totals(); as t) {
+    <div class="totals">
+      <div><b>{{ t.stops }}</b><span>остановок</span></div>
+      @if (t.all) { <div><b>{{ t.all }}</b><span>всего</span></div> }
+      @if (t.onSite) { <div><b>{{ t.onSite }}</b><span>на местах</span></div> }
+      @if (t.travel) { <div><b>{{ t.travel }}</b><span>в пути</span></div> }
+      @if (t.km) { <div><b>{{ t.km }}</b><span>по прямой</span></div> }
+    </div>
+  }
+
+  @if (message(); as m) {
+    <p class="status" role="status">{{ m }}</p>
+  }
+
+  <div class="actions">
+    @if (directions(); as d) {
+      <a class="btn primary" [href]="d.url" target="_blank" rel="noopener">Открыть маршрут на карте ↗</a>
+    }
+    <button type="button" class="btn" [class.on]="editMode()" [attr.aria-pressed]="editMode()" (click)="editMode.set(!editMode())">
+      {{ editMode() ? 'Готово' : '✎ Редактировать' }}
+    </button>
+  </div>
+  @if (directions()?.truncated) {
+    <p class="hint">В ссылке на карту только первые 11 точек: так ограничивает Google Maps.</p>
+  }
+
+  <section class="stops" aria-label="Остановки">
+    @for (s of stops(); track s.stop.placeId) {
+      <article class="stop" [class.done]="s.visited" [class.missing]="s.missing">
+        <div class="row">
+          <span class="num">{{ s.index + 1 }}</span>
+          @if (s.photo) {
+            <app-photo class="thumb" [photo]="s.photo" />
+          }
+          <div class="main">
+            <h3><span aria-hidden="true">{{ s.icon }}</span> {{ s.name }}</h3>
+            <div class="meta">
+              @if (s.nameLocal) { <span>{{ s.nameLocal }}</span> }
+              @if (s.areaName) { <span>{{ s.areaName }}</span> }
+              @if (s.duration) { <span>{{ s.duration }} мин</span> }
+              @if (s.stop.priority === 'must') { <span class="badge must">Must</span> } @else { <span class="muted">по желанию</span> }
+            </div>
+          </div>
+          @if (!editMode() && !s.missing) {
+            <button type="button" class="check" [class.on]="s.visited" [attr.aria-pressed]="s.visited" (click)="setVisited(s)" [attr.aria-label]="s.visited ? 'Снять отметку «Был»' : 'Отметить «Был»'">✓</button>
+          }
+        </div>
+
+        @if (!editMode() && s.mapsUrl) {
+          <a class="link" [href]="s.mapsUrl" target="_blank" rel="noopener">На карте ↗</a>
+        }
+
+        @if (editMode()) {
+          <div class="edit">
+            <div class="edit-row">
+              <button type="button" class="ic" (click)="move(s.index, -1)" [disabled]="s.index === 0" aria-label="Выше">↑</button>
+              <button type="button" class="ic" (click)="move(s.index, 1)" [disabled]="s.isLast" aria-label="Ниже">↓</button>
+              <button type="button" class="ic" [class.on]="s.stop.priority === 'must'" [attr.aria-pressed]="s.stop.priority === 'must'" (click)="togglePriority(s)">Must</button>
+              <label class="mini">
+                <input type="number" inputmode="numeric" min="0" step="5" [value]="s.stop.recommendedDurationMin ?? ''" (change)="onDuration(s, $event)" aria-label="Время на месте, мин" />
+                <span>мин</span>
+              </label>
+              <button type="button" class="ic del" (click)="removeStop(s.index)" aria-label="Убрать из маршрута">✕</button>
+            </div>
+            @if (!s.isLast) {
+              <div class="edit-row">
+                <span class="muted small">Дорога до следующей:</span>
+                <select [value]="s.stop.transportToNext?.type ?? ''" (change)="onTransportType(s, $event)" aria-label="Транспорт">
+                  <option value="">не указано</option>
+                  @for (t of transportTypes; track t.type) {
+                    <option [value]="t.type" [selected]="s.stop.transportToNext?.type === t.type">{{ t.icon }} {{ t.label }}</option>
+                  }
+                </select>
+                @if (s.stop.transportToNext) {
+                  <label class="mini">
+                    <input type="number" inputmode="numeric" min="0" step="1" [value]="s.stop.transportToNext.durationMin ?? ''" (change)="onTransportMin(s, $event)" aria-label="Минут в пути" />
+                    <span>мин</span>
+                  </label>
+                }
+              </div>
+            }
+          </div>
+        }
+      </article>
+
+      @if (s.leg) {
+        <div class="leg" aria-hidden="false"><span class="ico">{{ s.leg.icon }}</span>{{ s.leg.text }}</div>
+      }
+    } @empty {
+      <p class="empty">В маршруте пока нет остановок.</p>
+    }
+  </section>
+
+  @if (editMode()) {
+    <div class="actions">
+      <button type="button" class="btn primary" (click)="pickerOpen.set(true)">＋ Добавить остановки</button>
+      @if (stops().length > 2) {
+        <button type="button" class="btn" (click)="tidy()">Упорядочить по расстоянию</button>
+      }
+    </div>
+  }
+
+  @if (stops().length) {
+    <p class="progress muted small">Отмечено «Был»: {{ visitedCount() }} из {{ stops().length }}</p>
+  }
+
+  <section class="card plan">
+    <h3>На какой день</h3>
+    @if (assigned().length) {
+      <ul class="assigned">
+        @for (a of assigned(); track a.iso) {
+          <li>{{ a.label }} <button type="button" class="link" (click)="unassign(a.iso)">убрать</button></li>
+        }
+      </ul>
+    }
+    @if (dates().length) {
+      <div class="plan-row">
+        <select [value]="assignDate()" (change)="onAssignDate($event)" aria-label="День поездки">
+          @for (d of dates(); track d.iso) {
+            <option [value]="d.iso" [selected]="assignDate() === d.iso">{{ d.label }}</option>
+          }
+        </select>
+        <button type="button" class="btn" (click)="assign()">Назначить</button>
+      </div>
+    } @else {
+      <p class="muted small">У поездки не заданы даты.</p>
+    }
+  </section>
+
+  @if (spots().length) {
+    <h3 class="section">Фотолокации по пути</h3>
+    @for (sp of spots(); track sp.spot.id) {
+      <article class="card spot" [class.done]="sp.done">
+        <div class="row">
+          <div class="main">
+            <h3><span aria-hidden="true">📷</span> {{ sp.spot.title }}</h3>
+            <div class="meta">
+              <span>{{ sp.areaName }}</span>
+              @if (sp.time) { <span class="badge">{{ sp.time }}</span> }
+              @if (!sp.onRoute) { <span class="muted">в районе маршрута</span> }
+            </div>
+          </div>
+          <button type="button" class="seg-single" [class.on]="sp.done" [attr.aria-pressed]="sp.done" (click)="togglePhotoDone(sp)">{{ sp.done ? 'Снято ✓' : 'Снять' }}</button>
+        </div>
+      </article>
+    }
+  }
+
+  <section class="manage">
+    <button type="button" class="link" (click)="metaOpen.set(true)">Параметры маршрута</button>
+    <button type="button" class="link" (click)="duplicate()">Копировать</button>
+    @if (overridden()) {
+      <button type="button" class="link" (click)="reset()">Вернуть исходный</button>
+    }
+    <button type="button" class="link danger" (click)="remove()">{{ confirmDelete() ? 'Точно удалить?' : 'Удалить' }}</button>
+  </section>
+
+  @if (metaOpen()) {
+    <app-route-editor [route]="r" (saved)="saveMeta($event)" (closed)="metaOpen.set(false)" />
+  }
+  @if (pickerOpen()) {
+    <app-stop-picker [routeId]="r.id" (picked)="addPicked($event)" (closed)="pickerOpen.set(false)" />
+  }
+} @else {
+  <p class="empty">Маршрут не найден. Возможно, он был удалён.</p>
+}

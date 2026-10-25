@@ -1,0 +1,33 @@
+<dialog #dialog class="sheet" (close)="closed.emit()" (click)="onBackdrop($event)" aria-labelledby="day-picker-title">
+  <div class="sheet-body">
+    <header class="sheet-head">
+      <h2 id="day-picker-title">Маршрут на этот день</h2>
+      <button type="button" class="x" (click)="close()" aria-label="Закрыть">✕</button>
+    </header>
+
+    <ul class="list">
+      @for (r of items(); track r.id) {
+        <li>
+          <button type="button" class="row" [disabled]="r.taken || r.empty" (click)="pick(r.id)">
+            <span class="icon" aria-hidden="true">{{ r.icon }}</span>
+            <span class="txt">
+              <b>{{ r.title }}</b>
+              <span class="muted small">
+                {{ r.stops }} {{ r.stops === 1 ? 'остановка' : 'остановок' }}@if (r.duration) { · {{ r.duration }}}@if (r.weather) { · ☂️ от погоды}
+              </span>
+              @if (r.taken) {
+                <span class="small note">уже в этом дне</span>
+              } @else if (r.empty) {
+                <span class="small note">нет остановок</span>
+              } @else if (r.reasons) {
+                <span class="muted small">{{ r.reasons }}</span>
+              }
+            </span>
+          </button>
+        </li>
+      } @empty {
+        <li class="empty">Маршрутов пока нет. Создайте их на вкладке «Маршруты».</li>
+      }
+    </ul>
+  </div>
+</dialog>

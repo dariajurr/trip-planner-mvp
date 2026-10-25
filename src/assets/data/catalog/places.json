@@ -1,0 +1,1445 @@
+[
+  {
+    "id": "kaminarimon",
+    "name": "Kaminarimon",
+    "category": "landmark",
+    "priority": "must",
+    "areaId": "asakusa",
+    "coordinates": {
+      "lat": 35.711,
+      "lng": 139.796
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 20
+  },
+  {
+    "id": "senso-ji",
+    "name": "Senso-ji",
+    "category": "temple",
+    "priority": "must",
+    "areaId": "asakusa",
+    "coordinates": {
+      "lat": 35.7148,
+      "lng": 139.7967
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "06:30",
+        "to": "17:00"
+      },
+      "note": "Main hall hours approximate; working draft."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "asakusa-shrine",
+    "name": "Asakusa Shrine",
+    "category": "shrine",
+    "priority": "must",
+    "areaId": "asakusa",
+    "coordinates": {
+      "lat": 35.7147,
+      "lng": 139.798
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 20
+  },
+  {
+    "id": "nakamise-dori",
+    "name": "Nakamise-dori",
+    "category": "street",
+    "priority": "must",
+    "areaId": "asakusa",
+    "coordinates": {
+      "lat": 35.7136,
+      "lng": 139.7968
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "asakusa-culture-tourist-information-center",
+    "name": "Asakusa Culture Tourist Information Center",
+    "category": "viewpoint",
+    "priority": "must",
+    "areaId": "asakusa",
+    "coordinates": {
+      "lat": 35.7108,
+      "lng": 139.7966
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "09:00",
+        "to": "20:00"
+      },
+      "note": "Observation deck hours may differ; working draft."
+    },
+    "recommendedDurationMin": 30
+  },
+  {
+    "id": "sumida-park",
+    "name": "Sumida Park",
+    "category": "park",
+    "priority": "optional",
+    "areaId": "asakusa",
+    "coordinates": {
+      "lat": 35.7146,
+      "lng": 139.803
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 20
+  },
+  {
+    "id": "kappabashi",
+    "name": "Kappabashi",
+    "category": "shopping",
+    "priority": "must",
+    "areaId": "kappabashi",
+    "coordinates": {
+      "lat": 35.7138,
+      "lng": 139.7887
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat"
+      ],
+      "openingHours": {
+        "from": "09:00",
+        "to": "17:00"
+      },
+      "note": "Individual shops vary; working draft."
+    },
+    "recommendedDurationMin": 75
+  },
+  {
+    "id": "ameyoko",
+    "name": "Ameyoko",
+    "category": "market",
+    "priority": "must",
+    "areaId": "ueno",
+    "coordinates": {
+      "lat": 35.7077,
+      "lng": 139.7744
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "akihabara-electric-town",
+    "name": "Akihabara Electric Town",
+    "category": "district",
+    "priority": "must",
+    "areaId": "akihabara",
+    "coordinates": {
+      "lat": 35.6984,
+      "lng": 139.7731
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 120
+  },
+  {
+    "id": "radio-kaikan",
+    "name": "Radio Kaikan",
+    "category": "shopping",
+    "priority": "optional",
+    "areaId": "akihabara",
+    "coordinates": {
+      "lat": 35.698,
+      "lng": 139.7717
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "chureito-pagoda",
+    "name": "Chureito Pagoda",
+    "category": "viewpoint",
+    "priority": "must",
+    "areaId": "fujiyoshida",
+    "coordinates": {
+      "lat": 35.5008,
+      "lng": 138.8036
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "arakurayama-sengen-park",
+    "name": "Arakurayama Sengen Park",
+    "category": "park",
+    "priority": "must",
+    "areaId": "fujiyoshida",
+    "coordinates": {
+      "lat": 35.501,
+      "lng": 138.8032
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "honcho-street-fujiyoshida",
+    "name": "Honcho Street, Fujiyoshida",
+    "category": "street",
+    "priority": "must",
+    "areaId": "fujiyoshida",
+    "coordinates": {
+      "lat": 35.4865,
+      "lng": 138.807
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "kawaguchiko",
+    "name": "Lake Kawaguchi",
+    "category": "park",
+    "priority": "optional",
+    "areaId": "fujiyoshida",
+    "coordinates": {
+      "lat": 35.517,
+      "lng": 138.755
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "oishi-park",
+    "name": "Oishi Park",
+    "category": "park",
+    "priority": "optional",
+    "areaId": "fujiyoshida",
+    "coordinates": {
+      "lat": 35.52,
+      "lng": 138.748
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "kabukicho",
+    "name": "Kabukicho",
+    "category": "district",
+    "priority": "must",
+    "areaId": "kabukicho",
+    "coordinates": {
+      "lat": 35.694,
+      "lng": 139.702
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "kabukicho-ichibangai",
+    "name": "Kabukicho Ichibangai",
+    "category": "street",
+    "priority": "must",
+    "areaId": "kabukicho",
+    "coordinates": {
+      "lat": 35.6942,
+      "lng": 139.7005
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 30
+  },
+  {
+    "id": "golden-gai",
+    "name": "Golden Gai",
+    "category": "district",
+    "priority": "must",
+    "areaId": "kabukicho",
+    "coordinates": {
+      "lat": 35.6945,
+      "lng": 139.705
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "omoide-yokocho",
+    "name": "Omoide Yokocho",
+    "category": "street",
+    "priority": "optional",
+    "areaId": "shinjuku",
+    "coordinates": {
+      "lat": 35.6924,
+      "lng": 139.6995
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "tokyo-metropolitan-government-building",
+    "name": "Tokyo Metropolitan Government Building",
+    "category": "viewpoint",
+    "priority": "must",
+    "areaId": "shinjuku",
+    "coordinates": {
+      "lat": 35.6895,
+      "lng": 139.6917
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "tsukiji-outer-market",
+    "name": "Tsukiji Outer Market",
+    "category": "market",
+    "priority": "optional",
+    "areaId": "tsukiji",
+    "coordinates": {
+      "lat": 35.6655,
+      "lng": 139.7708
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "ginza",
+    "name": "Ginza",
+    "category": "district",
+    "priority": "must",
+    "areaId": "ginza",
+    "coordinates": {
+      "lat": 35.6717,
+      "lng": 139.765
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 120
+  },
+  {
+    "id": "ginza-six",
+    "name": "Ginza Six",
+    "category": "shopping",
+    "priority": "optional",
+    "areaId": "ginza",
+    "coordinates": {
+      "lat": 35.6699,
+      "lng": 139.7632
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "tokyo-station",
+    "name": "Tokyo Station",
+    "category": "landmark",
+    "priority": "optional",
+    "areaId": "ginza",
+    "coordinates": {
+      "lat": 35.6812,
+      "lng": 139.7671
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "marunouchi",
+    "name": "Marunouchi",
+    "category": "district",
+    "priority": "optional",
+    "areaId": "ginza",
+    "coordinates": {
+      "lat": 35.6815,
+      "lng": 139.764
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "tokyo-tower",
+    "name": "Tokyo Tower",
+    "category": "landmark",
+    "priority": "must",
+    "areaId": "minato",
+    "coordinates": {
+      "lat": 35.6586,
+      "lng": 139.7454
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "zojo-ji",
+    "name": "Zojo-ji",
+    "category": "temple",
+    "priority": "must",
+    "areaId": "minato",
+    "coordinates": {
+      "lat": 35.6575,
+      "lng": 139.748
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "shiba-park",
+    "name": "Shiba Park",
+    "category": "park",
+    "priority": "must",
+    "areaId": "minato",
+    "coordinates": {
+      "lat": 35.653,
+      "lng": 139.75
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "atago-shrine",
+    "name": "Atago Shrine",
+    "category": "shrine",
+    "priority": "optional",
+    "areaId": "minato",
+    "coordinates": {
+      "lat": 35.664,
+      "lng": 139.7485
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "tokyo-tower-7-eleven",
+    "name": "7-Eleven Minato City Shiba 3-chome",
+    "category": "shopping",
+    "priority": "optional",
+    "areaId": "minato",
+    "coordinates": {
+      "lat": 35.6519,
+      "lng": 139.7485
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 15
+  },
+  {
+    "id": "tokyo-tower-stairway",
+    "name": "Tokyo Tower Underground Parking Stairway",
+    "category": "landmark",
+    "priority": "optional",
+    "areaId": "minato",
+    "coordinates": {
+      "lat": 35.658,
+      "lng": 139.7445
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 15
+  },
+  {
+    "id": "tsurugaoka-hachimangu",
+    "name": "Tsurugaoka Hachimangu",
+    "category": "shrine",
+    "priority": "must",
+    "areaId": "kamakura",
+    "coordinates": {
+      "lat": 35.3261,
+      "lng": 139.5563
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "komachi-dori",
+    "name": "Komachi-dori",
+    "category": "street",
+    "priority": "must",
+    "areaId": "kamakura",
+    "coordinates": {
+      "lat": 35.3217,
+      "lng": 139.5509
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "hasedera",
+    "name": "Hasedera",
+    "category": "temple",
+    "priority": "must",
+    "areaId": "kamakura",
+    "coordinates": {
+      "lat": 35.3126,
+      "lng": 139.533
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "08:00",
+        "to": "17:00"
+      },
+      "note": "December working draft."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "great-buddha-kamakura",
+    "name": "Great Buddha of Kamakura",
+    "category": "landmark",
+    "priority": "must",
+    "areaId": "kamakura",
+    "coordinates": {
+      "lat": 35.3167,
+      "lng": 139.5358
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "shichirigahama",
+    "name": "Shichirigahama",
+    "category": "beach",
+    "priority": "must",
+    "areaId": "kamakura",
+    "coordinates": {
+      "lat": 35.3067,
+      "lng": 139.512
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "inamuragasaki",
+    "name": "Inamuragasaki",
+    "category": "beach",
+    "priority": "optional",
+    "areaId": "kamakura",
+    "coordinates": {
+      "lat": 35.3067,
+      "lng": 139.5305
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "yokohama-chinatown",
+    "name": "Yokohama Chinatown",
+    "category": "district",
+    "priority": "must",
+    "areaId": "yokohama",
+    "coordinates": {
+      "lat": 35.4437,
+      "lng": 139.6455
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "yamashita-park",
+    "name": "Yamashita Park",
+    "category": "park",
+    "priority": "optional",
+    "areaId": "yokohama",
+    "coordinates": {
+      "lat": 35.443,
+      "lng": 139.65
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "red-brick-warehouse",
+    "name": "Yokohama Red Brick Warehouse",
+    "category": "shopping",
+    "priority": "optional",
+    "areaId": "yokohama",
+    "coordinates": {
+      "lat": 35.4527,
+      "lng": 139.6425
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "minato-mirai",
+    "name": "Minato Mirai",
+    "category": "district",
+    "priority": "optional",
+    "areaId": "yokohama",
+    "coordinates": {
+      "lat": 35.4579,
+      "lng": 139.6328
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "marine-tower",
+    "name": "Yokohama Marine Tower",
+    "category": "viewpoint",
+    "priority": "optional",
+    "areaId": "yokohama",
+    "coordinates": {
+      "lat": 35.443,
+      "lng": 139.6503
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "oi-flea-market",
+    "name": "Tokyo City Flea Market at Oi Racecourse",
+    "category": "market",
+    "priority": "must",
+    "areaId": "oi",
+    "coordinates": {
+      "lat": 35.5967,
+      "lng": 139.733
+    },
+    "schedule": {
+      "weekdays": null,
+      "openingHours": null,
+      "shopHours": null,
+      "specialDates": [
+        {
+          "date": "2026-12-06",
+          "available": true,
+          "openingHours": {
+            "from": "09:00",
+            "to": "14:30"
+          },
+          "note": "Working draft; confirm event date and hours before trip."
+        }
+      ],
+      "note": "Special event; verify before use."
+    },
+    "recommendedDurationMin": 150
+  },
+  {
+    "id": "gotokuji",
+    "name": "Gotokuji",
+    "category": "temple",
+    "priority": "must",
+    "areaId": "gotokuji",
+    "coordinates": {
+      "lat": 35.6508,
+      "lng": 139.647
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "06:00",
+        "to": "17:00"
+      },
+      "shopHours": {
+        "from": "08:00",
+        "to": "15:00"
+      },
+      "note": "Working draft."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "shibuya-crossing",
+    "name": "Shibuya Crossing",
+    "category": "landmark",
+    "priority": "must",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.6595,
+      "lng": 139.7005
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 30
+  },
+  {
+    "id": "hachiko",
+    "name": "Hachiko Statue",
+    "category": "landmark",
+    "priority": "must",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.659,
+      "lng": 139.7005
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 15
+  },
+  {
+    "id": "shibuya-sky",
+    "name": "Shibuya Sky",
+    "category": "viewpoint",
+    "priority": "must",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.658,
+      "lng": 139.7016
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "10:00",
+        "to": "22:30"
+      },
+      "note": "Working draft; booking may be required/recommended."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "center-gai",
+    "name": "Center-gai",
+    "category": "street",
+    "priority": "optional",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.66,
+      "lng": 139.699
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "shibuya-parco",
+    "name": "Shibuya PARCO",
+    "category": "shopping",
+    "priority": "optional",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.6622,
+      "lng": 139.6985
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "nintendo-tokyo",
+    "name": "Nintendo TOKYO",
+    "category": "shopping",
+    "priority": "optional",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.662,
+      "lng": 139.698
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "loft-shibuya",
+    "name": "LOFT Shibuya",
+    "category": "shopping",
+    "priority": "optional",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.6621,
+      "lng": 139.6986
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 45
+  },
+  {
+    "id": "tower-records-shibuya",
+    "name": "Tower Records Shibuya",
+    "category": "shopping",
+    "priority": "optional",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.6613,
+      "lng": 139.698
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "meiji-jingu",
+    "name": "Meiji Jingu",
+    "category": "shrine",
+    "priority": "must",
+    "areaId": "harajuku",
+    "coordinates": {
+      "lat": 35.6764,
+      "lng": 139.6993
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "takeshita-street",
+    "name": "Takeshita Street",
+    "category": "street",
+    "priority": "must",
+    "areaId": "harajuku",
+    "coordinates": {
+      "lat": 35.6702,
+      "lng": 139.7054
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "omotesando",
+    "name": "Omotesando",
+    "category": "shopping",
+    "priority": "must",
+    "areaId": "omotesando",
+    "coordinates": {
+      "lat": 35.6652,
+      "lng": 139.7123
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 90
+  },
+  {
+    "id": "cat-street",
+    "name": "Cat Street",
+    "category": "street",
+    "priority": "optional",
+    "areaId": "harajuku",
+    "coordinates": {
+      "lat": 35.6675,
+      "lng": 139.7055
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Opening hours require verification."
+    },
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "shibuya",
+    "name": "Shibuya",
+    "nameLocal": "渋谷",
+    "category": "district",
+    "priority": "optional",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.6595,
+      "lng": 139.7005
+    },
+    "schedule": {
+      "weekdays": null,
+      "openingHours": null,
+      "note": "Whole-area stop: shopping and wandering."
+    },
+    "recommendedDurationMin": 180
+  }
+]

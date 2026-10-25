@@ -1,0 +1,88 @@
+<a class="back" routerLink="/places">← К точкам</a>
+<h2 class="page-title">Синхронизация</h2>
+
+@if (message(); as m) {
+  <p class="msg" [class.error]="m.kind === 'error'" role="status">{{ m.text }}</p>
+}
+
+<section class="card">
+  <h3>Отправить мои данные</h3>
+  <p class="hint">
+    В файл попадает всё, что вы добавили или изменили: точки, районы, маршруты, назначения на дни, заметки и ваши отметки.
+    На другом устройстве его нужно импортировать.
+  </p>
+
+  <label class="field">
+    <span>Имя этого устройства (увидит получатель)</span>
+    <input type="text" [value]="sync.deviceName()" (change)="onDeviceName($event)" placeholder="Например, iPhone Маши" />
+  </label>
+
+  <label class="check">
+    <input type="checkbox" [checked]="includePhotos()" (change)="setIncludePhotos($event)" />
+    <span>Включить фото и документы броней (файл будет больше)</span>
+  </label>
+
+  <div class="buttons">
+    <button type="button" class="btn primary" [disabled]="busy()" (click)="download()">Сохранить файл</button>
+    @if (canShare) {
+      <button type="button" class="btn" [disabled]="busy()" (click)="share()">Поделиться…</button>
+    }
+  </div>
+</section>
+
+<section class="card">
+  <h3>Получить данные из файла</h3>
+  <p class="hint">Перед применением вы увидите, что именно изменится. Ничего не будет потеряно: более свежие правки на этом устройстве остаются.</p>
+
+  <label class="btn file">
+    Выбрать файл…
+    <input type="file" accept="application/json,.json" (change)="onFile($event)" hidden />
+  </label>
+
+  @if (preview(); as p) {
+    <div class="preview">
+      <p class="from">Файл {{ fileInfo() }}</p>
+
+      @if (changedGroups().length) {
+        <ul class="groups">
+          @for (g of changedGroups(); track g.key) {
+            <li>
+              <b>{{ g.label }}</b>
+              <span class="nums">
+                @if (g.stats.added) { <span>+{{ g.stats.added }} новых</span> }
+                @if (g.stats.updated) { <span>{{ g.stats.updated }} обновлено</span> }
+                @if (g.stats.removed) { <span>{{ g.stats.removed }} удалено</span> }
+                @if (g.stats.keptLocal) { <span class="muted">{{ g.stats.keptLocal }} у вас новее — оставлено</span> }
+                @if (g.stats.invalid) { <span class="warn">{{ g.stats.invalid }} повреждённых пропущено</span> }
+              </span>
+            </li>
+          }
+        </ul>
+      } @else {
+        <p class="hint">Всё уже совпадает, менять нечего.</p>
+      }
+
+      @if (p.newPhotoIds.length) {
+        <p class="hint">Фото: +{{ p.newPhotoIds.length }}</p>
+      }
+      @if (p.newAttachmentIds.length) {
+        <p class="hint">Документы броней: +{{ p.newAttachmentIds.length }}</p>
+      }
+
+      @if (p.plan.marksInFile) {
+        <label class="check">
+          <input type="checkbox" [checked]="applyMarks()" (change)="toggleMarks($event)" />
+          <span>Синхронизировать отметки «Хочу / Был / Избранное» ({{ p.plan.marksInFile }})</span>
+        </label>
+        @if (!applyMarks()) {
+          <p class="hint">Отметки не выбраны: ваши останутся как есть.</p>
+        }
+      }
+
+      <div class="buttons">
+        <button type="button" class="btn primary" [disabled]="busy() || (!p.plan.hasChanges && !p.newPhotoIds.length && !p.newAttachmentIds.length)" (click)="applyImport()">Применить</button>
+        <button type="button" class="btn" (click)="cancelImport()">Отмена</button>
+      </div>
+    </div>
+  }
+</section>

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "asakusa",
+    "cityId": "tokyo",
+    "name": "Asakusa",
+    "nameLocal": "浅草"
+  },
+  {
+    "id": "kappabashi",
+    "cityId": "tokyo",
+    "name": "Kappabashi",
+    "nameLocal": "かっぱ橋"
+  },
+  {
+    "id": "ueno",
+    "cityId": "tokyo",
+    "name": "Ueno",
+    "nameLocal": "上野"
+  },
+  {
+    "id": "akihabara",
+    "cityId": "tokyo",
+    "name": "Akihabara",
+    "nameLocal": "秋葉原"
+  },
+  {
+    "id": "fujiyoshida",
+    "cityId": "fujiyoshida",
+    "name": "Fujiyoshida",
+    "nameLocal": "富士吉田"
+  },
+  {
+    "id": "shinjuku",
+    "cityId": "tokyo",
+    "name": "Shinjuku",
+    "nameLocal": "新宿"
+  },
+  {
+    "id": "kabukicho",
+    "cityId": "tokyo",
+    "name": "Kabukicho",
+    "nameLocal": "歌舞伎町"
+  },
+  {
+    "id": "ginza",
+    "cityId": "tokyo",
+    "name": "Ginza",
+    "nameLocal": "銀座"
+  },
+  {
+    "id": "minato",
+    "cityId": "tokyo",
+    "name": "Minato",
+    "nameLocal": "港区"
+  },
+  {
+    "id": "tsukiji",
+    "cityId": "tokyo",
+    "name": "Tsukiji",
+    "nameLocal": "築地"
+  },
+  {
+    "id": "kamakura",
+    "cityId": "kamakura",
+    "name": "Kamakura",
+    "nameLocal": "鎌倉"
+  },
+  {
+    "id": "yokohama",
+    "cityId": "yokohama",
+    "name": "Yokohama",
+    "nameLocal": "横浜"
+  },
+  {
+    "id": "oi",
+    "cityId": "tokyo",
+    "name": "Oi",
+    "nameLocal": "大井"
+  },
+  {
+    "id": "gotokuji",
+    "cityId": "tokyo",
+    "name": "Gotokuji",
+    "nameLocal": "豪徳寺"
+  },
+  {
+    "id": "shibuya",
+    "cityId": "tokyo",
+    "name": "Shibuya",
+    "nameLocal": "渋谷"
+  },
+  {
+    "id": "harajuku",
+    "cityId": "tokyo",
+    "name": "Harajuku",
+    "nameLocal": "原宿"
+  },
+  {
+    "id": "omotesando",
+    "cityId": "tokyo",
+    "name": "Omotesando",
+    "nameLocal": "表参道"
+  }
+]

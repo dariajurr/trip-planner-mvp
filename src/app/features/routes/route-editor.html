@@ -1,0 +1,46 @@
+<dialog #dialog class="sheet" (close)="closed.emit()" (click)="onBackdrop($event)" aria-labelledby="route-editor-title">
+  <form class="sheet-body" (submit)="$event.preventDefault(); save()">
+    <header class="sheet-head">
+      <h2 id="route-editor-title">{{ isEdit() ? 'Параметры маршрута' : 'Новый маршрут' }}</h2>
+      <button type="button" class="x" (click)="close()" aria-label="Закрыть">✕</button>
+    </header>
+
+    <div class="grid">
+      <label class="field icon-field">
+        <span>Значок</span>
+        <input type="text" maxlength="4" [value]="icon()" (input)="on(icon, $event)" />
+      </label>
+      <label class="field">
+        <span>Название *</span>
+        <input type="text" [value]="title()" (input)="on(title, $event)" autocomplete="off" />
+      </label>
+    </div>
+
+    <label class="field">
+      <span>Описание</span>
+      <textarea rows="2" [value]="description()" (input)="on(description, $event)"></textarea>
+    </label>
+
+    <div class="field">
+      <span>Темы</span>
+      <div class="tag-list">
+        @for (t of tags; track t.tag) {
+          <button type="button" class="chip" [class.on]="selected().includes(t.tag)" [attr.aria-pressed]="selected().includes(t.tag)" (click)="toggleTag(t.tag)">{{ t.label }}</button>
+        }
+      </div>
+    </div>
+
+    <label class="check">
+      <input type="checkbox" [checked]="weather()" (change)="weather.set($any($event.target).checked)" />
+      <span>Зависит от погоды</span>
+    </label>
+
+    <footer class="sheet-foot">
+      @if (error(); as e) {
+        <p class="status error" role="alert">{{ e }}</p>
+      }
+      <button type="submit" class="btn primary">Сохранить</button>
+      <button type="button" class="btn" (click)="close()">Отмена</button>
+    </footer>
+  </form>
+</dialog>

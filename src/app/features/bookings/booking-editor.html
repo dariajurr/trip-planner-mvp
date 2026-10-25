@@ -1,0 +1,94 @@
+<dialog #dialog class="sheet" (close)="closed.emit()" (click)="onBackdrop($event)" aria-labelledby="booking-editor-title">
+  <form class="sheet-body" (submit)="$event.preventDefault(); save()">
+    <header class="sheet-head">
+      <h2 id="booking-editor-title">{{ title() }}</h2>
+      <button type="button" class="x" (click)="close()" aria-label="Закрыть">✕</button>
+    </header>
+
+    @for (doc of documents(); track doc.file.name) {
+      <div class="docinfo">
+        <b>📎 {{ doc.file.name }}</b>
+        @if (doc.error) { <p class="status error">{{ doc.error }}</p> }
+        @if (doc.details; as info) {
+          <details>
+            <summary>Технические детали</summary>
+            <button type="button" class="link" (click)="copyText(info)">{{ copied() ? 'Скопировано ✓' : 'Копировать для поддержки' }}</button>
+            <pre>{{ info }}</pre>
+          </details>
+        }
+        @if (doc.text) {
+          <details>
+            <summary>Распознанный текст</summary>
+            <button type="button" class="link" (click)="copyText(doc.text)">{{ copied() ? 'Скопировано ✓' : 'Копировать текст' }}</button>
+            <pre>{{ doc.text }}</pre>
+          </details>
+        }
+      </div>
+    }
+
+    @for (it of items(); track $index; let i = $index) {
+      <section class="card item" [class.off]="!it.include">
+        <label class="check head-row">
+          <input type="checkbox" [checked]="it.include" (change)="toggle(i, $event)" />
+          <span>{{ it.draft.kind === 'flight' ? '✈️ Перелёт' : '🏨 Проживание' }}</span>
+          @if (!it.id && canAdd()) {
+            <button type="button" class="link rm" (click)="remove(i)">убрать</button>
+          }
+        </label>
+
+        @for (w of it.draft.warnings; track w) {
+          <p class="status warn">⚠ {{ w }}</p>
+        }
+        @for (e of errorsFor(i); track e) {
+          <p class="status error" role="alert">{{ e }}</p>
+        }
+
+        @if (asFlight(it.draft); as f) {
+          <div class="grid">
+            <label class="field"><span>Рейс *</span><input type="text" [value]="f.flightNumber" (input)="set(i, 'flightNumber', $event)" placeholder="LH 716" autocapitalize="characters" /></label>
+            <label class="field"><span>Код брони</span><input type="text" [value]="f.confirmation" (input)="set(i, 'confirmation', $event)" /></label>
+            <label class="field"><span>Откуда *</span><input type="text" [value]="f.from" (input)="set(i, 'from', $event)" placeholder="FRA" maxlength="3" /></label>
+            <label class="field"><span>Куда *</span><input type="text" [value]="f.to" (input)="set(i, 'to', $event)" placeholder="HND" maxlength="3" /></label>
+            <label class="field"><span>Вылет, дата *</span><input type="date" [value]="f.depDate" (input)="set(i, 'depDate', $event)" /></label>
+            <label class="field"><span>Вылет, время</span><input type="time" [value]="f.depTime" (input)="set(i, 'depTime', $event)" /></label>
+            <label class="field"><span>Прилёт, дата</span><input type="date" [value]="f.arrDate" (input)="set(i, 'arrDate', $event)" /></label>
+            <label class="field"><span>Прилёт, время</span><input type="time" [value]="f.arrTime" (input)="set(i, 'arrTime', $event)" /></label>
+          </div>
+          <p class="hint">Время указывайте местное, как в билете.</p>
+        }
+
+        @if (asHotel(it.draft); as h) {
+          <label class="field"><span>Название *</span><input type="text" [value]="h.name" (input)="set(i, 'name', $event)" /></label>
+          <label class="field"><span>Адрес</span><input type="text" [value]="h.address" (input)="set(i, 'address', $event)" /></label>
+          <div class="grid">
+            <label class="field"><span>Заезд, дата *</span><input type="date" [value]="h.checkInDate" (input)="set(i, 'checkInDate', $event)" /></label>
+            <label class="field"><span>Заезд, с</span><input type="time" [value]="h.checkInTime" (input)="set(i, 'checkInTime', $event)" /></label>
+            <label class="field"><span>Выезд, дата *</span><input type="date" [value]="h.checkOutDate" (input)="set(i, 'checkOutDate', $event)" /></label>
+            <label class="field"><span>Выезд, до</span><input type="time" [value]="h.checkOutTime" (input)="set(i, 'checkOutTime', $event)" /></label>
+            <label class="field"><span>Город</span>
+              <select [value]="h.cityId ?? ''" (change)="set(i, 'cityId', $event)">
+                <option value="">не выбран</option>
+                @for (c of cities(); track c.id) { <option [value]="c.id" [selected]="h.cityId === c.id">{{ c.name }}</option> }
+              </select>
+            </label>
+            <label class="field"><span>Код брони</span><input type="text" [value]="h.confirmation" (input)="set(i, 'confirmation', $event)" /></label>
+          </div>
+        }
+      </section>
+    } @empty {
+      <p class="empty">Пока ничего нет. Добавьте перелёт или проживание вручную.</p>
+    }
+
+    @if (canAdd()) {
+      <div class="adders">
+        <button type="button" class="btn" (click)="add('flight')">＋ Перелёт</button>
+        <button type="button" class="btn" (click)="add('hotel')">＋ Проживание</button>
+      </div>
+    }
+
+    <footer class="sheet-foot">
+      <button type="submit" class="btn primary" [disabled]="!chosen()">Сохранить{{ chosen() > 1 ? ' (' + chosen() + ')' : '' }}</button>
+      <button type="button" class="btn" (click)="close()">Отмена</button>
+    </footer>
+  </form>
+</dialog>

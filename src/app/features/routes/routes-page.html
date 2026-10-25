@@ -1,0 +1,84 @@
+<div class="toolbar">
+  <button type="button" class="add" (click)="creating.set(true)">＋ Новый маршрут</button>
+</div>
+
+<section class="filters" aria-label="Фильтры">
+  <div class="chips" role="group" aria-label="Город">
+    <button type="button" class="chip" [class.on]="cityId() === null" [attr.aria-pressed]="cityId() === null" (click)="cityId.set(null)">Все города</button>
+    @for (city of cities(); track city.id) {
+      <button type="button" class="chip" [class.on]="cityId() === city.id" [attr.aria-pressed]="cityId() === city.id" (click)="cityId.set(city.id)">{{ city.name }}</button>
+    }
+  </div>
+  <div class="chips" role="group" aria-label="Тема">
+    <button type="button" class="chip" [class.on]="tag() === null" [attr.aria-pressed]="tag() === null" (click)="tag.set(null)">Любая тема</button>
+    @for (t of tagChips(); track t.tag) {
+      <button type="button" class="chip" [class.on]="tag() === t.tag" [attr.aria-pressed]="tag() === t.tag" (click)="tag.set(t.tag)">{{ t.label }}</button>
+    }
+  </div>
+</section>
+
+<p class="summary">{{ items().length }} {{ items().length === 1 ? 'маршрут' : 'маршрутов' }}, сверху самые подходящие сейчас</p>
+
+@for (vm of items(); track vm.route.id) {
+  <a class="card route" [routerLink]="['/routes', vm.route.id]">
+    <div class="head">
+      <span class="icon" aria-hidden="true">{{ vm.icon }}</span>
+      <div class="titles">
+        <h2>{{ vm.route.title }}</h2>
+        @if (vm.cities) {
+          <span class="muted small">{{ vm.cities }}</span>
+        }
+      </div>
+      @if (vm.route.id === topId()) {
+        <span class="badge top">★ Рекомендуем</span>
+      }
+    </div>
+
+    @if (vm.route.description) {
+      <p class="desc">{{ vm.route.description }}</p>
+    }
+
+    <div class="meta">
+      <span>{{ vm.stops }} {{ vm.stops === 1 ? 'остановка' : 'остановок' }}</span>
+      @if (vm.duration) {
+        <span>{{ vm.duration }}</span>
+      }
+      @if (vm.route.weatherDependent) {
+        <span title="Зависит от погоды">☂️ от погоды</span>
+      }
+      @if (vm.custom) {
+        <span class="badge">Мой</span>
+      }
+    </div>
+
+    @if (vm.tags.length) {
+      <div class="tags">
+        @for (t of vm.tags; track t.tag) {
+          <span class="badge">{{ t.label }}</span>
+        }
+      </div>
+    }
+
+    @if (vm.stops) {
+      <div class="progress" [attr.aria-label]="'Посещено ' + vm.visited + ' из ' + vm.stops">
+        <div class="bar"><div class="fill" [style.width.%]="vm.percent"></div></div>
+        <span class="muted small">{{ vm.visited }}/{{ vm.stops }}</span>
+      </div>
+    } @else {
+      <p class="muted small">Пока без остановок: откройте и добавьте точки</p>
+    }
+
+    @if (vm.reasons) {
+      <p class="muted small reasons">{{ vm.reasons }}</p>
+    }
+    @if (vm.warnings) {
+      <p class="warn small">⚠ {{ vm.warnings }}</p>
+    }
+  </a>
+} @empty {
+  <p class="empty">По этим фильтрам маршрутов нет.</p>
+}
+
+@if (creating()) {
+  <app-route-editor (saved)="create($event)" (closed)="creating.set(false)" />
+}

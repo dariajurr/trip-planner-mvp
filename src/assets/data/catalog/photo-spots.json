@@ -1,0 +1,396 @@
+[
+  {
+    "id": "senso-ji-kaminarimon",
+    "title": "Kaminarimon",
+    "areaId": "asakusa",
+    "coordinates": {
+      "lat": 35.711,
+      "lng": 139.796
+    },
+    "placeIds": [
+      "kaminarimon"
+    ],
+    "routeIds": [
+      "asakusa-kappabashi-ueno-akihabara"
+    ],
+    "bestTime": "morning",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "temple",
+      "gate",
+      "photo"
+    ]
+  },
+  {
+    "id": "senso-ji-main-hall",
+    "title": "Senso-ji Main Hall",
+    "areaId": "asakusa",
+    "coordinates": {
+      "lat": 35.7148,
+      "lng": 139.7967
+    },
+    "placeIds": [
+      "senso-ji"
+    ],
+    "routeIds": [
+      "asakusa-kappabashi-ueno-akihabara"
+    ],
+    "bestTime": "morning",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "temple",
+      "photo"
+    ]
+  },
+  {
+    "id": "asakusa-skytree-view",
+    "title": "Asakusa + Tokyo Skytree view",
+    "areaId": "asakusa",
+    "coordinates": {
+      "lat": 35.7146,
+      "lng": 139.803
+    },
+    "placeIds": [
+      "sumida-park"
+    ],
+    "routeIds": [
+      "asakusa-kappabashi-ueno-akihabara"
+    ],
+    "bestTime": "day",
+    "difficulty": "easy",
+    "estimatedDetourMin": 20,
+    "tags": [
+      "skytree",
+      "river",
+      "photo"
+    ]
+  },
+  {
+    "id": "chureito-fuji",
+    "title": "Chureito + Fuji",
+    "areaId": "fujiyoshida",
+    "coordinates": {
+      "lat": 35.5008,
+      "lng": 138.8036
+    },
+    "placeIds": [
+      "chureito-pagoda",
+      "arakurayama-sengen-park"
+    ],
+    "routeIds": [
+      "fuji-day"
+    ],
+    "bestTime": "morning",
+    "weatherConditions": "Clear visibility strongly preferred.",
+    "difficulty": "medium",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "fuji",
+      "pagoda",
+      "iconic"
+    ]
+  },
+  {
+    "id": "honcho-street-fuji",
+    "title": "Fujiyoshida Honcho Street + Fuji",
+    "areaId": "fujiyoshida",
+    "coordinates": {
+      "lat": 35.4865,
+      "lng": 138.807
+    },
+    "placeIds": [
+      "honcho-street-fujiyoshida"
+    ],
+    "routeIds": [
+      "fuji-day"
+    ],
+    "bestTime": "morning",
+    "weatherConditions": "Clear visibility preferred.",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "fuji",
+      "street"
+    ]
+  },
+  {
+    "id": "lake-kawaguchiko-fuji",
+    "title": "Lake Kawaguchiko + Fuji",
+    "areaId": "fujiyoshida",
+    "coordinates": {
+      "lat": 35.517,
+      "lng": 138.755
+    },
+    "placeIds": [
+      "kawaguchiko"
+    ],
+    "routeIds": [
+      "fuji-day"
+    ],
+    "bestTime": "day",
+    "weatherConditions": "Clear visibility preferred.",
+    "difficulty": "easy",
+    "estimatedDetourMin": 15,
+    "tags": [
+      "fuji",
+      "lake"
+    ]
+  },
+  {
+    "id": "tokyo-tower-7-eleven",
+    "title": "Tokyo Tower + 7-Eleven",
+    "areaId": "minato",
+    "coordinates": {
+      "lat": 35.6519,
+      "lng": 139.7485
+    },
+    "placeIds": [
+      "tokyo-tower",
+      "tokyo-tower-7-eleven"
+    ],
+    "routeIds": [
+      "ginza-tokyo-tower"
+    ],
+    "bestTime": "night",
+    "difficulty": "easy",
+    "estimatedDetourMin": 15,
+    "tags": [
+      "tokyo-tower",
+      "night"
+    ]
+  },
+  {
+    "id": "tokyo-tower-stairway",
+    "title": "Tokyo Tower stairway photo",
+    "areaId": "minato",
+    "description": "Public/legal approach only; do not enter restricted parking areas. Confirm current access rules.",
+    "coordinates": {
+      "lat": 35.658,
+      "lng": 139.7445
+    },
+    "placeIds": [
+      "tokyo-tower-stairway",
+      "tokyo-tower"
+    ],
+    "routeIds": [
+      "ginza-tokyo-tower"
+    ],
+    "bestTime": "night",
+    "difficulty": "medium",
+    "estimatedDetourMin": 15,
+    "tags": [
+      "tokyo-tower",
+      "photo",
+      "safety"
+    ]
+  },
+  {
+    "id": "zojo-ji-tokyo-tower",
+    "title": "Zojo-ji + Tokyo Tower",
+    "areaId": "minato",
+    "coordinates": {
+      "lat": 35.6575,
+      "lng": 139.748
+    },
+    "placeIds": [
+      "zojo-ji",
+      "tokyo-tower"
+    ],
+    "routeIds": [
+      "ginza-tokyo-tower"
+    ],
+    "bestTime": "golden-hour",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "tokyo-tower",
+      "temple"
+    ]
+  },
+  {
+    "id": "hasedera-kamakura",
+    "title": "Hasedera",
+    "areaId": "kamakura",
+    "coordinates": {
+      "lat": 35.3126,
+      "lng": 139.533
+    },
+    "placeIds": [
+      "hasedera"
+    ],
+    "routeIds": [
+      "kamakura-yokohama"
+    ],
+    "bestTime": "day",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "kamakura",
+      "temple"
+    ]
+  },
+  {
+    "id": "shichirigahama-fuji",
+    "title": "Shichirigahama + Fuji",
+    "areaId": "kamakura",
+    "coordinates": {
+      "lat": 35.3067,
+      "lng": 139.512
+    },
+    "placeIds": [
+      "shichirigahama"
+    ],
+    "routeIds": [
+      "kamakura-yokohama"
+    ],
+    "bestTime": "golden-hour",
+    "weatherConditions": "Clear visibility preferred.",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "kamakura",
+      "ocean",
+      "fuji"
+    ]
+  },
+  {
+    "id": "kabukicho-neon",
+    "title": "Kabukicho neon",
+    "areaId": "kabukicho",
+    "coordinates": {
+      "lat": 35.694,
+      "lng": 139.702
+    },
+    "placeIds": [
+      "kabukicho",
+      "kabukicho-ichibangai"
+    ],
+    "routeIds": [
+      "kabukicho-shinjuku"
+    ],
+    "bestTime": "night",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "kabukicho",
+      "neon",
+      "night"
+    ]
+  },
+  {
+    "id": "golden-gai-lanterns",
+    "title": "Golden Gai lantern streets",
+    "areaId": "kabukicho",
+    "coordinates": {
+      "lat": 35.6945,
+      "lng": 139.705
+    },
+    "placeIds": [
+      "golden-gai"
+    ],
+    "routeIds": [
+      "kabukicho-shinjuku"
+    ],
+    "bestTime": "night",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "golden-gai",
+      "lanterns",
+      "night"
+    ]
+  },
+  {
+    "id": "shibuya-crossing",
+    "title": "Shibuya Crossing",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.6595,
+      "lng": 139.7005
+    },
+    "placeIds": [
+      "shibuya-crossing"
+    ],
+    "routeIds": [
+      "shibuya",
+      "oi-gotokuji-shibuya"
+    ],
+    "bestTime": "night",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "shibuya",
+      "crossing"
+    ]
+  },
+  {
+    "id": "shibuya-night",
+    "title": "Shibuya night cityscape",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.658,
+      "lng": 139.7016
+    },
+    "placeIds": [
+      "shibuya-sky"
+    ],
+    "routeIds": [
+      "shibuya",
+      "oi-gotokuji-shibuya"
+    ],
+    "bestTime": "night",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "shibuya",
+      "night",
+      "skyline"
+    ]
+  },
+  {
+    "id": "meiji-jingu-torii",
+    "title": "Meiji Jingu torii",
+    "areaId": "harajuku",
+    "coordinates": {
+      "lat": 35.6764,
+      "lng": 139.6993
+    },
+    "placeIds": [
+      "meiji-jingu"
+    ],
+    "routeIds": [
+      "meiji-harajuku-omotesando"
+    ],
+    "bestTime": "morning",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "meiji-jingu",
+      "torii"
+    ]
+  },
+  {
+    "id": "takeshita-street",
+    "title": "Takeshita Street",
+    "areaId": "harajuku",
+    "coordinates": {
+      "lat": 35.6702,
+      "lng": 139.7054
+    },
+    "placeIds": [
+      "takeshita-street"
+    ],
+    "routeIds": [
+      "meiji-harajuku-omotesando"
+    ],
+    "bestTime": "day",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "harajuku",
+      "street"
+    ]
+  }
+]

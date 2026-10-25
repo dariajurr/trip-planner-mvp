@@ -1,0 +1,634 @@
+[
+  {
+    "id": "asakusa-kappabashi-ueno-akihabara",
+    "title": "Asakusa → Kappabashi → Ueno → Akihabara",
+    "icon": "⛩️",
+    "stops": [
+      {
+        "placeId": "kaminarimon",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 20,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "senso-ji",
+        "order": 2,
+        "priority": "must",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "nakamise-dori",
+        "order": 3,
+        "priority": "must",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "asakusa-culture-tourist-information-center",
+        "order": 4,
+        "priority": "must",
+        "recommendedDurationMin": 30,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "kappabashi",
+        "order": 5,
+        "priority": "must",
+        "recommendedDurationMin": 75,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 20
+        }
+      },
+      {
+        "placeId": "ameyoko",
+        "order": 6,
+        "priority": "must",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "akihabara-electric-town",
+        "order": 7,
+        "priority": "must",
+        "recommendedDurationMin": 120
+      }
+    ],
+    "tags": [
+      "culture",
+      "shopping",
+      "photo",
+      "city"
+    ],
+    "recommendedStartTime": "10:00",
+    "recommendedEndTime": "20:00",
+    "recommendedDurationMin": 600
+  },
+  {
+    "id": "fuji-day",
+    "title": "Fuji Day: Chureito → Fujiyoshida → Kawaguchiko",
+    "icon": "🗻",
+    "stops": [
+      {
+        "placeId": "chureito-pagoda",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "arakurayama-sengen-park",
+        "order": 2,
+        "priority": "must",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 20
+        }
+      },
+      {
+        "placeId": "honcho-street-fujiyoshida",
+        "order": 3,
+        "priority": "must",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 30
+        }
+      },
+      {
+        "placeId": "kawaguchiko",
+        "order": 4,
+        "priority": "optional",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "oishi-park",
+        "order": 5,
+        "priority": "optional",
+        "recommendedDurationMin": 45
+      }
+    ],
+    "tags": [
+      "day-trip",
+      "nature",
+      "photo"
+    ],
+    "recommendedStartTime": "06:00",
+    "recommendedEndTime": "18:00",
+    "recommendedDurationMin": 720,
+    "weatherDependent": true
+  },
+  {
+    "id": "kabukicho-shinjuku",
+    "title": "Shinjuku + Kabukicho",
+    "icon": "🌃",
+    "stops": [
+      {
+        "placeId": "kabukicho",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "kabukicho-ichibangai",
+        "order": 2,
+        "priority": "must",
+        "recommendedDurationMin": 30,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "golden-gai",
+        "order": 3,
+        "priority": "must",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "omoide-yokocho",
+        "order": 4,
+        "priority": "optional",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 25
+        }
+      },
+      {
+        "placeId": "tokyo-metropolitan-government-building",
+        "order": 5,
+        "priority": "must",
+        "recommendedDurationMin": 60
+      }
+    ],
+    "tags": [
+      "night",
+      "photo",
+      "city"
+    ],
+    "recommendedStartTime": "16:30",
+    "recommendedEndTime": "23:00",
+    "recommendedDurationMin": 390
+  },
+  {
+    "id": "ginza-tokyo-tower",
+    "title": "Tsukiji → Ginza → Tokyo Tower",
+    "icon": "🏙️",
+    "stops": [
+      {
+        "placeId": "tsukiji-outer-market",
+        "order": 1,
+        "priority": "optional",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 20
+        }
+      },
+      {
+        "placeId": "ginza",
+        "order": 2,
+        "priority": "must",
+        "recommendedDurationMin": 120,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "ginza-six",
+        "order": 3,
+        "priority": "optional",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "marunouchi",
+        "order": 4,
+        "priority": "optional",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 20
+        }
+      },
+      {
+        "placeId": "tokyo-tower",
+        "order": 5,
+        "priority": "must",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "zojo-ji",
+        "order": 6,
+        "priority": "must",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "shiba-park",
+        "order": 7,
+        "priority": "must",
+        "recommendedDurationMin": 45
+      }
+    ],
+    "tags": [
+      "shopping",
+      "photo",
+      "city"
+    ],
+    "recommendedStartTime": "09:30",
+    "recommendedEndTime": "20:00",
+    "recommendedDurationMin": 630
+  },
+  {
+    "id": "kamakura-yokohama",
+    "title": "Kamakura → Enoden → Yokohama",
+    "icon": "🌊",
+    "stops": [
+      {
+        "placeId": "tsurugaoka-hachimangu",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "komachi-dori",
+        "order": 2,
+        "priority": "must",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 20
+        }
+      },
+      {
+        "placeId": "hasedera",
+        "order": 3,
+        "priority": "must",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "great-buddha-kamakura",
+        "order": 4,
+        "priority": "must",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 20
+        }
+      },
+      {
+        "placeId": "shichirigahama",
+        "order": 5,
+        "priority": "must",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 60
+        }
+      },
+      {
+        "placeId": "yokohama-chinatown",
+        "order": 6,
+        "priority": "must",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "yamashita-park",
+        "order": 7,
+        "priority": "optional",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "red-brick-warehouse",
+        "order": 8,
+        "priority": "optional",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 20
+        }
+      },
+      {
+        "placeId": "minato-mirai",
+        "order": 9,
+        "priority": "optional",
+        "recommendedDurationMin": 90
+      }
+    ],
+    "tags": [
+      "day-trip",
+      "nature",
+      "photo",
+      "city"
+    ],
+    "recommendedStartTime": "08:00",
+    "recommendedEndTime": "22:00",
+    "recommendedDurationMin": 840
+  },
+  {
+    "id": "oi-gotokuji-shibuya",
+    "title": "Oi Flea Market → Gotokuji → Shibuya",
+    "icon": "🛍️",
+    "stops": [
+      {
+        "placeId": "oi-flea-market",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 150,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 45
+        }
+      },
+      {
+        "placeId": "gotokuji",
+        "order": 2,
+        "priority": "must",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 45
+        }
+      },
+      {
+        "placeId": "shibuya-crossing",
+        "order": 3,
+        "priority": "must",
+        "recommendedDurationMin": 30,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "hachiko",
+        "order": 4,
+        "priority": "must",
+        "recommendedDurationMin": 15,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "shibuya-sky",
+        "order": 5,
+        "priority": "must",
+        "recommendedDurationMin": 90
+      }
+    ],
+    "tags": [
+      "vintage",
+      "shopping",
+      "photo",
+      "city"
+    ],
+    "recommendedStartTime": "08:00",
+    "recommendedEndTime": "22:00",
+    "recommendedDurationMin": 840
+  },
+  {
+    "id": "meiji-harajuku-omotesando",
+    "title": "Meiji Jingu → Harajuku → Omotesando",
+    "icon": "🛍️",
+    "stops": [
+      {
+        "placeId": "meiji-jingu",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "takeshita-street",
+        "order": 2,
+        "priority": "must",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 20
+        }
+      },
+      {
+        "placeId": "cat-street",
+        "order": 3,
+        "priority": "optional",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "omotesando",
+        "order": 4,
+        "priority": "must",
+        "recommendedDurationMin": 90
+      }
+    ],
+    "tags": [
+      "culture",
+      "shopping",
+      "city"
+    ],
+    "recommendedStartTime": "10:00",
+    "recommendedEndTime": "17:00",
+    "recommendedDurationMin": 420
+  },
+  {
+    "id": "shibuya",
+    "title": "Shibuya",
+    "icon": "🏙️",
+    "stops": [
+      {
+        "placeId": "hachiko",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 15,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "shibuya-crossing",
+        "order": 2,
+        "priority": "must",
+        "recommendedDurationMin": 30,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "shibuya-sky",
+        "order": 3,
+        "priority": "must",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "center-gai",
+        "order": 4,
+        "priority": "optional",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "shibuya-parco",
+        "order": 5,
+        "priority": "optional",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "nintendo-tokyo",
+        "order": 6,
+        "priority": "optional",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "tower-records-shibuya",
+        "order": 7,
+        "priority": "optional",
+        "recommendedDurationMin": 60
+      }
+    ],
+    "tags": [
+      "shopping",
+      "photo",
+      "night",
+      "city"
+    ],
+    "recommendedStartTime": "16:00",
+    "recommendedEndTime": "22:00",
+    "recommendedDurationMin": 360
+  },
+  {
+    "id": "vintage-flea-market",
+    "title": "Vintage & Flea Market",
+    "icon": "🛒",
+    "stops": [
+      {
+        "placeId": "oi-flea-market",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 150,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 45
+        }
+      },
+      {
+        "placeId": "gotokuji",
+        "order": 2,
+        "priority": "optional",
+        "recommendedDurationMin": 90
+      },
+      {
+        "placeId": "shibuya",
+        "order": 3,
+        "priority": "optional",
+        "recommendedDurationMin": 180
+      }
+    ],
+    "tags": [
+      "vintage",
+      "shopping"
+    ],
+    "recommendedStartTime": "08:00",
+    "recommendedEndTime": "18:00",
+    "recommendedDurationMin": 600
+  },
+  {
+    "id": "tokyo-food-day",
+    "title": "Tokyo Food Day",
+    "icon": "🥢",
+    "description": "Discovery route for food options; restaurant data is intentionally postponed.",
+    "stops": [],
+    "tags": [
+      "food"
+    ],
+    "recommendedStartTime": "11:00",
+    "recommendedEndTime": "22:00",
+    "recommendedDurationMin": 660
+  }
+]

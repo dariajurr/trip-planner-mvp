@@ -1,0 +1,12 @@
+{
+  "id": "japan-2026",
+  "title": "Japan 2026",
+  "startDate": "2026-12-01",
+  "endDate": "2026-12-08",
+  "cityIds": [
+    "tokyo",
+    "fujiyoshida",
+    "kamakura",
+    "yokohama"
+  ]
+}

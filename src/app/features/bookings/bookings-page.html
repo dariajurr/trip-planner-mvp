@@ -1,0 +1,82 @@
+<div class="toolbar">
+  <label class="btn primary" [class.disabled]="busy()">
+    📎 Загрузить документы
+    <input type="file" hidden multiple accept=".pdf,.eml,.ics,.html,.htm,.txt,application/pdf,text/calendar,message/rfc822,text/html,text/plain,image/*" (change)="onFiles($event)" />
+  </label>
+  <button type="button" class="btn" (click)="pasteOpen.set(!pasteOpen())">Вставить текст</button>
+  <button type="button" class="btn" (click)="addManual()">＋ Вручную</button>
+</div>
+
+@if (busy()) {
+  <p class="muted small">Читаю документ…</p>
+}
+@if (message(); as m) {
+  <p class="status" [class.error]="m.kind === 'error'" role="status">{{ m.text }}</p>
+}
+
+@if (pasteOpen()) {
+  <section class="card paste">
+    <label class="field">
+      <span>Текст письма или брони</span>
+      <textarea rows="7" [value]="pasteText()" (input)="onPaste($event)" placeholder="Скопируйте текст подтверждения из письма, приложения авиакомпании или Booking.com"></textarea>
+    </label>
+    <button type="button" class="btn primary" [disabled]="!pasteText().trim()" (click)="analyzePaste()">Распознать</button>
+  </section>
+}
+
+<p class="privacy muted small">Документы читаются прямо на этом устройстве и никуда не отправляются. Поддерживаются PDF, письма (.eml), календарь (.ics), HTML и текст.</p>
+
+@if (range(); as r) {
+  <section class="card banner">
+    <p>По бронированиям поездка идёт <b>{{ r.text }}</b>, сейчас в приложении <b>{{ r.current }}</b>.</p>
+    <button type="button" class="btn primary" (click)="applyRange()">Применить даты</button>
+  </section>
+}
+
+<h2 class="section">Перелёты</h2>
+@for (f of flights(); track f.b.id) {
+  <article class="card">
+    <div class="row">
+      <div class="main">
+        <h3>✈️ {{ f.b.flightNumber }}@if (f.b.airline) { <span class="muted"> · {{ f.b.airline }}</span> }</h3>
+        <p class="route">{{ f.b.from }} → {{ f.b.to }} <span class="muted small">{{ f.route }}</span></p>
+        <p class="when">Вылет: {{ f.dep }}@if (f.arr) { <br />Прилёт: {{ f.arr }} }</p>
+        @if (f.b.confirmation) { <p class="muted small">Код брони: <b>{{ f.b.confirmation }}</b></p> }
+      </div>
+    </div>
+    <div class="links">
+      @for (a of f.b.attachments ?? []; track a.id) {
+        <button type="button" class="link" (click)="open(a)">📎 {{ a.name }}</button>
+      }
+      <button type="button" class="link push" (click)="edit(f.b)">Изменить</button>
+      <button type="button" class="link danger" (click)="remove(f.b)">{{ confirmId() === f.b.id ? 'Точно удалить?' : 'Удалить' }}</button>
+    </div>
+  </article>
+} @empty {
+  <p class="empty">Перелётов пока нет.</p>
+}
+
+<h2 class="section">Проживание</h2>
+@for (h of hotels(); track h.b.id) {
+  <article class="card">
+    <div class="main">
+      <h3>🏨 {{ h.b.name }}</h3>
+      <p class="when">{{ h.stay }} · {{ h.nights }} {{ h.nights === 1 ? 'ночь' : (h.nights >= 2 && h.nights <= 4 ? 'ночи' : 'ночей') }}@if (h.city) { · {{ h.city }} }</p>
+      @if (h.b.address) { <p class="muted small">{{ h.b.address }}</p> }
+      @if (h.b.confirmation) { <p class="muted small">Номер брони: <b>{{ h.b.confirmation }}</b></p> }
+    </div>
+    <div class="links">
+      @for (a of h.b.attachments ?? []; track a.id) {
+        <button type="button" class="link" (click)="open(a)">📎 {{ a.name }}</button>
+      }
+      <button type="button" class="link push" (click)="edit(h.b)">Изменить</button>
+      <button type="button" class="link danger" (click)="remove(h.b)">{{ confirmId() === h.b.id ? 'Точно удалить?' : 'Удалить' }}</button>
+    </div>
+  </article>
+} @empty {
+  <p class="empty">Проживания пока нет.</p>
+}
+
+@if (editor(); as ed) {
+  <app-booking-editor [title]="ed.title" [initial]="ed.items" [documents]="ed.documents" [canAdd]="ed.canAdd" (saved)="onSaved($event)" (closed)="editor.set(null)" />
+}

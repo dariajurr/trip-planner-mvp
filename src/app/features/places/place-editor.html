@@ -1,0 +1,178 @@
+<dialog #dialog class="sheet" (close)="onClosed()" (click)="onBackdrop($event)" aria-labelledby="editor-title">
+  <form class="body" (submit)="$event.preventDefault(); save()">
+    <header class="head">
+      <h2 id="editor-title">{{ isEdit() ? 'Изменить точку' : 'Новая точка' }}</h2>
+      <button type="button" class="x" (click)="close()" aria-label="Закрыть">✕</button>
+    </header>
+
+    <section class="block">
+      <label class="field">
+        <span>Ссылка Google Maps или координаты</span>
+        <div class="row">
+          <input type="text" inputmode="url" placeholder="Вставьте ссылку или «35.71, 139.79»" [value]="linkInput()" (input)="onLink($event)" />
+          <button type="button" class="btn" [disabled]="busy() || !linkInput().trim()" (click)="fillFromLink()">Заполнить</button>
+        </div>
+      </label>
+      <p class="tip">Из ссылки берутся название и координаты, остальное подтягивается из OpenStreetMap и Wikimedia.</p>
+      @if (status(); as s) {
+        <p class="status" [class.ok]="s.kind === 'ok'" [class.error]="s.kind === 'error'" role="status">{{ s.text }}</p>
+      }
+    </section>
+
+    <label class="field">
+      <span>Название *</span>
+      <input type="text" [value]="draft().name" (input)="onText('name', $event)" autocomplete="off" />
+    </label>
+    <label class="field">
+      <span>Название на местном языке</span>
+      <input type="text" [value]="draft().nameLocal" (input)="onText('nameLocal', $event)" autocomplete="off" />
+    </label>
+
+    <div class="grid2">
+      <label class="field">
+        <span>Город *</span>
+        <select [value]="draft().cityId" (change)="onCity($event)">
+          <option value="" disabled>Выберите…</option>
+          @for (c of cities(); track c.id) {
+            <option [value]="c.id" [selected]="draft().cityId === c.id">{{ c.name }}</option>
+          }
+          <option [value]="NEW" [selected]="draft().cityId === NEW">＋ Новый город…</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Район *</span>
+        <select [value]="draft().areaId" (change)="onArea($event)" [disabled]="!draft().cityId">
+          <option value="" disabled>Выберите…</option>
+          @for (a of areas(); track a.id) {
+            <option [value]="a.id" [selected]="draft().areaId === a.id">{{ a.name }}</option>
+          }
+          <option [value]="NEW" [selected]="draft().areaId === NEW">＋ Новый район…</option>
+        </select>
+      </label>
+    </div>
+
+    @if (draft().cityId === NEW) {
+      <div class="grid2">
+        <label class="field">
+          <span>Название города *</span>
+          <input type="text" [value]="draft().newCityName" (input)="onText('newCityName', $event)" />
+        </label>
+        <label class="field">
+          <span>Страна *</span>
+          <select [value]="draft().countryId" (change)="onText('countryId', $event)">
+            <option value="" disabled>Выберите…</option>
+            @for (c of countries(); track c.id) {
+              <option [value]="c.id" [selected]="draft().countryId === c.id">{{ c.name }}</option>
+            }
+            <option [value]="NEW" [selected]="draft().countryId === NEW">＋ Новая страна…</option>
+          </select>
+        </label>
+      </div>
+      @if (draft().countryId === NEW) {
+        <label class="field">
+          <span>Название страны *</span>
+          <input type="text" [value]="draft().newCountryName" (input)="onText('newCountryName', $event)" />
+        </label>
+      }
+    }
+    @if (draft().areaId === NEW) {
+      <label class="field">
+        <span>Название района{{ draft().cityId === NEW ? ' (по умолчанию как город)' : ' *' }}</span>
+        <input type="text" [value]="draft().newAreaName" (input)="onText('newAreaName', $event)" />
+      </label>
+    }
+
+    <div class="grid2">
+      <label class="field">
+        <span>Категория</span>
+        <select [value]="draft().category" (change)="onCategory($event)">
+          @for (c of categories; track c.value) {
+            <option [value]="c.value" [selected]="draft().category === c.value">{{ c.label }}</option>
+          }
+        </select>
+      </label>
+      <label class="field">
+        <span>Время на месте, мин</span>
+        <input type="number" inputmode="numeric" min="0" step="5" [value]="draft().duration" (input)="onText('duration', $event)" />
+      </label>
+    </div>
+
+    <label class="check">
+      <input type="checkbox" [checked]="draft().must" (change)="onMust($event)" />
+      <span>Обязательно посетить (Must)</span>
+    </label>
+
+    <section class="block">
+      <div class="grid2">
+        <label class="field">
+          <span>Широта *</span>
+          <input type="text" inputmode="decimal" [value]="draft().lat" (input)="onText('lat', $event)" />
+        </label>
+        <label class="field">
+          <span>Долгота *</span>
+          <input type="text" inputmode="decimal" [value]="draft().lng" (input)="onText('lng', $event)" />
+        </label>
+      </div>
+      <div class="row wrap">
+        <button type="button" class="btn" (click)="locate()">📍 Моё местоположение</button>
+        <button type="button" class="btn" [disabled]="busy() || !coordsValid()" (click)="enrich()">Дотянуть данные</button>
+      </div>
+    </section>
+
+    <label class="field">
+      <span>Часы работы</span>
+      <input type="text" placeholder="09:00-17:00 или Mo-Fr 10:00-18:00" [value]="draft().hoursText" (input)="onText('hoursText', $event)" />
+    </label>
+    <label class="field">
+      <span>Адрес</span>
+      <input type="text" [value]="draft().address" (input)="onText('address', $event)" />
+    </label>
+    <label class="field">
+      <span>Сайт</span>
+      <input type="url" inputmode="url" [value]="draft().website" (input)="onText('website', $event)" />
+    </label>
+    <label class="field">
+      <span>Заметка</span>
+      <input type="text" [value]="draft().description" (input)="onText('description', $event)" />
+    </label>
+
+    <section class="block">
+      <span class="label">Фото</span>
+      @if (items().length) {
+        <div class="thumbs">
+          @for (item of items(); track item.photo.id) {
+            <figure class="thumb">
+              @if (item.previewUrl) {
+                <img [src]="item.previewUrl" [alt]="item.photo.caption ?? ''" />
+              } @else {
+                <app-photo [photo]="item.photo" />
+              }
+              <button type="button" class="rm" (click)="removePhoto(item.photo.id)" aria-label="Убрать фото">✕</button>
+              @if (item.photo.credit) {
+                <figcaption>{{ item.photo.credit }}@if (item.photo.license) {, {{ item.photo.license }}}</figcaption>
+              }
+            </figure>
+          }
+        </div>
+      }
+      <label class="btn file">
+        ＋ Добавить фото
+        <input type="file" accept="image/*" multiple hidden (change)="onFiles($event)" />
+      </label>
+    </section>
+
+    <footer class="foot">
+      @if (error(); as e) {
+        <p class="status error" role="alert">{{ e }}</p>
+      }
+      <div class="row wrap">
+        <button type="submit" class="btn primary" [disabled]="busy()">Сохранить</button>
+        <button type="button" class="btn" (click)="close()">Отмена</button>
+        @if (isEdit()) {
+          <button type="button" class="btn danger" (click)="remove()">{{ confirmDelete() ? 'Точно удалить?' : 'Удалить' }}</button>
+        }
+      </div>
+    </footer>
+  </form>
+</dialog>

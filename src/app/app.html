@@ -1,0 +1,16 @@
+<header class="topbar">
+  <div class="titles">
+    <h1>{{ title() }}</h1>
+    <p>{{ subtitle() }}</p>
+  </div>
+  <a class="sync-link" routerLink="/sync" aria-label="Синхронизация" title="Синхронизация">⇄</a>
+</header>
+<main class="content">
+  <router-outlet />
+</main>
+<nav class="tabs" aria-label="Разделы">
+  <a routerLink="/days" routerLinkActive="on"><span aria-hidden="true">📅</span>Дни</a>
+  <a routerLink="/bookings" routerLinkActive="on"><span aria-hidden="true">🎫</span>Брони</a>
+  <a routerLink="/places" routerLinkActive="on"><span aria-hidden="true">📍</span>Точки</a>
+  <a routerLink="/routes" routerLinkActive="on"><span aria-hidden="true">🗺️</span>Маршруты</a>
+</nav>

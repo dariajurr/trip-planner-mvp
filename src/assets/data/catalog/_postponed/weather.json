@@ -1,0 +1,4 @@
+{
+  "_status": "runtime",
+  "_note": "Weather should be loaded from a provider/service at runtime, not treated as static trip content."
+}

@@ -1,0 +1,54 @@
+@use 'app/shared/ui';
+
+:root {
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --text: #1d1d1b;
+  --muted: #6b6a66;
+  --accent: #0f6e56;
+  --accent-soft: #e1f5ee;
+  --border: #e2e0d8;
+  --danger: #b3261e;
+  --warn-soft: #faeeda;
+  --warn: #854f0b;
+  --radius: 12px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615;
+    --surface: #222220;
+    --text: #efeee9;
+    --muted: #9a9890;
+    --accent: #5dcaa5;
+    --accent-soft: #0f3b30;
+    --border: #363633;
+    --danger: #f2b8b5;
+    --warn-soft: #412402;
+    --warn: #fac775;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.45 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}

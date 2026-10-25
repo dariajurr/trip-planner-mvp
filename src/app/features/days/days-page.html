@@ -1,0 +1,147 @@
+<section class="status" aria-live="polite">
+  @switch (weather.status()) {
+    @case ('loading') { <p class="muted">Загружаю погоду…</p> }
+    @case ('error') {
+      <p class="warn">Не удалось загрузить погоду. Проверьте интернет.</p>
+      <button type="button" class="link" (click)="reload()">Повторить</button>
+    }
+    @default {
+      @if (weather.stale()) {
+        <p class="warn">Нет связи: показаны данные от {{ updated() }}.</p>
+      } @else if (updated()) {
+        <p class="muted">Погода обновлена {{ updated() }}</p>
+      }
+      @if (updated()) {
+        <button type="button" class="link" (click)="reload()" aria-label="Обновить погоду">↻ Обновить</button>
+      }
+    }
+  }
+</section>
+
+@if (climateNotice(); as notice) {
+  <p class="notice">{{ notice }}</p>
+}
+
+@if (strip(); as s) {
+  <section class="card strip" aria-label="Лучшие дни для Фудзи">
+    <h2>🗻 Когда ехать к Фудзи</h2>
+    <p class="muted small">Лучшие дни для вида на гору из города {{ fujiBaseName() }}</p>
+    <ol>
+      @for (item of s.items; track item.date) {
+        <li [class]="'lvl lvl-' + item.level">
+          <span class="when"><b>{{ item.label }}</b> <span class="small">{{ item.relative }}</span></span>
+          <span class="what">{{ item.text }}</span>
+          <span class="score">{{ item.score }}</span>
+        </li>
+      }
+    </ol>
+  </section>
+}
+
+@for (day of days(); track day.date) {
+  <article class="card day" [class.today]="day.isToday" [class.past]="day.isPast">
+    <button type="button" class="head" [attr.aria-expanded]="expanded() === day.date" (click)="toggle(day.date)">
+      <span class="date">
+        <b>{{ day.label }}</b>
+        <span class="small muted">{{ day.relative }}@if (day.cityName) { · {{ day.cityName }}}</span>
+      </span>
+      <span class="tags">
+        @for (t of day.tags; track t) { <span class="badge">{{ t }}</span> }
+      </span>
+      <span class="chev" aria-hidden="true">{{ expanded() === day.date ? '▾' : '▸' }}</span>
+    </button>
+
+    @if (day.bookings.length || day.noHotel) {
+      <ul class="bk">
+        @for (b of day.bookings; track b.bookingId + b.kind) {
+          <li><span aria-hidden="true">{{ b.icon }}</span> <b>{{ b.title }}</b> <span class="muted small">{{ b.detail }}</span></li>
+        }
+        @if (day.noHotel) {
+          <li class="gap"><span aria-hidden="true">🏨</span> Нет брони на эту ночь</li>
+        }
+      </ul>
+    }
+
+    @if (day.weather; as w) {
+      <div class="weather">
+        <span class="w-icon" aria-hidden="true">{{ w.icon }}</span>
+        <div class="w-main">
+          <span>{{ w.label }} · <b>{{ w.temp }}</b></span>
+          <span class="muted small">{{ w.precip }}@if (w.wind) { · {{ w.wind }}}</span>
+        </div>
+        @if (day.fuji; as f) {
+          <span [class]="'fuji lvl lvl-' + f.level" [attr.title]="f.text">🗻 <b>{{ f.score }}</b></span>
+        }
+      </div>
+      @if (day.fuji; as f) {
+        <p class="fuji-line"><span [class]="'dot lvl-' + f.level"></span>{{ f.text }}@if (f.best) { · лучшее время {{ f.best }} }</p>
+      }
+    } @else if (!day.isPast) {
+      <p class="muted small">Нет данных о погоде</p>
+    }
+
+    @for (w of day.warnings; track w.text) {
+      <div class="warning">
+        <p>{{ w.text }}</p>
+        @if (w.move; as m) {
+          <button type="button" class="btn small-btn" (click)="move(m.routeId, day.date, m.to)">{{ m.label }}</button>
+        }
+      </div>
+    }
+    @if (day.busy) {
+      <div class="warning"><p>⏱ Насыщенный день: около {{ day.busy }}.</p></div>
+    }
+
+    <div class="routes">
+      @for (r of day.routes; track r.id) {
+        <div class="route">
+          <a class="r-link" [routerLink]="['/routes', r.id]">
+            <span class="r-icon" aria-hidden="true">{{ r.icon }}</span>
+            <span class="r-text">
+              <b>{{ r.title }}</b>
+              <span class="muted small">{{ r.stops.length }} ост.@if (r.duration) { · {{ r.duration }}}@if (r.cities) { · {{ r.cities }}}</span>
+            </span>
+          </a>
+          <button type="button" class="rm" (click)="unassign(day.date, r.id)" [attr.aria-label]="'Убрать маршрут ' + r.title">✕</button>
+        </div>
+      } @empty {
+        <p class="muted small">Маршрут не назначен</p>
+      }
+      <button type="button" class="btn add" (click)="pickerDate.set(day.date)">＋ Маршрут</button>
+    </div>
+
+    @if (expanded() === day.date) {
+      <div class="details">
+        @if (day.fuji; as f) {
+          <h3>Видимость Фудзи</h3>
+          <p class="small">{{ f.detail }}</p>
+          @if (f.hours.length) {
+            <div class="bars" role="img" [attr.aria-label]="'Оценка видимости по часам, лучшее время ' + f.best">
+              @for (h of f.hours; track h.hour) {
+                <div class="bar"><span [class]="'fill lvl-' + h.level" [style.height.%]="h.score || 2"></span><span class="hr">{{ h.hour }}</span></div>
+              }
+            </div>
+          }
+          <p class="muted small">Это оценка по облачности, влажности и осадкам, а не гарантия.</p>
+        }
+        @for (r of day.routes; track r.id) {
+          <h3>{{ r.title }}</h3>
+          <ol class="stops">
+            @for (s of r.stops; track $index) { <li>{{ s }}</li> }
+          </ol>
+        }
+        @if (!day.fuji && !day.routes.length) {
+          <p class="muted small">Добавьте маршрут, и здесь появится его состав.</p>
+        }
+      </div>
+    }
+  </article>
+} @empty {
+  <p class="empty">У поездки не заданы даты.</p>
+}
+
+<p class="credits">Погода: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a>. Оценка видимости Фудзи рассчитана приложением и носит ориентировочный характер.</p>
+
+@if (pickerDate(); as d) {
+  <app-day-route-picker [date]="d" (picked)="assign(d, $event)" (closed)="pickerDate.set(null)" />
+}

@@ -1,0 +1,183 @@
+<div class="toolbar">
+  <button type="button" class="add" (click)="openEditor(null)">＋ Добавить точку</button>
+</div>
+
+<section class="filters" aria-label="Фильтры">
+  <input
+    class="search"
+    type="search"
+    placeholder="Поиск по названию или району"
+    [value]="query()"
+    (input)="onQuery($event)"
+  />
+
+  <div class="chips" role="group" aria-label="Город">
+    <button type="button" class="chip" [class.on]="cityId() === null" [attr.aria-pressed]="cityId() === null" (click)="selectCity(null)">
+      Все города
+    </button>
+    @for (city of cities(); track city.id) {
+      <button type="button" class="chip" [class.on]="cityId() === city.id" [attr.aria-pressed]="cityId() === city.id" (click)="selectCity(city.id)">
+        {{ city.name }}
+      </button>
+    }
+  </div>
+
+  <div class="chips" role="group" aria-label="Район">
+    <button type="button" class="chip" [class.on]="areaId() === null" [attr.aria-pressed]="areaId() === null" (click)="selectArea(null)">
+      Все районы
+    </button>
+    @for (chip of areaChips(); track chip.area.id) {
+      <button type="button" class="chip" [class.on]="areaId() === chip.area.id" [attr.aria-pressed]="areaId() === chip.area.id" (click)="selectArea(chip.area.id)">
+        {{ chip.area.name }} <span class="count">{{ chip.count }}</span>
+      </button>
+    }
+  </div>
+
+  <div class="chips" role="group" aria-label="Статус">
+    @for (f of statusFilters; track f.value) {
+      <button type="button" class="chip" [class.on]="statusFilter() === f.value" [attr.aria-pressed]="statusFilter() === f.value" (click)="statusFilter.set(f.value)">
+        {{ f.label }}
+      </button>
+    }
+  </div>
+</section>
+
+<p class="summary">
+  <span>{{ items().length }} {{ items().length === 1 ? 'точка' : 'точек' }}</span>
+  @if (hasFilters()) {
+    <button type="button" class="link" (click)="resetFilters()">Сбросить фильтры</button>
+  }
+  @if (selectedArea() && photoSpots().length) {
+    <button type="button" class="link" (click)="scrollToPhotos()">📷 Фотолокации: {{ photoSpots().length }} ↓</button>
+  }
+</p>
+
+@for (vm of items(); track vm.place.id) {
+  <article class="card" [class.dim]="vm.status === 'not-wanted'">
+    @if (vm.photos.length) {
+      <div class="photos">
+        @for (photo of vm.photos; track photo.id) {
+          <figure class="shot">
+            <app-photo [photo]="photo" />
+            @if (photo.credit) {
+              <figcaption>
+                @if (photo.sourceUrl) {
+                  <a [href]="photo.sourceUrl" target="_blank" rel="noopener">{{ photo.credit }}</a>
+                } @else {
+                  {{ photo.credit }}
+                }
+                @if (photo.license) {, {{ photo.license }}}
+              </figcaption>
+            }
+          </figure>
+        }
+      </div>
+    }
+    <div class="card-head">
+      <div class="title">
+        <h2>
+          <span class="icon" aria-hidden="true">{{ vm.icon }}</span>{{ vm.place.name }}
+        </h2>
+        @if (vm.place.nameLocal) {
+          <span class="local">{{ vm.place.nameLocal }}</span>
+        }
+      </div>
+      <button
+        type="button"
+        class="fav"
+        [class.on]="vm.favorite"
+        [attr.aria-pressed]="vm.favorite"
+        [attr.aria-label]="vm.favorite ? 'Убрать из избранного' : 'В избранное'"
+        (click)="toggleFavorite(vm.place.id)"
+      >
+        {{ vm.favorite ? '♥' : '♡' }}
+      </button>
+    </div>
+
+    <div class="meta">
+      @if (vm.place.priority === 'must') {
+        <span class="badge must">Must</span>
+      }
+      @if (vm.custom) {
+        <span class="badge">Моя</span>
+      }
+      <span>{{ vm.categoryLabel }}</span>
+      <span>{{ vm.areaName }}@if (!cityId() && vm.cityName !== vm.areaName) {, {{ vm.cityName }}}</span>
+      @if (vm.duration) {
+        <span>{{ vm.duration }}</span>
+      }
+      @if (vm.hours) {
+        <span>{{ vm.hours }}</span>
+      } @else {
+        <span class="faint">часы не проверены</span>
+      }
+    </div>
+
+    @if (vm.address) {
+      <p class="extra">{{ vm.address }}</p>
+    }
+    @if (vm.place.description) {
+      <p class="extra">{{ vm.place.description }}</p>
+    }
+
+    <div class="actions">
+      <div class="seg" role="group" aria-label="Статус точки">
+        @for (action of statusActions; track action.value) {
+          <button
+            type="button"
+            [class.on]="vm.status === action.value"
+            [attr.aria-pressed]="vm.status === action.value"
+            (click)="toggleStatus(vm, action.value)"
+          >
+            {{ action.label }}
+          </button>
+        }
+      </div>
+      <span class="links">
+        <button type="button" class="link" (click)="openEditor(vm.place)">Изменить</button>
+        @if (vm.website) {
+          <a class="link" [href]="vm.website" target="_blank" rel="noopener">Сайт ↗</a>
+        }
+        <a class="link" [href]="vm.mapsUrl" target="_blank" rel="noopener">На карте ↗</a>
+      </span>
+    </div>
+    @if (vm.sources) {
+      <p class="source">Данные: {{ vm.sources }}</p>
+    }
+  </article>
+} @empty {
+  <p class="empty">По этим фильтрам ничего не нашлось.</p>
+}
+
+@if (selectedArea(); as area) {
+  <h3 class="section" id="photo-spots">Фотолокации: {{ area.name }}</h3>
+  @for (vm of photoSpots(); track vm.spot.id) {
+    <article class="card photo" [class.done]="vm.done">
+      <div class="card-head">
+        <div class="title">
+          <h2><span class="icon" aria-hidden="true">📷</span>{{ vm.spot.title }}</h2>
+        </div>
+        <button type="button" class="seg-single" [class.on]="vm.done" [attr.aria-pressed]="vm.done" (click)="togglePhotoDone(vm)">
+          {{ vm.done ? 'Снято ✓' : 'Снять' }}
+        </button>
+      </div>
+      <div class="meta">
+        @if (vm.time) {
+          <span class="badge">{{ vm.time }}</span>
+        }
+        @if (vm.difficulty) {
+          <span>{{ vm.difficulty }}</span>
+        }
+        @if (vm.detour) {
+          <span>{{ vm.detour }}</span>
+        }
+      </div>
+    </article>
+  } @empty {
+    <p class="empty">Для этого района фотолокаций пока нет.</p>
+  }
+}
+
+@if (editor(); as ed) {
+  <app-place-editor [place]="ed.place" [defaults]="editorDefaults()" (saved)="onSaved($event)" (closed)="closeEditor()" />
+}

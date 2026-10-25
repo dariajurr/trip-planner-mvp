@@ -1,0 +1,46 @@
+[
+  {
+    "id": "tokyo",
+    "countryId": "japan",
+    "name": "Tokyo",
+    "nameLocal": "東京",
+    "timezone": "Asia/Tokyo",
+    "coordinates": {
+      "lat": 35.6762,
+      "lng": 139.6503
+    }
+  },
+  {
+    "id": "fujiyoshida",
+    "countryId": "japan",
+    "name": "Fujiyoshida",
+    "nameLocal": "富士吉田",
+    "timezone": "Asia/Tokyo",
+    "coordinates": {
+      "lat": 35.4878,
+      "lng": 138.81
+    }
+  },
+  {
+    "id": "kamakura",
+    "countryId": "japan",
+    "name": "Kamakura",
+    "nameLocal": "鎌倉",
+    "timezone": "Asia/Tokyo",
+    "coordinates": {
+      "lat": 35.3192,
+      "lng": 139.5467
+    }
+  },
+  {
+    "id": "yokohama",
+    "countryId": "japan",
+    "name": "Yokohama",
+    "nameLocal": "横浜",
+    "timezone": "Asia/Tokyo",
+    "coordinates": {
+      "lat": 35.4437,
+      "lng": 139.638
+    }
+  }
+]
