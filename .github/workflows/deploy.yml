@@ -28,6 +28,12 @@ jobs:
       - name: Build
         run: npm run build -- --configuration production --base-href "/${{ github.event.repository.name }}/"
 
+      - name: Debug - show dist structure
+        run: ls -R ./dist
+
+      - name: SPA fallback (404.html)
+        run: cp ./dist/my-trip-app/index.html ./dist/my-trip-app/404.html
+
       - name: SPA fallback (404.html)
         run: cp ./dist/my-trip-app/index.html ./dist/my-trip-app/404.html
 
