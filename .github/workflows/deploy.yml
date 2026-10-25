@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -19,8 +19,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
-          cache: 'npm'
+          node-version: "24"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -28,14 +28,8 @@ jobs:
       - name: Build
         run: npm run build -- --configuration production --base-href "/${{ github.event.repository.name }}/"
 
-      - name: Debug - show dist structure
-        run: ls -R ./dist
-
       - name: SPA fallback (404.html)
-        run: cp ./dist/my-trip-app/index.html ./dist/my-trip-app/404.html
-
-      - name: SPA fallback (404.html)
-        run: cp ./dist/my-trip-app/index.html ./dist/my-trip-app/404.html
+        run: cp ./dist/my-trip-app/browser/index.html ./dist/my-trip-app/browser/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -43,7 +37,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/my-trip-app
+          path: ./dist/my-trip-app/browser
 
   deploy:
     environment:
