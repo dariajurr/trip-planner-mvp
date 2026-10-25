@@ -2,8 +2,33 @@ import { Injectable } from '@angular/core';
 
 import { TextChunk, chunksToLines } from '../utils/document-text';
 
+// Полифил асинхронного итератора ReadableStream для Safari.
+// Должен выполниться ДО загрузки pdfjs-dist, поэтому находится в самом верху модуля.
+if (
+  typeof ReadableStream !== 'undefined' &&
+  !ReadableStream.prototype[Symbol.asyncIterator]
+) {
+  (ReadableStream.prototype as unknown as Record<symbol, unknown>)[
+    Symbol.asyncIterator
+  ] = async function* (this: ReadableStream) {
+    const reader = this.getReader();
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) return;
+        yield value;
+      }
+    } finally {
+      reader.releaseLock();
+    }
+  };
+}
+
 export class DocumentError extends Error {
-  constructor(message: string, readonly technical?: string) {
+  constructor(
+    message: string,
+    readonly technical?: string,
+  ) {
     super(message);
   }
 }
@@ -24,7 +49,10 @@ export class PdfTextService {
       );
     }
     if (!pdfjs.GlobalWorkerOptions.workerSrc) {
-      pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs/pdf.worker.min.mjs', document.baseURI).href;
+      pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+        'pdfjs-dist/legacy/build/pdf.worker.min.mjs',
+        import.meta.url,
+      ).toString();
     }
 
     let task;
@@ -35,9 +63,14 @@ export class PdfTextService {
     } catch (e) {
       void task?.destroy();
       if ((e as { name?: string }).name === 'PasswordException') {
-        throw new DocumentError('PDF защищён паролем. Снимите защиту или вставьте текст вручную.');
+        throw new DocumentError(
+          'PDF защищён паролем. Снимите защиту или вставьте текст вручную.',
+        );
       }
-      throw new DocumentError('Не удалось открыть PDF. Файл повреждён, это не PDF, либо не загрузился файл pdfjs/pdf.worker.min.mjs.', describe(e));
+      throw new DocumentError(
+        'Не удалось открыть PDF. Файл повреждён, это не PDF, либо не загрузился файл pdfjs/pdf.worker.min.mjs.',
+        describe(e),
+      );
     }
 
     try {
@@ -45,14 +78,27 @@ export class PdfTextService {
       for (let n = 1; n <= Math.min(doc.numPages, MAX_PAGES); n++) {
         const page = await doc.getPage(n);
         const content = await page.getTextContent();
-        const chunks: TextChunk[] = content.items.flatMap(item =>
-          'str' in item ? [{ str: item.str, x: item.transform[4], y: item.transform[5], width: item.width, height: item.height || Math.abs(item.transform[3]) }] : [],
+        const chunks: TextChunk[] = content.items.flatMap((item) =>
+          'str' in item
+            ? [
+                {
+                  str: item.str,
+                  x: item.transform[4],
+                  y: item.transform[5],
+                  width: item.width,
+                  height: item.height || Math.abs(item.transform[3]),
+                },
+              ]
+            : [],
         );
         pages.push(chunksToLines(chunks).join('\n'));
       }
       return { text: pages.join('\n\n'), pages: doc.numPages };
     } catch (e) {
-      throw new DocumentError('Не удалось прочитать текст страницы PDF.', describe(e));
+      throw new DocumentError(
+        'Не удалось прочитать текст страницы PDF.',
+        describe(e),
+      );
     } finally {
       void task.destroy();
     }
