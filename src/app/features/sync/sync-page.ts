@@ -3,10 +3,11 @@ import { RouterLink } from '@angular/router';
 
 import { ExportFile } from '../../core/models';
 import { ImportPreview, SyncError, SyncService } from '../../core/services/sync.service';
+import { OfflineCard } from './offline-card';
 
 @Component({
   selector: 'app-sync-page',
-  imports: [RouterLink],
+  imports: [RouterLink, OfflineCard],
   templateUrl: './sync-page.html',
   styleUrl: './sync-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -56,6 +57,7 @@ export class SyncPage {
       a.click();
       a.remove();
       setTimeout(() => URL.revokeObjectURL(url), 10_000);
+      this.sync.markExported();
       this.message.set({ kind: 'ok', text: `Файл сохранён: ${this.sync.fileName()} (${this.size(blob)}).` });
     });
   }
@@ -70,6 +72,7 @@ export class SyncPage {
       }
       try {
         await navigator.share({ files: [file], title: 'Trip Planner' });
+        this.sync.markExported();
       } catch (e) {
         if ((e as DOMException).name !== 'AbortError') {
           throw e;

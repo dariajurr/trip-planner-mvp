@@ -1,0 +1,67 @@
+<section class="card">
+  <h3>Работа без интернета</h3>
+
+  <div class="row">
+    @switch (pwa.offline()) {
+      @case ('ready') {
+        <p class="ok">✓ Готово: приложение, ваши данные и чтение PDF работают без связи.</p>
+      }
+      @case ('preparing') {
+        <p class="wait">Скачиваю приложение для работы без интернета. Оставайтесь на связи, это займёт меньше минуты.</p>
+      }
+      @case ('dev') {
+        <p class="muted">Режим разработки: офлайн включается в боевой сборке (<code>ng build</code>).</p>
+      }
+      @case ('unsupported') {
+        <p class="warn">Браузер не поддерживает работу без интернета. Данные хранятся на устройстве, но без связи приложение не откроется.</p>
+      }
+      @default {
+        <p class="muted">Проверяю…</p>
+      }
+    }
+  </div>
+
+  <div class="row">
+    <b>Версия приложения</b>
+    @if (pwa.updateReady()) {
+      <p class="ok">Новая версия скачана и готова.</p>
+      <button type="button" class="btn primary" (click)="pwa.applyUpdate()">Обновить сейчас</button>
+    } @else {
+      <button type="button" class="btn" [disabled]="pwa.updateCheck() === 'checking'" (click)="pwa.checkForUpdate()">Проверить обновления</button>
+      @switch (pwa.updateCheck()) {
+        @case ('checking') { <p class="muted">Проверяю…</p> }
+        @case ('latest') { <p class="ok">У вас последняя версия.</p> }
+        @case ('available') { <p class="ok">Найдена новая версия, скачиваю…</p> }
+        @case ('error') { <p class="warn">Не удалось проверить: нет связи.</p> }
+        @case ('unavailable') { <p class="muted">Недоступно в режиме разработки.</p> }
+      }
+    }
+  </div>
+
+  <div class="row">
+    <b>Хранение данных</b>
+    @if (usage(); as u) {
+      <p class="muted">Занято {{ u }}.</p>
+    }
+    @if (pwa.persisted() === true) {
+      <p class="ok">✓ Данные защищены: браузер не очистит их сам.</p>
+    } @else if (pwa.persisted() === false) {
+      <p class="warn">Браузер может удалить данные при нехватке места или если приложением долго не пользоваться.</p>
+      <button type="button" class="btn" (click)="protect()">Защитить данные</button>
+    }
+    <p class="muted small">Поэтому раз в несколько дней делайте копию (блок ниже). {{ backup() }}.</p>
+  </div>
+
+  <div class="row">
+    <b>Установка на телефон</b>
+    @if (pwa.standalone()) {
+      <p class="ok">✓ Приложение установлено.</p>
+    } @else if (pwa.installable()) {
+      <button type="button" class="btn primary" (click)="pwa.promptInstall()">Установить приложение</button>
+    } @else if (pwa.ios) {
+      <p>В Safari нажмите <b>«Поделиться»</b> (квадрат со стрелкой), затем <b>«На экран Домой»</b>. Так приложение открывается как обычное и браузер не очищает его данные.</p>
+    } @else {
+      <p class="muted">В меню браузера выберите «Установить приложение» или «Добавить на главный экран».</p>
+    }
+  </div>
+</section>

@@ -1,0 +1,7 @@
+h3 { margin: 0 0 8px; font-size: 15px; }
+.row { display: grid; gap: 6px; padding: 10px 0; border-top: 1px solid var(--border); font-size: 14px; &:first-of-type { border-top: 0; padding-top: 0; } b { font-size: 13px; } p { margin: 0; } .btn { justify-self: start; } }
+.ok { color: var(--accent); }
+.warn { color: var(--warn); }
+.wait { color: var(--muted); }
+.small { font-size: 12px; }
+code { padding: 1px 5px; border-radius: 4px; background: var(--border); font-size: 12px; }

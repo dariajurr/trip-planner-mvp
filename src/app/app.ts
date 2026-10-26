@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
+import { PwaService } from './core/services/pwa.service';
 import { TripStateStore } from './core/state/trip-state.store';
 
 const dateFormat = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'short' });
@@ -14,6 +15,7 @@ const dateFormat = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'sh
 })
 export class App {
   private readonly tripState = inject(TripStateStore);
+  protected readonly pwa = inject(PwaService);
 
   protected readonly title = computed(() => this.tripState.trip()?.title ?? 'Trip Planner');
 

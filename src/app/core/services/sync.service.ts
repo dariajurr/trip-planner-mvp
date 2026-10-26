@@ -8,6 +8,7 @@ import { LocalStorageService } from './local-storage.service';
 import { PhotoStorageService } from './photo-storage.service';
 
 const DEVICE_NAME_KEY = 'trip-app.device-name';
+const LAST_EXPORT_KEY = 'trip-app.last-export';
 const IMAGE_DATA_URL = /^data:image\/(jpeg|png|webp|gif);base64,/;
 const FILE_DATA_URL = /^data:[\w/+.-]+;base64,/;
 
@@ -28,6 +29,15 @@ export class SyncService {
   private readonly storage = inject(LocalStorageService);
 
   readonly deviceName = signal(this.storage.get<string>(DEVICE_NAME_KEY) ?? '');
+
+  /** When a backup file was last created on this device (ISO), if ever. */
+  readonly lastExport = signal<string | null>(this.storage.get<string>(LAST_EXPORT_KEY));
+
+  markExported(): void {
+    const now = new Date().toISOString();
+    this.lastExport.set(now);
+    this.storage.set(LAST_EXPORT_KEY, now);
+  }
 
   setDeviceName(name: string): void {
     this.deviceName.set(name);

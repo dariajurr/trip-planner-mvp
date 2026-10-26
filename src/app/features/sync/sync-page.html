@@ -1,5 +1,7 @@
 <a class="back" routerLink="/places">← К точкам</a>
-<h2 class="page-title">Синхронизация</h2>
+<h2 class="page-title">Офлайн и синхронизация</h2>
+
+<app-offline-card />
 
 @if (message(); as m) {
   <p class="msg" [class.error]="m.kind === 'error'" role="status">{{ m.text }}</p>

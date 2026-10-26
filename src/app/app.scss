@@ -74,3 +74,34 @@
     }
   }
 }
+
+.notice-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 12px;
+  max-width: 760px;
+  margin: 6px auto 0;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 13px;
+  text-align: center;
+
+  &.warn,
+  &.offline {
+    background: var(--warn-soft);
+    color: var(--warn);
+  }
+
+  button {
+    padding: 4px 12px;
+    border: 1px solid currentColor;
+    border-radius: 99px;
+    background: transparent;
+    color: inherit;
+    font-size: 13px;
+  }
+}

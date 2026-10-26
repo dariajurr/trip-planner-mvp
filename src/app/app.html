@@ -5,6 +5,20 @@
   </div>
   <a class="sync-link" routerLink="/sync" aria-label="Синхронизация" title="Синхронизация">⇄</a>
 </header>
+@if (pwa.needsReload()) {
+  <div class="notice-bar warn" role="alert">
+    Приложение нужно перезапустить.
+    <button type="button" (click)="pwa.applyUpdate()">Перезапустить</button>
+  </div>
+} @else if (pwa.updateReady()) {
+  <div class="notice-bar" role="status">
+    Доступна новая версия приложения.
+    <button type="button" (click)="pwa.applyUpdate()">Обновить</button>
+  </div>
+}
+@if (!pwa.online()) {
+  <div class="notice-bar offline" role="status">Нет связи. Всё работает на данных этого устройства.</div>
+}
 <main class="content">
   <router-outlet />
 </main>
