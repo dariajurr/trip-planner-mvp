@@ -1,0 +1,30 @@
+:host { display: block; }
+.page-title { margin: 6px 0 12px; font-size: 1.125rem; }
+h3 { margin: 0 0 4px; font-size: 0.9375rem; }
+.hint { margin: 0 0 12px; font-size: 0.8125rem; color: var(--muted); }
+.small { font-size: 0.75rem; }
+
+.themes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.theme {
+  display: grid; gap: 6px; padding: 8px; text-align: left; color: var(--text);
+  border: 2px solid var(--border); border-radius: 14px; background: var(--surface);
+  &.on { border-color: var(--accent); }
+  .label { display: flex; align-items: center; justify-content: space-between; font-size: 0.9375rem; }
+  .check { color: var(--accent); font-weight: 700; }
+  small { font-size: 0.75rem; color: var(--muted); line-height: 1.3; }
+}
+
+/* A miniature of the app drawn with the colours of the theme (data-theme on .mock picks them). */
+.mock {
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 14px 34px; gap: 6px; height: 74px; padding: 8px;
+  border-radius: 8px; background: var(--bg); border: 1px solid var(--border);
+  i { display: block; border-radius: 4px; }
+  .bar { grid-column: 1 / 3; background: var(--text); opacity: 0.85; height: 8px; width: 55%; align-self: center; }
+  .box { background: var(--surface); border: 1px solid var(--border); }
+  .chip { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 99px; align-self: center; height: 14px; }
+  .btn { grid-column: 1 / 3; background: var(--accent); height: 12px; align-self: end; }
+}
+.pair { position: relative; display: block; height: 76px; .mock { position: absolute; inset: 0; width: 100%; &.left { clip-path: inset(0 50% 0 0); } &.right { clip-path: inset(0 0 0 50%); } } }
+
+.sizes { display: flex; flex-wrap: wrap; gap: 8px; }
+.sample { margin: 12px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); }

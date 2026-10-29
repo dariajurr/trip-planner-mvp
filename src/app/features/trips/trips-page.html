@@ -1,0 +1,65 @@
+<h2 class="page-title">Поездки</h2>
+
+<div class="toolbar">
+  <button type="button" class="btn primary" (click)="newTrip()">＋ Новая поездка</button>
+  <label class="btn" [class.disabled]="busy()">
+    📎 Из броней
+    <input type="file" hidden multiple accept=".pdf,.eml,.ics,.html,.htm,.txt,application/pdf,text/calendar,message/rfc822,text/html,text/plain" (change)="onFiles($event)" />
+  </label>
+</div>
+<p class="muted small">«Из броней»: загрузите билеты и подтверждения отелей, и приложение предложит название, даты и города поездки.</p>
+
+@if (busy()) {
+  <p class="muted small">Читаю документы…</p>
+}
+@if (message(); as m) {
+  <p class="status" [class.error]="m.kind === 'error'" role="status">{{ m.text }}</p>
+}
+
+@for (section of sections(); track section.title) {
+  <h3 class="section">{{ section.title }}</h3>
+  @for (vm of section.items; track vm.trip.id) {
+    <article class="card trip" [class.on]="vm.selected">
+      <div class="head">
+        <div class="titles">
+          <h4>{{ vm.trip.title }}</h4>
+          <p class="muted">{{ vm.when }} · {{ vm.length }} · {{ vm.status }}</p>
+        </div>
+        @if (vm.selected) { <span class="badge">Выбрана</span> }
+      </div>
+      <p class="cities">{{ vm.cities }}</p>
+      @if (vm.bookings || vm.assignments) {
+        <p class="muted small">
+          @if (vm.bookings) { броней: {{ vm.bookings }} }
+          @if (vm.bookings && vm.assignments) { · }
+          @if (vm.assignments) { маршрутов по дням: {{ vm.assignments }} }
+        </p>
+      }
+      <div class="links">
+        <button type="button" class="btn primary small-btn" (click)="open(vm.trip)">Открыть</button>
+        <button type="button" class="link" (click)="edit(vm.trip)">Изменить</button>
+        <button type="button" class="link danger" (click)="remove(vm)">{{ confirmId() === vm.trip.id ? 'Точно удалить?' : 'Удалить' }}</button>
+      </div>
+      @if (confirmId() === vm.trip.id) {
+        <p class="status error">{{ deleteText(vm) }}</p>
+      }
+    </article>
+  }
+} @empty {
+  <p class="empty">Поездок пока нет. Создайте первую: вручную или из билетов и броней.</p>
+}
+
+@if (review(); as r) {
+  <app-booking-editor
+    title="Проверьте брони"
+    [initial]="r.items"
+    [documents]="r.documents"
+    [withCity]="false"
+    (saved)="onReviewed($event)"
+    (closed)="review.set(null)"
+  />
+}
+
+@if (form(); as f) {
+  <app-trip-editor [trip]="f.trip" [prefill]="f.prefill" [note]="f.note" (saved)="onSaved($event)" (closed)="onFormClosed()" />
+}

@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, effect, inject, signal, untracked } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+import { FlightBooking } from '../../core/models';
 import { BookingService } from '../../core/services/booking.service';
 import { ContentService } from '../../core/services/content.service';
 import { Observer, WeatherService } from '../../core/services/weather.service';
@@ -11,6 +12,7 @@ import { FUJI, FujiLabel, FUJI_HOURS, fujiLabel } from '../../core/utils/fuji';
 import { haversineKm } from '../../core/utils/geo';
 import { DayBookingLine, bookingsForDay, nightsWithoutHotel } from '../../core/utils/booking-utils';
 import { formatMinutes, routeTotals, tripDates } from '../../core/utils/route-utils';
+import { cityOnDay } from '../../core/utils/trip-utils';
 import { DayEntry } from '../../core/utils/weather-aggregate';
 import { weatherInfo } from '../../core/utils/weather-codes';
 import { DayRoutePicker } from './day-route-picker';
@@ -290,8 +292,16 @@ export class DaysPage {
       const city = route ? this.content.getRouteCityIds(route)[0] : undefined;
       if (city && known.has(city)) return city;
     }
-    const stay = this.bookingSvc.bookings().find(b => b.kind === 'hotel' && b.cityId && b.checkIn.date <= date && date < b.checkOut.date);
+    const bookings = this.bookingSvc.bookings();
+    const stay = bookings.find(b => b.kind === 'hotel' && b.cityId && b.checkIn.date <= date && date < b.checkOut.date);
     if (stay?.kind === 'hotel' && stay.cityId && known.has(stay.cityId)) return stay.cityId;
+
+    // otherwise, by flights: the city where the traveller last landed (so Vietnam days show Vietnamese weather)
+    const byName = new Map(this.tripState.cities().filter(c => known.has(c.id)).map(c => [c.name.toLowerCase(), c.id]));
+    const flights = bookings.filter((b): b is FlightBooking => b.kind === 'flight');
+    const flightCity = cityOnDay(flights, date, name => byName.has(name.toLowerCase()));
+    if (flightCity) return byName.get(flightCity.toLowerCase());
+
     return trip.cityIds.find(c => known.has(c));
   }
 

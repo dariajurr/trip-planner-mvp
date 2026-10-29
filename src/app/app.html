@@ -1,9 +1,12 @@
 <header class="topbar">
-  <div class="titles">
-    <h1>{{ title() }}</h1>
-    <p>{{ subtitle() }}</p>
+  <a class="titles" routerLink="/trips" aria-label="Поездки: выбрать или создать">
+    <h1>{{ title() }} <span class="caret" aria-hidden="true">▾</span></h1>
+    <p>{{ subtitle() || 'Выберите или создайте поездку' }}</p>
+  </a>
+  <div class="icon-links">
+    <a class="icon-link settings-link" routerLink="/settings" aria-label="Настройки" title="Настройки">⚙</a>
+    <a class="icon-link sync-link" routerLink="/sync" aria-label="Синхронизация и офлайн" title="Синхронизация и офлайн">⇄</a>
   </div>
-  <a class="sync-link" routerLink="/sync" aria-label="Синхронизация" title="Синхронизация">⇄</a>
 </header>
 @if (pwa.needsReload()) {
   <div class="notice-bar warn" role="alert">
@@ -18,6 +21,12 @@
 }
 @if (!pwa.online()) {
   <div class="notice-bar offline" role="status">Нет связи. Всё работает на данных этого устройства.</div>
+}
+@if (!hasTrip()) {
+  <div class="notice-bar" role="status">
+    Поездки пока нет.
+    <a routerLink="/trips">Создать</a>
+  </div>
 }
 <main class="content">
   <router-outlet />

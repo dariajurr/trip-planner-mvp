@@ -1,11 +1,11 @@
 :host { display: block; }
 .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
 label.btn { cursor: pointer; &.disabled { opacity: 0.5; pointer-events: none; } }
-.small { font-size: 12px; }
+.small { font-size: 0.75rem; }
 .privacy { margin: 0 0 10px; }
-.section { margin: 18px 0 8px; font-size: 15px; }
-.banner { background: var(--accent-soft); border-color: transparent; p { margin: 0 0 8px; font-size: 14px; } }
-h3 { margin: 0; font-size: 16px; }
-.main p { margin: 3px 0 0; font-size: 14px; }
+.section { margin: 18px 0 8px; font-size: 0.9375rem; }
+.banner { background: var(--accent-soft); border-color: transparent; p { margin: 0 0 8px; font-size: 0.875rem; } }
+h3 { margin: 0; font-size: 1rem; }
+.main p { margin: 3px 0 0; font-size: 0.875rem; }
 .route { font-weight: 600; }
 .links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 10px; .push { margin-left: auto; } .danger { color: var(--danger); } }

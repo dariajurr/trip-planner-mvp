@@ -1,0 +1,70 @@
+<dialog #dialog class="sheet" (close)="closed.emit()" (click)="onBackdrop($event)" aria-labelledby="trip-editor-title">
+  <form class="sheet-body" (submit)="$event.preventDefault(); save()">
+    <header class="sheet-head">
+      <h2 id="trip-editor-title">{{ isEdit() ? 'Параметры поездки' : 'Новая поездка' }}</h2>
+      <button type="button" class="x" (click)="close()" aria-label="Закрыть">✕</button>
+    </header>
+
+    @if (note(); as n) {
+      <p class="status warn">{{ n }}</p>
+    }
+
+    <label class="field">
+      <span>Название *</span>
+      <input type="text" [value]="title()" (input)="on(title, $event)" placeholder="Например, Япония, декабрь 2026" autocomplete="off" />
+    </label>
+
+    <div class="grid">
+      <label class="field"><span>Начало *</span><input type="date" [value]="startDate()" (input)="on(startDate, $event)" /></label>
+      <label class="field"><span>Конец *</span><input type="date" [value]="endDate()" (input)="on(endDate, $event)" /></label>
+    </div>
+
+    <div class="field">
+      <span>Города поездки *</span>
+      <div class="chips wrap">
+        @for (c of cityOptions(); track c.id) {
+          <button type="button" class="chip" [class.on]="selected().includes(c.id)" [attr.aria-pressed]="selected().includes(c.id)" (click)="toggleCity(c.id)">
+            {{ c.name }} <span class="sub">{{ c.country }}</span>
+          </button>
+        }
+        @for (p of pending(); track $index; let i = $index) {
+          <span class="chip on pending">{{ pendingLabel(p) }} <span class="sub">новый</span>
+            <button type="button" class="rm" (click)="removePending(i)" [attr.aria-label]="'Убрать ' + p.name">✕</button>
+          </span>
+        }
+      </div>
+    </div>
+
+    @if (adding()) {
+      <section class="card add">
+        <label class="field"><span>Город</span><input type="text" [value]="miniName()" (input)="on(miniName, $event)" autocomplete="off" /></label>
+        <label class="field">
+          <span>Страна</span>
+          <select [value]="miniCountry()" (change)="on(miniCountry, $event)">
+            <option value="" disabled>Выберите…</option>
+            @for (c of countries(); track c.id) { <option [value]="c.id" [selected]="miniCountry() === c.id">{{ c.name }}</option> }
+            <option [value]="NEW" [selected]="miniCountry() === NEW">＋ Другая страна…</option>
+          </select>
+        </label>
+        @if (miniCountry() === NEW) {
+          <label class="field"><span>Название страны</span><input type="text" [value]="miniCountryName()" (input)="on(miniCountryName, $event)" /></label>
+        }
+        <div class="row">
+          <button type="button" class="btn primary" (click)="addCity()">Добавить город</button>
+          <button type="button" class="btn" (click)="adding.set(false)">Отмена</button>
+        </div>
+      </section>
+    } @else {
+      <button type="button" class="btn add-btn" (click)="adding.set(true)">＋ Новый город</button>
+    }
+    <p class="hint">Положение нового города определяется по интернету, чтобы показывать погоду. Без связи погода появится после добавления в город хотя бы одной точки.</p>
+
+    <footer class="sheet-foot">
+      @if (error(); as e) {
+        <p class="status error" role="alert">{{ e }}</p>
+      }
+      <button type="submit" class="btn primary" [disabled]="busy()">{{ busy() ? 'Сохраняю…' : 'Сохранить' }}</button>
+      <button type="button" class="btn" (click)="close()">Отмена</button>
+    </footer>
+  </form>
+</dialog>

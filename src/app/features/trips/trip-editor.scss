@@ -1,0 +1,11 @@
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.wrap { flex-wrap: wrap; overflow: visible; }
+.chip .sub { font-size: 0.75rem; }
+.pending { display: inline-flex; align-items: center; gap: 6px; }
+.rm { border: 0; padding: 0 2px; background: transparent; color: inherit; font-size: 0.75rem; }
+.add { display: grid; gap: 8px; }
+.add .row { display: flex; gap: 8px; }
+.add-btn { justify-self: start; }
+.hint { margin: 0; font-size: 0.75rem; color: var(--muted); }
+.status.warn { background: var(--warn-soft); color: var(--warn); }
+.sheet-foot .status { flex-basis: 100%; }

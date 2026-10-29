@@ -24,6 +24,8 @@ export class BookingEditor {
   /** Documents the drafts came from (for messages and the raw text). */
   readonly documents = input<ImportedDocument[]>([]);
   readonly canAdd = input(true);
+  /** Hide the hotel city field (when the trip the bookings belong to does not exist yet). */
+  readonly withCity = input(true);
 
   readonly saved = output<EditableDraft[]>();
   readonly closed = output<void>();

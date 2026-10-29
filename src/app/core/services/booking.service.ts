@@ -61,16 +61,38 @@ export class BookingService {
     return true;
   }
 
+  /**
+   * Stores each uploaded document once on the device, attaches it to the bookings read from it
+   * and saves them (to the given trip, by default the selected one).
+   */
+  async commit(items: EditableDraft[], tripId?: string): Promise<Booking[]> {
+    const stored = new Map<File, BookingAttachment>();
+    const prepared: EditableDraft[] = [];
+    for (const item of items) {
+      if (!item.include) continue;
+      let attachments = item.attachments;
+      if (item.file && item.file.size > 0) {
+        let a = stored.get(item.file);
+        if (!a) {
+          a = await this.storeFile(item.file);
+          stored.set(item.file, a);
+        }
+        attachments = [...(attachments ?? []), a];
+      }
+      prepared.push({ ...item, attachments });
+    }
+    return this.save(prepared, tripId);
+  }
+
   /** Saves the drafts that are included; drafts with an id replace the existing booking. */
-  save(items: EditableDraft[]): Booking[] {
-    const trip = this.tripState.trip();
-    if (!trip) return [];
+  save(items: EditableDraft[], tripId: string | undefined = this.tripState.trip()?.id): Booking[] {
+    if (!tripId) return [];
 
     const saved: Booking[] = [];
     for (const item of items.filter(i => i.include)) {
       const booking = draftToBooking(item.draft, {
         id: item.id ?? newId('booking'),
-        tripId: trip.id,
+        tripId,
         attachments: item.attachments,
         notes: item.id ? this.content.getBooking(item.id)?.notes : undefined,
       });

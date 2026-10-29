@@ -120,23 +120,7 @@ export class BookingsPage {
   protected async onSaved(items: EditableDraft[]): Promise<void> {
     this.busy.set(true);
     try {
-      // one stored copy of each uploaded document, shared by all bookings read from it
-      const stored = new Map<File, BookingAttachment>();
-      const withFiles: EditableDraft[] = [];
-      for (const item of items) {
-        if (!item.include) continue;
-        let attachments = item.attachments;
-        if (item.file && item.file.size > 0) {
-          let a = stored.get(item.file);
-          if (!a) {
-            a = await this.svc.storeFile(item.file);
-            stored.set(item.file, a);
-          }
-          attachments = [...(attachments ?? []), a];
-        }
-        withFiles.push({ ...item, attachments });
-      }
-      const saved = this.svc.save(withFiles);
+      const saved = await this.svc.commit(items);
       this.message.set({ kind: 'ok', text: `Сохранено: ${saved.length}.` });
     } finally {
       this.busy.set(false);

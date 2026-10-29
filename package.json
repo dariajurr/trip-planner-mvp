@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "validate:data": "node scripts/validate-data.mjs",
-    "prebuild": "npm run validate:data"
+    "prebuild": "npm run validate:data && npm run check:themes",
+    "check:themes": "node scripts/check-themes.mjs"
   },
   "private": true,
   "dependencies": {

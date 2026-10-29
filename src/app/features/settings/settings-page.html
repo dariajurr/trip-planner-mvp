@@ -1,0 +1,40 @@
+<a class="back" routerLink="/days">← К поездке</a>
+<h2 class="page-title">Настройки</h2>
+
+<section class="card">
+  <h3>Цветовая схема</h3>
+  <p class="hint">Выберите, что удобнее глазам. Схема применяется сразу и запоминается на этом устройстве.</p>
+
+  <div class="themes" role="radiogroup" aria-label="Цветовая схема">
+    @for (t of themes; track t.id) {
+      <button type="button" class="theme" role="radio" [class.on]="settings.settings().theme === t.id" [attr.aria-checked]="settings.settings().theme === t.id" [attr.data-pick]="t.id" (click)="pickTheme(t.id)">
+        @if (t.id === 'auto') {
+          <span class="pair" aria-hidden="true">
+            <span class="mock left" data-theme="classic"><i class="bar"></i><i class="box"></i><i class="chip"></i><i class="btn"></i></span>
+            <span class="mock right" data-theme="dark"><i class="bar"></i><i class="box"></i><i class="chip"></i><i class="btn"></i></span>
+          </span>
+        } @else {
+          <span class="mock" [attr.data-theme]="t.id" aria-hidden="true"><i class="bar"></i><i class="box"></i><i class="chip"></i><i class="btn"></i></span>
+        }
+        <span class="label">
+          <b>{{ t.name }}</b>
+          @if (settings.settings().theme === t.id) { <span class="check" aria-hidden="true">✓</span> }
+        </span>
+        <small>{{ t.hint }}</small>
+      </button>
+    }
+  </div>
+</section>
+
+<section class="card">
+  <h3>Размер текста</h3>
+  <div class="sizes" role="radiogroup" aria-label="Размер текста">
+    @for (s of sizes; track s.id) {
+      <button type="button" class="chip" role="radio" [class.on]="settings.settings().textSize === s.id" [attr.aria-checked]="settings.settings().textSize === s.id" [attr.data-size]="s.id" (click)="pickSize(s.id)">{{ s.name }}</button>
+    }
+  </div>
+  <p class="sample">Пример: вылет 11:45, заезд в отель с 15:00, до Фудзи 1 ч 40 мин.</p>
+</section>
+
+<p class="muted small">Настройки хранятся только на этом устройстве и не переносятся при синхронизации: на телефоне и планшете можно выбрать разное.</p>
+<button type="button" class="link" (click)="settings.reset()">Сбросить настройки</button>

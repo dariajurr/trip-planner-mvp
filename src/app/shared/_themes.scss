@@ -1,0 +1,135 @@
+/*
+ * Colour themes. Plain CSS on purpose: scripts/check-themes.mjs reads this file and checks the contrast
+ * (WCAG AA) of every theme, and the settings page previews a theme by putting data-theme on a small element.
+ * "Auto" is not here: it is resolved to 'classic' or 'dark' by the app according to the system setting.
+ */
+
+:root,
+[data-theme='classic'] {
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --text: #1d1d1b;
+  --muted: #615f5b;
+  --accent: #0f6e56;
+  --accent-soft: #e1f5ee;
+  --border: #dedcd3;
+  --danger: #b3261e;
+  --warn-soft: #faeeda;
+  --warn: #7a4709;
+  --on-accent: #ffffff;
+  --chrome: #f6f5f1;
+  color-scheme: light;
+}
+
+[data-theme='ocean'] {
+  --bg: #eef4f9;
+  --surface: #ffffff;
+  --text: #14232f;
+  --muted: #4f6475;
+  --accent: #0b5fa5;
+  --accent-soft: #dcebf8;
+  --border: #d0dde8;
+  --danger: #b3261e;
+  --warn-soft: #fdf0d8;
+  --warn: #7a4b00;
+  --on-accent: #ffffff;
+  --chrome: #eef4f9;
+  color-scheme: light;
+}
+
+[data-theme='sakura'] {
+  --bg: #fbf3f4;
+  --surface: #ffffff;
+  --text: #2b1d21;
+  --muted: #6f5760;
+  --accent: #ad2457;
+  --accent-soft: #fbe2ec;
+  --border: #ead7dc;
+  --danger: #a8231b;
+  --warn-soft: #fdefd9;
+  --warn: #7a4700;
+  --on-accent: #ffffff;
+  --chrome: #fbf3f4;
+  color-scheme: light;
+}
+
+[data-theme='sunset'] {
+  --bg: #fbf4ec;
+  --surface: #fffdf9;
+  --text: #2a1f17;
+  --muted: #6e5949;
+  --accent: #b8430f;
+  --accent-soft: #fde6d4;
+  --border: #ead9c5;
+  --danger: #a8231b;
+  --warn-soft: #fbecc8;
+  --warn: #6b4100;
+  --on-accent: #ffffff;
+  --chrome: #fbf4ec;
+  color-scheme: light;
+}
+
+[data-theme='lavender'] {
+  --bg: #f4f2fa;
+  --surface: #ffffff;
+  --text: #1f1b2e;
+  --muted: #5c5476;
+  --accent: #5a3ec2;
+  --accent-soft: #e6e0fa;
+  --border: #dad5ea;
+  --danger: #b3261e;
+  --warn-soft: #fbeed4;
+  --warn: #744600;
+  --on-accent: #ffffff;
+  --chrome: #f4f2fa;
+  color-scheme: light;
+}
+
+[data-theme='sepia'] {
+  --bg: #f3ead7;
+  --surface: #fbf5e6;
+  --text: #35291a;
+  --muted: #675640;
+  --accent: #7a4a1e;
+  --accent-soft: #ead9b8;
+  --border: #d9cba9;
+  --danger: #a5231b;
+  --warn-soft: #efdcae;
+  --warn: #5f3800;
+  --on-accent: #fbf5e6;
+  --chrome: #f3ead7;
+  color-scheme: light;
+}
+
+/* Maximum readability, for bright sunlight. */
+[data-theme='contrast'] {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text: #000000;
+  --muted: #3a3a3a;
+  --accent: #003f85;
+  --accent-soft: #d8e6f7;
+  --border: #6b6b6b;
+  --danger: #9b0000;
+  --warn-soft: #ffeeb8;
+  --warn: #4f3000;
+  --on-accent: #ffffff;
+  --chrome: #ffffff;
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #161615;
+  --surface: #222220;
+  --text: #efeee9;
+  --muted: #a3a199;
+  --accent: #5dcaa5;
+  --accent-soft: #0f3b30;
+  --border: #3a3a37;
+  --danger: #f2b8b5;
+  --warn-soft: #412402;
+  --warn: #fac775;
+  --on-accent: #0b2a22;
+  --chrome: #161615;
+  color-scheme: dark;
+}

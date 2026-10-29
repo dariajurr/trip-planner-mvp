@@ -1,0 +1,14 @@
+:host { display: block; }
+.page-title { margin: 10px 0 6px; font-size: 1.125rem; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0; }
+label.btn { cursor: pointer; &.disabled { opacity: 0.5; pointer-events: none; } }
+.small { font-size: 0.75rem; }
+.section { margin: 18px 0 8px; font-size: 0.875rem; color: var(--muted); font-weight: 600; }
+.trip { &.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); } }
+.head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+h4 { margin: 0; font-size: 1rem; }
+.titles p, .cities { margin: 2px 0 0; font-size: 0.8125rem; }
+.cities { margin-top: 6px; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 10px; .danger { color: var(--danger); } }
+.small-btn { padding: 6px 14px; font-size: 0.875rem; }
+.status { margin: 8px 0 0; }

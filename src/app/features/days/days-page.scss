@@ -1,53 +1,60 @@
 :host { display: block; }
-.small { font-size: 12px; }
-.status { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 10px 0 4px; font-size: 13px; p { margin: 0; } }
+.small { font-size: 0.75rem; }
+.status { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 10px 0 4px; font-size: 0.8125rem; p { margin: 0; } }
 .warn { color: var(--warn); }
-.notice { margin: 6px 0 10px; padding: 8px 10px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-size: 13px; }
+.notice { margin: 6px 0 10px; padding: 8px 10px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-size: 0.8125rem; }
 
-.lvl-excellent { --lvl-bg: var(--accent); --lvl-fg: var(--bg); }
+.lvl-excellent { --lvl-bg: var(--accent); --lvl-fg: var(--on-accent); }
 .lvl-good { --lvl-bg: var(--accent-soft); --lvl-fg: var(--accent); }
 .lvl-possible { --lvl-bg: var(--warn-soft); --lvl-fg: var(--warn); }
-.lvl-unlikely { --lvl-bg: var(--border); --lvl-fg: var(--muted); }
+.lvl-unlikely { --lvl-bg: var(--bg); --lvl-fg: var(--text); }
+/* a light tint of the text colour: readable in every theme (the border colour is dark in the high-contrast one) */
+@supports (background: color-mix(in srgb, red, blue)) {
+  .lvl-unlikely { --lvl-bg: color-mix(in srgb, var(--text) 14%, var(--bg)); }
+}
 
-.strip { h2 { margin: 0 0 2px; font-size: 16px; } p { margin: 0 0 8px; }
+.strip { h2 { margin: 0 0 2px; font-size: 1rem; } p { margin: 0 0 8px; }
   ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
   li { display: grid; grid-template-columns: 1fr auto; gap: 0 10px; align-items: center; padding: 8px 10px; border-radius: 10px; background: var(--lvl-bg); color: var(--lvl-fg); }
-  .when { grid-column: 1; } .what { grid-column: 1; font-size: 12px; opacity: 0.9; } .score { grid-column: 2; grid-row: 1 / 3; font-size: 20px; font-weight: 700; } }
+  .when { grid-column: 1; } .what { grid-column: 1; font-size: 0.75rem; } .score { grid-column: 2; grid-row: 1 / 3; font-size: 1.25rem; font-weight: 700; } }
 
-.day { padding: 0; overflow: hidden; &.today { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); } &.past { opacity: 0.65; } }
+.day { padding: 0; overflow: hidden; &.today { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); } &.past { border-style: dashed; } }
 .day > :not(.head) { margin-left: 14px; margin-right: 14px; }
 .day > :last-child { margin-bottom: 12px; }
-.head { display: flex; align-items: center; gap: 8px; width: 100%; padding: 12px 14px 8px; border: 0; background: transparent; color: var(--text); text-align: left; font-size: 16px; }
+.head { display: flex; align-items: center; gap: 8px; width: 100%; padding: 12px 14px 8px; border: 0; background: transparent; color: var(--text); text-align: left; font-size: 1rem; }
 .date { display: grid; flex: 1; min-width: 0; }
 .tags { display: flex; gap: 4px; flex-wrap: wrap; }
 .chev { color: var(--muted); }
 
 .weather { display: flex; align-items: center; gap: 10px; }
-.w-icon { font-size: 28px; }
-.w-main { display: grid; flex: 1; min-width: 0; font-size: 14px; }
-.fuji { padding: 5px 10px; border-radius: 99px; background: var(--lvl-bg); color: var(--lvl-fg); font-size: 14px; white-space: nowrap; }
-.fuji-line { display: flex; align-items: center; gap: 6px; margin: 6px 14px 0; font-size: 13px; }
+.w-icon { font-size: 1.75rem; }
+.w-main { display: grid; flex: 1; min-width: 0; font-size: 0.875rem; }
+.fuji { padding: 5px 10px; border-radius: 99px; background: var(--lvl-bg); color: var(--lvl-fg); font-size: 0.875rem; white-space: nowrap; }
+.fuji-line { display: flex; align-items: center; gap: 6px; margin: 6px 14px 0; font-size: 0.8125rem; }
 .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--lvl-bg); border: 1px solid var(--lvl-fg); }
 
-.warning { margin-top: 8px; padding: 8px 10px; border-radius: 8px; background: var(--warn-soft); color: var(--warn); font-size: 13px; p { margin: 0; } }
-.small-btn { margin-top: 6px; padding: 6px 10px; font-size: 13px; }
+.warning { margin-top: 8px; padding: 8px 10px; border-radius: 8px; background: var(--warn-soft); color: var(--warn); font-size: 0.8125rem; p { margin: 0; } }
+.small-btn { margin-top: 6px; padding: 6px 10px; font-size: 0.8125rem; }
 
 .routes { display: grid; gap: 6px; margin-top: 10px; }
 .route { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); }
 .r-link { display: flex; flex: 1; align-items: center; gap: 10px; min-width: 0; color: inherit; text-decoration: none; }
-.r-icon { font-size: 22px; }
-.r-text { display: grid; min-width: 0; b { font-size: 14px; } }
+.r-icon { font-size: 1.375rem; }
+.r-text { display: grid; min-width: 0; b { font-size: 0.875rem; } }
 .rm { flex: none; width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); }
-.add { justify-self: start; padding: 8px 12px; font-size: 14px; }
+.add { justify-self: start; padding: 8px 12px; font-size: 0.875rem; }
 
 .details { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);
-  h3 { margin: 10px 0 4px; font-size: 14px; } p { margin: 4px 0; }
-  .stops { margin: 0; padding-left: 20px; font-size: 14px; } }
+  h3 { margin: 10px 0 4px; font-size: 0.875rem; } p { margin: 4px 0; }
+  .stops { margin: 0; padding-left: 20px; font-size: 0.875rem; } }
 .bars { display: flex; align-items: flex-end; gap: 3px; height: 84px; margin: 8px 0; }
 .bar { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; }
 .fill { display: block; width: 100%; min-height: 2px; border-radius: 3px 3px 0 0; background: var(--lvl-bg); border: 1px solid var(--lvl-fg); }
-.hr { margin-top: 2px; font-size: 10px; color: var(--muted); }
+.hr { margin-top: 2px; font-size: 0.625rem; color: var(--muted); }
 
-.credits { margin: 16px 0 0; font-size: 11px; color: var(--muted); a { color: inherit; } }
+.credits { margin: 16px 0 0; font-size: 0.6875rem; color: var(--muted); a { color: inherit; } }
 
-.bk { list-style: none; margin: 4px 0 8px; padding: 0; display: grid; gap: 4px; font-size: 14px; .gap { color: var(--warn); } }
+.bk .muted { margin-left: 0.4em; }
+.bk li > span[aria-hidden='true'] { margin-right: 0.35em; }
+.strip .when .small { margin-left: 0.4em; }
+.bk { list-style: none; margin: 4px 0 8px; padding: 0; display: grid; gap: 4px; font-size: 0.875rem; .gap { color: var(--warn); } }

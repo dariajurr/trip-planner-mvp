@@ -31,7 +31,8 @@ interface Cache {
   entries: Entries;
 }
 
-const CACHE_KEY = 'trip-app.weather.v1';
+const CACHE_KEY = 'trip-app.weather.v2';
+const MAX_CACHED_TRIPS = 6;
 const FORECAST_TTL_MS = 3 * 3600_000;
 const CLIMATE_TTL_MS = 30 * 24 * 3600_000;
 const FORECAST_DAYS = 16;
@@ -146,7 +147,7 @@ export class WeatherService {
       climateAt: needClimate && got ? now : cached?.climateAt ?? null,
       entries,
     };
-    this.storage.set(CACHE_KEY, next);
+    this.save(key, next);
     this.entries.set(entries);
     this.updatedAt.set(next.forecastAt ?? next.climateAt);
     this.stale.set(failed && !!cached);
@@ -228,7 +229,16 @@ export class WeatherService {
   }
 
   private load(key: string): Cache | null {
-    const cache = this.storage.get<Cache>(CACHE_KEY);
-    return cache && cache.key === key && cache.entries ? cache : null;
+    const cache = this.storage.get<Record<string, Cache>>(CACHE_KEY)?.[key];
+    return cache && cache.entries ? cache : null;
+  }
+
+  /** Every trip keeps its own cache entry; the oldest ones are dropped. */
+  private save(key: string, cache: Cache): void {
+    const all = { ...(this.storage.get<Record<string, Cache>>(CACHE_KEY) ?? {}), [key]: cache };
+    const newest = Object.entries(all)
+      .sort(([, a], [, b]) => (b.forecastAt ?? b.climateAt ?? 0) - (a.forecastAt ?? a.climateAt ?? 0))
+      .slice(0, MAX_CACHED_TRIPS);
+    this.storage.set(CACHE_KEY, Object.fromEntries(newest));
   }
 }

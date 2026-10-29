@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 import { PwaService } from './core/services/pwa.service';
+import { SettingsService } from './core/services/settings.service';
 import { TripStateStore } from './core/state/trip-state.store';
 
 const dateFormat = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'short' });
@@ -16,8 +17,11 @@ const dateFormat = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'sh
 export class App {
   private readonly tripState = inject(TripStateStore);
   protected readonly pwa = inject(PwaService);
+  /** Created at start: it applies the saved theme and text size and follows the system dark mode. */
+  private readonly settings = inject(SettingsService);
 
   protected readonly title = computed(() => this.tripState.trip()?.title ?? 'Trip Planner');
+  protected readonly hasTrip = computed(() => !!this.tripState.trip());
 
   protected readonly subtitle = computed(() => {
     const trip = this.tripState.trip();

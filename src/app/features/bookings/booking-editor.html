@@ -65,12 +65,14 @@
             <label class="field"><span>Заезд, с</span><input type="time" [value]="h.checkInTime" (input)="set(i, 'checkInTime', $event)" /></label>
             <label class="field"><span>Выезд, дата *</span><input type="date" [value]="h.checkOutDate" (input)="set(i, 'checkOutDate', $event)" /></label>
             <label class="field"><span>Выезд, до</span><input type="time" [value]="h.checkOutTime" (input)="set(i, 'checkOutTime', $event)" /></label>
-            <label class="field"><span>Город</span>
-              <select [value]="h.cityId ?? ''" (change)="set(i, 'cityId', $event)">
-                <option value="">не выбран</option>
-                @for (c of cities(); track c.id) { <option [value]="c.id" [selected]="h.cityId === c.id">{{ c.name }}</option> }
-              </select>
-            </label>
+            @if (withCity()) {
+              <label class="field"><span>Город</span>
+                <select [value]="h.cityId ?? ''" (change)="set(i, 'cityId', $event)">
+                  <option value="">не выбран</option>
+                  @for (c of cities(); track c.id) { <option [value]="c.id" [selected]="h.cityId === c.id">{{ c.name }}</option> }
+                </select>
+              </label>
+            }
             <label class="field"><span>Код брони</span><input type="text" [value]="h.confirmation" (input)="set(i, 'confirmation', $event)" /></label>
           </div>
         }

@@ -46,3 +46,15 @@ export const AIRLINES: Record<string, string> = {
   VN: 'Vietnam Airlines', MH: 'Malaysia Airlines', GA: 'Garuda', PR: 'Philippine Airlines', SU: 'Aeroflot', S7: 'S7 Airlines', U6: 'Ural Airlines',
   LY: 'El Al', MS: 'EgyptAir', ET: 'Ethiopian', AI: 'Air India', '6E': 'IndiGo', FR: 'Ryanair', U2: 'easyJet', W6: 'Wizz Air', VY: 'Vueling', HV: 'Transavia',
 };
+
+/** Words that name the airport, not the city: "Tokyo Haneda" is in Tokyo. */
+const AIRPORT_SUFFIX = /\s+(Haneda|Narita|Kansai|Itami|Heathrow|Gatwick|Stansted|CDG|Orly|JFK|Incheon|Gimpo|Pudong|Hongqiao|Daxing|Don Mueang|Sabiha|Sheremetyevo|Domodedovo|Vnukovo|Malpensa|Dulles)$/;
+
+export function airportCity(code: string): string {
+  const name = AIRPORTS[code]?.[0];
+  return name ? name.replace(AIRPORT_SUFFIX, '') : code;
+}
+
+export function airportCountry(code: string): string | undefined {
+  return AIRPORTS[code]?.[1];
+}
