@@ -13,3 +13,20 @@ export interface PlacePhoto {
   license?: string;
   sourceUrl?: string;
 }
+
+/** A short text about a place taken from an open source (Wikipedia, CC BY-SA). */
+export interface PlaceSummary {
+  text: string;
+  lang: string;
+  sourceUrl?: string;
+}
+
+/**
+ * Photos and text found for a place, kept apart from the place itself so that a catalog place
+ * does not have to be copied just to get pictures. `id` is the place id.
+ */
+export interface PlaceMedia {
+  id: string;
+  photos: PlacePhoto[];
+  summary?: PlaceSummary;
+}

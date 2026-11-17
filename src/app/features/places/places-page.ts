@@ -1,38 +1,18 @@
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 
-import { Area, PhotoSpot, Place, PlacePhoto, PlaceUserStatus } from '../../core/models';
+import { Area, PhotoSpot, Place, PlaceUserStatus } from '../../core/models';
 import { ContentService } from '../../core/services/content.service';
 import { TripStateStore } from '../../core/state/trip-state.store';
 import { UserStateStore } from '../../core/state/user-state.store';
-import { PhotoImg } from '../../shared/photo-img';
+import { PlaceCard } from '../../shared/place/place-card';
+import { PlaceViewService, PlaceVm } from '../../core/services/place-view.service';
 import { PlaceEditor } from './place-editor';
-import {
-  CATEGORY_LABELS,
-  PHOTO_DIFFICULTY_LABELS,
-  PHOTO_TIME_LABELS,
-  formatDuration,
-} from './place-labels';
+import { PlaceSheet } from './place-sheet';
+import { PhotoViewer } from '../../shared/place/photo-viewer';
+import { PHOTO_DIFFICULTY_LABELS, PHOTO_TIME_LABELS } from './place-labels';
 
 type StatusFilter = 'all' | 'favorite' | 'todo' | 'visited';
-
-interface PlaceVm {
-  place: Place;
-  icon: string;
-  categoryLabel: string;
-  areaName: string;
-  cityName: string;
-  duration: string | null;
-  hours: string | null;
-  mapsUrl: string;
-  photos: PlacePhoto[];
-  address: string | null;
-  website: string | null;
-  sources: string | null;
-  custom: boolean;
-  status: PlaceUserStatus | null;
-  favorite: boolean;
-}
 
 interface PhotoSpotVm {
   spot: PhotoSpot;
@@ -41,12 +21,6 @@ interface PhotoSpotVm {
   detour: string | null;
   done: boolean;
 }
-
-const STATUS_ACTIONS: { value: PlaceUserStatus; label: string }[] = [
-  { value: 'want', label: 'Хочу' },
-  { value: 'visited', label: 'Был' },
-  { value: 'not-wanted', label: 'Не хочу' },
-];
 
 const STATUS_FILTERS: { value: StatusFilter; label: string }[] = [
   { value: 'all', label: 'Все' },
@@ -57,7 +31,7 @@ const STATUS_FILTERS: { value: StatusFilter; label: string }[] = [
 
 @Component({
   selector: 'app-places-page',
-  imports: [PhotoImg, PlaceEditor],
+  imports: [PlaceCard, PlaceEditor, PlaceSheet, PhotoViewer],
   templateUrl: './places-page.html',
   styleUrl: './places-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -67,8 +41,8 @@ export class PlacesPage {
   private readonly tripState = inject(TripStateStore);
   private readonly userState = inject(UserStateStore);
   private readonly document = inject(DOCUMENT);
+  private readonly placeView = inject(PlaceViewService);
 
-  protected readonly statusActions = STATUS_ACTIONS;
   protected readonly statusFilters = STATUS_FILTERS;
 
   protected readonly cities = this.tripState.cities;
@@ -77,6 +51,10 @@ export class PlacesPage {
   protected readonly areaId = signal<string | null>(null);
   protected readonly query = signal('');
   protected readonly statusFilter = signal<StatusFilter>('all');
+
+  /** The place whose details are open. */
+  protected readonly sheetId = signal<string | null>(null);
+  protected readonly viewer = signal<{ vm: PlaceVm; index: number } | null>(null);
 
   /** null = closed; place null = creating a new one. */
   protected readonly editor = signal<{ place: Place | null } | null>(null);
@@ -115,7 +93,7 @@ export class PlacesPage {
     const filter = this.statusFilter();
 
     return this.basePlaces()
-      .map(place => this.toVm(place))
+      .map(place => this.placeView.vm(place))
       .filter(vm => {
         if (query) {
           const haystack = `${vm.place.name} ${vm.place.nameLocal ?? ''} ${vm.areaName}`.toLowerCase();
@@ -203,6 +181,10 @@ export class PlacesPage {
     this.statusFilter.set('all');
   }
 
+  protected openPhoto(vm: PlaceVm, index: number): void {
+    this.viewer.set({ vm, index });
+  }
+
   protected toggleFavorite(placeId: string): void {
     this.userState.toggleFavorite(placeId);
   }
@@ -221,34 +203,6 @@ export class PlacesPage {
 
   protected togglePhotoDone(vm: PhotoSpotVm): void {
     this.userState.setPhotoStatus(vm.spot.id, vm.done ? 'want' : 'done');
-  }
-
-  private toVm(place: Place): PlaceVm {
-    const area = this.content.getArea(place.areaId);
-    const city = area ? this.content.getCity(area.cityId) : undefined;
-    const state = this.userState.getPlaceState(place.id);
-    const hours = place.schedule.openingHours;
-    const category = CATEGORY_LABELS[place.category];
-
-    return {
-      place,
-      icon: category.icon,
-      categoryLabel: category.label,
-      areaName: area?.name ?? '',
-      cityName: city?.name ?? '',
-      duration: formatDuration(place.recommendedDurationMin),
-      hours: hours ? `${hours.from}–${hours.to}` : (place.schedule.hoursText ?? null),
-      mapsUrl:
-        place.googleMapsUrl ??
-        `https://www.google.com/maps/search/?api=1&query=${place.coordinates.lat},${place.coordinates.lng}`,
-      photos: place.photos ?? [],
-      address: place.address ?? null,
-      website: place.website ?? null,
-      sources: place.sources?.length ? place.sources.join(' · ') : null,
-      custom: place.id.startsWith('u-'),
-      status: state?.status ?? null,
-      favorite: state?.isFavorite ?? false,
-    };
   }
 
   /** Must-see first, places marked "not wanted" last. */

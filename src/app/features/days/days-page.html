@@ -22,6 +22,19 @@
   <p class="notice">{{ notice }}</p>
 }
 
+@if (segments().length > 1) {
+  <nav class="segments" aria-label="Города поездки">
+    @for (seg of segments(); track seg.key) {
+      <button type="button" class="seg-tab" [class.on]="segmentKey() === seg.key" [attr.aria-pressed]="segmentKey() === seg.key" (click)="segmentKey.set(seg.key)">
+        <b>{{ seg.name }}</b><span>{{ seg.range }}</span>
+      </button>
+    }
+    <button type="button" class="seg-tab" [class.on]="segmentKey() === null" [attr.aria-pressed]="segmentKey() === null" (click)="segmentKey.set(null)">
+      <b>Все дни</b><span>{{ days().length }}</span>
+    </button>
+  </nav>
+}
+
 @if (strip(); as s) {
   <section class="card strip" aria-label="Лучшие дни для Фудзи">
     <h2>🗻 Когда ехать к Фудзи</h2>
@@ -38,103 +51,126 @@
   </section>
 }
 
-@for (day of days(); track day.date) {
-  <article class="card day" [class.today]="day.isToday" [class.past]="day.isPast">
-    <button type="button" class="head" [attr.aria-expanded]="expanded() === day.date" (click)="toggle(day.date)">
-      <span class="date">
-        <b>{{ day.label }}</b>
-        <span class="small muted">{{ day.relative }}@if (day.cityName) { · {{ day.cityName }}}</span>
-      </span>
-      <span class="tags">
-        @for (t of day.tags; track t) { <span class="badge">{{ t }}</span> }
-      </span>
-      <span class="chev" aria-hidden="true">{{ expanded() === day.date ? '▾' : '▸' }}</span>
-    </button>
-
-    @if (day.bookings.length || day.noHotel) {
-      <ul class="bk">
-        @for (b of day.bookings; track b.bookingId + b.kind) {
-          <li><span aria-hidden="true">{{ b.icon }}</span> <b>{{ b.title }}</b> <span class="muted small">{{ b.detail }}</span></li>
-        }
-        @if (day.noHotel) {
-          <li class="gap"><span aria-hidden="true">🏨</span> Нет брони на эту ночь</li>
-        }
-      </ul>
-    }
-
-    @if (day.weather; as w) {
-      <div class="weather">
-        <span class="w-icon" aria-hidden="true">{{ w.icon }}</span>
-        <div class="w-main">
-          <span>{{ w.label }} · <b>{{ w.temp }}</b></span>
-          <span class="muted small">{{ w.precip }}@if (w.wind) { · {{ w.wind }}}</span>
-        </div>
-        @if (day.fuji; as f) {
-          <span [class]="'fuji lvl lvl-' + f.level" [attr.title]="f.text">🗻 <b>{{ f.score }}</b></span>
-        }
-      </div>
-      @if (day.fuji; as f) {
-        <p class="fuji-line"><span [class]="'dot lvl-' + f.level"></span>{{ f.text }}@if (f.best) { · лучшее время {{ f.best }} }</p>
+@for (day of shownDays(); track day.date) {
+  <article class="card day" [class.today]="day.isToday" [class.past]="day.isPast" [class.open]="day.open">
+    <header class="banner">
+      @if (day.photo; as photo) {
+        <app-photo class="bg" [photo]="photo" />
+        <span class="scrim"></span>
       }
-    } @else if (!day.isPast) {
-      <p class="muted small">Нет данных о погоде</p>
-    }
-
-    @for (w of day.warnings; track w.text) {
-      <div class="warning">
-        <p>{{ w.text }}</p>
-        @if (w.move; as m) {
-          <button type="button" class="btn small-btn" (click)="move(m.routeId, day.date, m.to)">{{ m.label }}</button>
+      <button type="button" class="head" [attr.aria-expanded]="day.open" (click)="toggle(day.date)">
+        <span class="kicker">
+          <b>ДЕНЬ {{ day.number }}</b>
+          @if (day.sun) { <span class="sun" title="Восход и закат">☀ {{ day.sun }}</span> }
+          @for (t of day.tags; track t) { <span class="tag">{{ t }}</span> }
+        </span>
+        <span class="title">{{ day.label }}</span>
+        <span class="sub">{{ day.cityName }}@if (day.notes) { · {{ day.notes }}} · {{ day.relative }}</span>
+      </button>
+      <div class="banner-actions">
+        @if (day.mapUrl; as url) {
+          <a class="chipbtn" [href]="url" target="_blank" rel="noopener">🗺 На карте</a>
         }
+        <button type="button" class="chipbtn" (click)="toggle(day.date)" [attr.aria-label]="day.open ? 'Свернуть день' : 'Развернуть день'">{{ day.open ? '▲' : '▼' }}</button>
       </div>
-    }
-    @if (day.busy) {
-      <div class="warning"><p>⏱ Насыщенный день: около {{ day.busy }}.</p></div>
-    }
+    </header>
 
-    <div class="routes">
-      @for (r of day.routes; track r.id) {
-        <div class="route">
-          <a class="r-link" [routerLink]="['/routes', r.id]">
-            <span class="r-icon" aria-hidden="true">{{ r.icon }}</span>
-            <span class="r-text">
-              <b>{{ r.title }}</b>
-              <span class="muted small">{{ r.stops.length }} ост.@if (r.duration) { · {{ r.duration }}}@if (r.cities) { · {{ r.cities }}}</span>
-            </span>
-          </a>
-          <button type="button" class="rm" (click)="unassign(day.date, r.id)" [attr.aria-label]="'Убрать маршрут ' + r.title">✕</button>
-        </div>
-      } @empty {
-        <p class="muted small">Маршрут не назначен</p>
-      }
-      <button type="button" class="btn add" (click)="pickerDate.set(day.date)">＋ Маршрут</button>
-    </div>
-
-    @if (expanded() === day.date) {
-      <div class="details">
-        @if (day.fuji; as f) {
-          <h3>Видимость Фудзи</h3>
-          <p class="small">{{ f.detail }}</p>
-          @if (f.hours.length) {
-            <div class="bars" role="img" [attr.aria-label]="'Оценка видимости по часам, лучшее время ' + f.best">
-              @for (h of f.hours; track h.hour) {
-                <div class="bar"><span [class]="'fill lvl-' + h.level" [style.height.%]="h.score || 2"></span><span class="hr">{{ h.hour }}</span></div>
-              }
-            </div>
+    <div class="inner">
+      @if (day.bookings.length || day.noHotel) {
+        <ul class="bk">
+          @for (b of day.bookings; track b.bookingId + b.kind) {
+            <li><span aria-hidden="true">{{ b.icon }}</span> <b>{{ b.title }}</b> <span class="muted small">{{ b.detail }}</span></li>
           }
-          <p class="muted small">Это оценка по облачности, влажности и осадкам, а не гарантия.</p>
+          @if (day.noHotel) {
+            <li class="gap"><span aria-hidden="true">🏨</span> Нет брони на эту ночь</li>
+          }
+        </ul>
+      }
+
+      @if (day.weather; as w) {
+        <div class="weather">
+          <span class="w-icon" aria-hidden="true">{{ w.icon }}</span>
+          <div class="w-main">
+            <span>{{ w.label }} · <b>{{ w.temp }}</b></span>
+            <span class="muted small">{{ w.precip }}@if (w.wind) { · {{ w.wind }}}</span>
+          </div>
+          @if (day.fuji; as f) {
+            <span [class]="'fuji lvl lvl-' + f.level" [attr.title]="f.text">🗻 <b>{{ f.score }}</b></span>
+          }
+        </div>
+        @if (day.fuji; as f) {
+          <p class="fuji-line"><span [class]="'dot lvl-' + f.level"></span>{{ f.text }}@if (f.best) { · лучшее время {{ f.best }} }</p>
         }
+      } @else if (!day.isPast) {
+        <p class="muted small">Нет данных о погоде</p>
+      }
+
+      @for (w of day.warnings; track w.text) {
+        <div class="warning">
+          <p>{{ w.text }}</p>
+          @if (w.move; as m) {
+            <button type="button" class="btn small-btn" (click)="move(m.routeId, day.date, m.to)">{{ m.label }}</button>
+          }
+        </div>
+      }
+      @if (day.busy) {
+        <div class="warning"><p>⏱ Насыщенный день: около {{ day.busy }}.</p></div>
+      }
+
+      <div class="routes">
         @for (r of day.routes; track r.id) {
-          <h3>{{ r.title }}</h3>
-          <ol class="stops">
-            @for (s of r.stops; track $index) { <li>{{ s }}</li> }
-          </ol>
+          <div class="route">
+            <a class="r-link" [routerLink]="['/routes', r.id]">
+              <span class="r-icon" aria-hidden="true">{{ r.icon }}</span>
+              <span class="r-text">
+                <b>{{ r.title }}</b>
+                <span class="muted small">{{ r.stops.length }} ост.@if (r.duration) { · {{ r.duration }}}@if (r.cities) { · {{ r.cities }}}</span>
+              </span>
+            </a>
+            <button type="button" class="rm" (click)="unassign(day.date, r.id)" [attr.aria-label]="'Убрать маршрут ' + r.title">✕</button>
+          </div>
+        } @empty {
+          <p class="muted small">Маршрут не назначен</p>
         }
-        @if (!day.fuji && !day.routes.length) {
-          <p class="muted small">Добавьте маршрут, и здесь появится его состав.</p>
-        }
+        <button type="button" class="btn add" (click)="pickerDate.set(day.date)">＋ Маршрут</button>
       </div>
-    }
+
+      @if (day.open) {
+        <div class="details">
+          @if (day.fuji; as f) {
+            <h3>Видимость Фудзи</h3>
+            <p class="small">{{ f.detail }}</p>
+            @if (f.hours.length) {
+              <div class="bars" role="img" [attr.aria-label]="'Оценка видимости по часам, лучшее время ' + f.best">
+                @for (h of f.hours; track h.hour) {
+                  <div class="bar"><span [class]="'fill lvl-' + h.level" [style.height.%]="h.score || 2"></span><span class="hr">{{ h.hour }}</span></div>
+                }
+              </div>
+            }
+            <p class="muted small">Это оценка по облачности, влажности и осадкам, а не гарантия.</p>
+          }
+
+          @if (day.stops.length) {
+            <ol class="timeline" aria-label="План дня">
+              @for (s of day.stops; track $index) {
+                <li class="slot">
+                  <div class="rail">
+                    @if (s.partLabel) { <span class="part">{{ s.partLabel }}</span> }
+                    <span class="pin" aria-hidden="true"></span>
+                  </div>
+                  <div class="slot-card">
+                    @if (s.routeTitle && day.routes.length > 1) { <p class="route-cap">{{ s.routeTitle }}</p> }
+                    <app-place-card [vm]="s.vm" [time]="s.time" [from]="s.from" (details)="openSheet(s)" (photo)="openPhoto(s.vm, $event)" (favorite)="toggleFavorite(s.vm.place.id)" />
+                  </div>
+                </li>
+              }
+            </ol>
+          } @else if (!day.fuji) {
+            <p class="muted small">Добавьте маршрут, и здесь появится план дня с фото.</p>
+          }
+        </div>
+      }
+    </div>
   </article>
 } @empty {
   <p class="empty">У поездки не заданы даты.</p>
@@ -144,4 +180,10 @@
 
 @if (pickerDate(); as d) {
   <app-day-route-picker [date]="d" (picked)="assign(d, $event)" (closed)="pickerDate.set(null)" />
+}
+@if (sheet(); as sh) {
+  <app-place-sheet [placeId]="sh.id" [from]="sh.from" (closed)="sheet.set(null)" />
+}
+@if (viewer(); as v) {
+  <app-photo-viewer [photos]="v.vm.photos" [index]="v.index" [title]="v.vm.place.name" (closed)="viewer.set(null)" />
 }

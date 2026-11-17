@@ -14,8 +14,11 @@ export class PhotoStorageService {
         resolve(null);
         return;
       }
-      const request = indexedDB.open(DB_NAME, 1);
-      request.onupgradeneeded = () => request.result.createObjectStore(STORE);
+      // version 2: a database that exists without the photo store (created by something else, or damaged) is repaired
+      const request = indexedDB.open(DB_NAME, 2);
+      request.onupgradeneeded = () => {
+        if (!request.result.objectStoreNames.contains(STORE)) request.result.createObjectStore(STORE);
+      };
       request.onsuccess = () => resolve(request.result);
       request.onerror = () => resolve(null);
     });

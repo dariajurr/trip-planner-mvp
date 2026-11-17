@@ -1,0 +1,28 @@
+<dialog #dialog class="viewer" (close)="closed.emit()" (keydown)="onKey($event)" aria-label="Фотографии">
+  <header class="bar">
+    <span class="count">{{ title() }} · {{ current() + 1 }}/{{ photos().length }}</span>
+    <button type="button" class="x" (click)="close()" aria-label="Закрыть">✕</button>
+  </header>
+
+  <div class="strip" #strip (scroll)="onScroll()">
+    @for (p of photos(); track p.id) {
+      <div class="slide"><app-photo class="contain" [photo]="p" /></div>
+    }
+  </div>
+
+  @if (photos().length > 1) {
+    <button type="button" class="nav prev" (click)="go(-1)" [disabled]="current() === 0" aria-label="Предыдущее фото">‹</button>
+    <button type="button" class="nav next" (click)="go(1)" [disabled]="current() === photos().length - 1" aria-label="Следующее фото">›</button>
+  }
+
+  <footer class="credit">
+    @if (photo(); as p) {
+      @if (p.credit || p.license) {
+        <span>Фото: {{ p.credit ?? 'автор не указан' }}@if (p.license) {, {{ p.license }}}</span>
+        @if (p.sourceUrl) { <a [href]="p.sourceUrl" target="_blank" rel="noopener">Wikimedia Commons ↗</a> }
+      } @else {
+        <span>Ваше фото</span>
+      }
+    }
+  </footer>
+</dialog>

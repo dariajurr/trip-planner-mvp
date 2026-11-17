@@ -59,13 +59,17 @@ export class SyncService {
     };
 
     if (opts.includePhotos) {
+      const ids = new Set<string>();
+      const add = (list?: { id: string }[]) => list?.forEach(p => ids.add(p.id));
+      for (const record of Object.values(content.places)) add(record.value?.photos);
+      for (const record of Object.values(content.placeMedia)) add(record.value?.photos);
+      for (const record of Object.values(content.cities)) if (record.value?.photo) ids.add(record.value.photo.id);
+
       const photos: Record<string, string> = {};
-      for (const record of Object.values(content.places)) {
-        for (const photo of record.value?.photos ?? []) {
-          const blob = await this.photos.get(photo.id);
-          if (blob) {
-            photos[photo.id] = await this.photos.toDataUrl(blob);
-          }
+      for (const id of ids) {
+        const blob = await this.photos.get(id);
+        if (blob) {
+          photos[id] = await this.photos.toDataUrl(blob);
         }
       }
       if (Object.keys(photos).length) {

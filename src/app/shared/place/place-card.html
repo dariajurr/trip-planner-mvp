@@ -1,0 +1,52 @@
+<article class="place" [class.dim]="vm().status === 'not-wanted'">
+  <div class="media">
+    @if (vm().photos[0]; as first) {
+      <button type="button" class="shot" (click)="photo.emit(0)" [attr.aria-label]="'Фото: ' + vm().place.name">
+        <app-photo [photo]="first" />
+      </button>
+    } @else {
+      <button type="button" class="ph" (click)="details.emit()" [attr.aria-label]="vm().place.name" [attr.data-category]="vm().place.category">
+        <span aria-hidden="true">{{ vm().icon }}</span>
+      </button>
+    }
+    <button type="button" class="fav" [class.on]="vm().favorite" [attr.aria-pressed]="vm().favorite" [attr.aria-label]="vm().favorite ? 'Убрать из избранного' : 'В избранное'" (click)="favorite.emit()">
+      {{ vm().favorite ? '♥' : '♡' }}
+    </button>
+    @if (time(); as t) {
+      <span class="time">{{ t }}</span>
+    }
+  </div>
+
+  <div class="body">
+    <p class="meta">
+      {{ vm().areaName }}@if (vm().duration) { · {{ vm().duration }}}
+      @if (vm().place.priority === 'must') { <span class="badge must">Must</span> }
+      @if (vm().custom) { <span class="badge">Моя</span> }
+    </p>
+    <h2>{{ vm().place.name }}</h2>
+    @if (vm().place.nameLocal) { <p class="local">{{ vm().place.nameLocal }}</p> }
+    @if (vm().description; as text) { <p class="desc">{{ text }}</p> }
+
+    <div class="actions">
+      <button type="button" class="act" (click)="details.emit()"><span class="ic" aria-hidden="true">ⓘ</span>Подробнее</button>
+      <a class="act" [href]="vm().mapsUrl" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">📍</span>Карта</a>
+      <a class="act" [href]="routeLink()" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">🧭</span>Дорога</a>
+      @if (vm().photos.length > 1) {
+        <span class="thumbs">
+          @for (p of vm().photos.slice(1, 3); track p.id; let i = $index) {
+            <button type="button" class="thumb" (click)="photo.emit(i + 1)" [attr.aria-label]="'Фото ' + (i + 2) + ' из ' + vm().photos.length"><app-photo [photo]="p" /></button>
+          }
+          @if (vm().photos.length > 3) { <span class="more">+{{ vm().photos.length - 3 }}</span> }
+        </span>
+      }
+    </div>
+
+    @if (showStatus()) {
+      <div class="seg" role="group" aria-label="Статус точки">
+        @for (action of statusActions; track action.value) {
+          <button type="button" [class.on]="vm().status === action.value" [attr.aria-pressed]="vm().status === action.value" (click)="status.emit(action.value)">{{ action.label }}</button>
+        }
+      </div>
+    }
+  </div>
+</article>

@@ -2,6 +2,7 @@ import { Injectable, computed, inject } from '@angular/core';
 
 import { Area, Booking, City, Coordinates, Country, OverlayMap, PhotoSpot, Place, Route, Trip } from '../models';
 import { UserContentStore } from '../state/user-content.store';
+import { withMedia } from '../utils/place-media';
 import { haversineKm } from '../utils/geo';
 
 import countriesData from '../../../assets/data/catalog/countries.json';
@@ -47,7 +48,10 @@ export class ContentService {
   private readonly countriesSig = computed(() => applyOverlay(countriesData as Country[], this.overlay().countries));
   private readonly citiesSig = computed(() => applyOverlay(citiesData as City[], this.overlay().cities));
   private readonly areasSig = computed(() => applyOverlay(areasData as Area[], this.overlay().areas));
-  private readonly placesSig = computed(() => applyOverlay(placesData as Place[], this.overlay().places));
+  private readonly placesSig = computed(() => {
+    const media = this.overlay().placeMedia;
+    return applyOverlay(placesData as Place[], this.overlay().places).map(p => withMedia(p, media[p.id]?.value));
+  });
   private readonly routesSig = computed(() => applyOverlay(routesData as Route[], this.overlay().routes));
   private readonly photoSpotsSig = computed(() => applyOverlay(photoSpotsData as PhotoSpot[], this.overlay().photoSpots));
 

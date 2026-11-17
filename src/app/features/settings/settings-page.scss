@@ -28,3 +28,8 @@ h3 { margin: 0 0 4px; font-size: 0.9375rem; }
 
 .sizes { display: flex; flex-wrap: wrap; gap: 8px; }
 .sample { margin: 12px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); }
+
+.cov { margin: 0 0 8px; font-size: 0.875rem; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.bar { height: 8px; margin: 8px 0 4px; border-radius: 4px; background: var(--border); overflow: hidden; span { display: block; height: 100%; background: var(--accent); } }
+.status { margin: 6px 0 0; }

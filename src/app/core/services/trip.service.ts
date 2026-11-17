@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 
-import { countryNameEn } from '../data/countries';
+import { countryNameEn, defaultTimezone } from '../data/countries';
 import { Coordinates, Country, Trip } from '../models';
 import { UserContentStore, newId } from '../state/user-content.store';
 import { UserStateStore } from '../state/user-state.store';
@@ -64,7 +64,7 @@ export class TripService {
         id: cityId,
         countryId,
         name: nc.name.trim(),
-        timezone: sibling?.timezone ?? Intl.DateTimeFormat().resolvedOptions().timeZone,
+        timezone: sibling?.timezone ?? defaultTimezone(this.content.getCountry(countryId)?.code, coordinates?.lng) ?? Intl.DateTimeFormat().resolvedOptions().timeZone,
         ...(coordinates ? { coordinates } : {}),
       });
       cityIds.push(cityId);

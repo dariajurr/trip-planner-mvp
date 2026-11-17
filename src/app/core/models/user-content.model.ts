@@ -3,6 +3,7 @@ import { Booking } from './booking.model';
 import { City } from './city.model';
 import { Country } from './country.model';
 import { PhotoSpot } from './photo-spot.model';
+import { PlaceMedia } from './photo.model';
 import { Place } from './place.model';
 import { Route } from './route.model';
 import { Trip } from './trip.model';
@@ -29,6 +30,7 @@ export interface UserContent {
   photoSpots: OverlayMap<PhotoSpot>;
   trips: OverlayMap<Trip>;
   bookings: OverlayMap<Booking>;
+  placeMedia: OverlayMap<PlaceMedia>;
 }
 
 export type ContentCollection = Exclude<keyof UserContent, 'version'>;
@@ -42,6 +44,7 @@ export const CONTENT_COLLECTIONS: ContentCollection[] = [
   'photoSpots',
   'trips',
   'bookings',
+  'placeMedia',
 ];
 
 export function emptyUserContent(): UserContent {
@@ -55,5 +58,6 @@ export function emptyUserContent(): UserContent {
     photoSpots: {},
     trips: {},
     bookings: {},
+    placeMedia: {},
   };
 }

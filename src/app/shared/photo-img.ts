@@ -13,6 +13,8 @@ import { PhotoStorageService } from '../core/services/photo-storage.service';
   styles: `
     :host { display: block; background: var(--accent-soft); overflow: hidden; }
     img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    :host(.contain) { background: transparent; }
+    :host(.contain) img { object-fit: contain; }
   `,
 })
 export class PhotoImg {

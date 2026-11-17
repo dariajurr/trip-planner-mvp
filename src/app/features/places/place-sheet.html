@@ -1,0 +1,78 @@
+@if (vm(); as v) {
+  <div class="sheet-host">
+    <section class="panel" role="dialog" aria-modal="true" [attr.aria-label]="v.place.name">
+      <header class="top">
+        <h2>{{ v.place.name }}</h2>
+        <button type="button" class="x" (click)="closed.emit()" aria-label="Закрыть">✕</button>
+      </header>
+
+      @if (v.photos.length) {
+        <div class="gallery">
+          @for (p of v.photos; track p.id; let i = $index) {
+            <button type="button" class="slide" (click)="viewer.set(i)" [attr.aria-label]="'Открыть фото ' + (i + 1) + ' из ' + v.photos.length">
+              <app-photo [photo]="p" />
+            </button>
+          }
+        </div>
+      } @else {
+        <div class="ph" aria-hidden="true">{{ v.icon }}</div>
+      }
+
+      <div class="content">
+        @if (v.place.nameLocal) { <p class="local">{{ v.place.nameLocal }}</p> }
+        <p class="meta">
+          {{ v.categoryLabel }} · {{ v.areaName }}@if (v.cityName && v.cityName !== v.areaName) {, {{ v.cityName }}}@if (v.duration) { · {{ v.duration }}}
+        </p>
+        <div class="badges">
+          @if (v.place.priority === 'must') { <span class="badge must">Must</span> }
+          @if (v.custom) { <span class="badge">Моя</span> }
+        </div>
+
+        @if (v.description; as text) {
+          <p class="desc">{{ text }}</p>
+          @if (v.descriptionCredit; as c) {
+            <p class="credit">Описание: @if (c.url) { <a [href]="c.url" target="_blank" rel="noopener">{{ c.label }} ↗</a> } @else { {{ c.label }} }</p>
+          }
+        }
+
+        <dl class="facts">
+          <dt>Часы работы</dt><dd>{{ v.hours ?? 'не проверены' }}</dd>
+          @if (v.address) { <dt>Адрес</dt><dd>{{ v.address }}</dd> }
+          @if (v.website) { <dt>Сайт</dt><dd><a [href]="v.website" target="_blank" rel="noopener">{{ v.website }}</a></dd> }
+        </dl>
+
+        <div class="buttons">
+          <a class="btn" [href]="v.mapsUrl" target="_blank" rel="noopener">📍 Карта</a>
+          <a class="btn" [href]="route()" target="_blank" rel="noopener">🧭 Дорога</a>
+        </div>
+
+        <h3>Мои отметки</h3>
+        <div class="seg" role="group" aria-label="Статус точки">
+          @for (a of statusActions; track a.value) {
+            <button type="button" [class.on]="v.status === a.value" [attr.aria-pressed]="v.status === a.value" (click)="setStatus(a.value)">{{ a.label }}</button>
+          }
+          <button type="button" class="fav" [class.on]="v.favorite" [attr.aria-pressed]="v.favorite" (click)="toggleFavorite()">{{ v.favorite ? '♥ Избранное' : '♡ Избранное' }}</button>
+        </div>
+
+        <label class="field note">
+          <span>Заметка</span>
+          <textarea rows="3" [value]="note()" (change)="onNote($event)" placeholder="Что важно не забыть"></textarea>
+        </label>
+
+        <div class="buttons">
+          <button type="button" class="btn" (click)="editing.set(true)">✎ Изменить</button>
+          <button type="button" class="btn" [disabled]="searching()" (click)="findPhotos()">{{ searching() ? 'Ищу…' : '📷 Найти фото' }}</button>
+        </div>
+        @if (message(); as m) { <p class="status" role="status">{{ m }}</p> }
+        @if (v.sources) { <p class="credit">Данные: {{ v.sources }}</p> }
+      </div>
+    </section>
+  </div>
+
+  @if (viewer() !== null) {
+    <app-photo-viewer [photos]="v.photos" [index]="viewer() ?? 0" [title]="v.place.name" (closed)="viewer.set(null)" />
+  }
+  @if (editing()) {
+    <app-place-editor [place]="v.place" (closed)="editing.set(false)" />
+  }
+}

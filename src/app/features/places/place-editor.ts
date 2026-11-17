@@ -356,16 +356,25 @@ export class PlaceEditor {
         },
       };
       if (d.nameLocal.trim()) place.nameLocal = d.nameLocal.trim();
-      if (d.description.trim()) place.description = d.description.trim();
+      // a description that came from Wikipedia stays in the found-media layer (with its credit) unless the user changed it
+      const untouchedSummary = !!existing?.descriptionCredit && d.description.trim() === (existing.description ?? '');
+      if (d.description.trim() && !untouchedSummary) place.description = d.description.trim();
       if (Number.isFinite(duration) && duration > 0) place.recommendedDurationMin = Math.round(duration);
       if (d.address.trim()) place.address = d.address.trim();
       if (d.website.trim()) place.website = d.website.trim();
       if (d.googleMapsUrl.trim()) place.googleMapsUrl = d.googleMapsUrl.trim();
       if (existing?.tags) place.tags = existing.tags;
-      if (items.length) place.photos = items.map(i => i.photo);
       if (sources.size) place.sources = [...sources];
 
       this.store.upsert('places', place);
+
+      // photos live in the media layer, so editing a catalog place never copies photos into the place itself
+      const media = this.store.content().placeMedia[place.id]?.value;
+      if (items.length || media?.summary) {
+        this.store.upsert('placeMedia', { id: place.id, photos: items.map(i => i.photo), ...(media?.summary ? { summary: media.summary } : {}) });
+      } else if (media) {
+        this.store.remove('placeMedia', place.id);
+      }
       this.saved.emit(place.id);
       this.close();
     } finally {

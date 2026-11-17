@@ -100,6 +100,8 @@ function plausibleEntity(collection: ContentCollection, key: string, record: Ove
       return typeof v['title'] === 'string' && Array.isArray(v['stops']);
     case 'trips':
       return typeof v['title'] === 'string' && Array.isArray(v['cityIds']);
+    case 'placeMedia':
+      return Array.isArray(v['photos']);
     case 'bookings':
       return (
         typeof v['tripId'] === 'string' &&
@@ -138,6 +140,7 @@ export const GROUP_LABELS: Record<string, string> = {
   photoSpots: 'Фотолокации',
   trips: 'Поездки',
   bookings: 'Брони',
+  placeMedia: 'Фото и описания точек',
   assignedRoutes: 'Маршруты по дням',
   notes: 'Заметки',
   placeStates: 'Отметки точек',

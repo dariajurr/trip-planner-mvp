@@ -146,3 +146,13 @@ describe('planImport: bookings', () => {
     expect(f.attachments).toEqual({ 'u-doc-1': 'data:application/pdf;base64,AAAA' });
   });
 });
+
+describe('planImport: found photos', () => {
+  it('syncs found photos and rejects malformed media records', () => {
+    const incoming: any = emptyUserContent();
+    incoming.placeMedia['senso-ji'] = { value: { id: 'senso-ji', photos: [{ id: 'u-photo-1', source: 'commons', url: 'https://x/a.jpg' }] }, updatedAt: T2 };
+    incoming.placeMedia['broken'] = { value: { id: 'broken', photos: 'nope' }, updatedAt: T2 };
+    const plan = planImport(local(), file({ content: incoming }), { applyMarks: false });
+    expect(stats(plan, 'placeMedia')).toEqual(jasmine.objectContaining({ added: 1, invalid: 1 }));
+  });
+});

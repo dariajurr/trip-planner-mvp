@@ -29,6 +29,8 @@ export interface Place {
   priority: PlacePriority;
   areaId: string;
   description?: string;
+  /** Set when the description is not the user's own text but comes from an open source. */
+  descriptionCredit?: { label: string; url?: string };
   coordinates: Coordinates;
   schedule: PlaceSchedule;
   recommendedDurationMin?: number;

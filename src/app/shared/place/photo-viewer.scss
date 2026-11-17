@@ -1,0 +1,9 @@
+/* Always dark, whatever the theme: it is a photo viewer. */
+.viewer { width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: #000; color: #fff; &::backdrop { background: #000; } }
+.bar { position: absolute; z-index: 2; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: calc(env(safe-area-inset-top, 0px) + 10px) 14px 10px; background: #000; font-size: 0.875rem; }
+.x { width: 38px; height: 38px; border: 0; border-radius: 50%; background: #333; color: #fff; font-size: 1rem; }
+.strip { display: flex; height: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+.slide { flex: none; width: 100%; height: 100%; scroll-snap-align: center; padding: 56px 0 64px; }
+.slide app-photo { width: 100%; height: 100%; }
+.nav { position: absolute; z-index: 2; top: 50%; width: 42px; height: 56px; margin-top: -28px; border: 0; border-radius: 10px; background: #222; color: #fff; font-size: 1.6rem; &:disabled { opacity: 0.3; } &.prev { left: 6px; } &.next { right: 6px; } }
+.credit { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 10px 14px calc(env(safe-area-inset-bottom, 0px) + 10px); background: #000; font-size: 0.8125rem; a { color: #9ad4ff; } }

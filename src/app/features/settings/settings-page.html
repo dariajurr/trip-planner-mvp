@@ -36,5 +36,33 @@
   <p class="sample">Пример: вылет 11:45, заезд в отель с 15:00, до Фудзи 1 ч 40 мин.</p>
 </section>
 
+<section class="card">
+  <h3>Фотографии и описания</h3>
+  <p class="hint">Фото точек и города нужны для карточек и баннеров дней. Приложение ищет их по координатам в Википедии и Wikimedia Commons (открытые лицензии, автор указан под каждым фото) и сохраняет на устройстве, поэтому они видны без интернета.</p>
+
+  <p class="cov">
+    Фото у точек: <b>{{ coverage().withPhotos }} из {{ coverage().places }}</b>
+    · картинки городов: <b>{{ coverage().withCityPhoto }} из {{ coverage().cities }}</b>
+  </p>
+
+  @if (busy() && finder.progress().state === 'running') {
+    <div class="bar" role="progressbar" [attr.aria-valuenow]="finder.progress().done" [attr.aria-valuemax]="finder.progress().total">
+      <span [style.width.%]="finder.progress().total ? (finder.progress().done / finder.progress().total) * 100 : 0"></span>
+    </div>
+    <p class="muted small">Ищу: {{ finder.progress().done }} из {{ finder.progress().total }}. Можно переходить на другие экраны, поиск продолжится.</p>
+  }
+
+  <div class="row">
+    <button type="button" class="btn primary" [disabled]="busy()" (click)="findAll()">📷 Найти фото и описания</button>
+    @if (busy() && finder.progress().state === 'running') {
+      <button type="button" class="btn" (click)="finder.cancel()">Остановить</button>
+    } @else {
+      <button type="button" class="btn" [disabled]="busy()" (click)="cacheForOffline()">Скачать для работы без интернета</button>
+    }
+  </div>
+  @if (message(); as m) { <p class="status" role="status">{{ m }}</p> }
+  <p class="muted small">Нужен интернет, около 100–150 КБ на фото. Найденное не удаляет ваши фото и описания.</p>
+</section>
+
 <p class="muted small">Настройки хранятся только на этом устройстве и не переносятся при синхронизации: на телефоне и планшете можно выбрать разное.</p>
 <button type="button" class="link" (click)="settings.reset()">Сбросить настройки</button>

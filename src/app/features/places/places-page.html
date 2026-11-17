@@ -53,98 +53,14 @@
 </p>
 
 @for (vm of items(); track vm.place.id) {
-  <article class="card" [class.dim]="vm.status === 'not-wanted'">
-    @if (vm.photos.length) {
-      <div class="photos">
-        @for (photo of vm.photos; track photo.id) {
-          <figure class="shot">
-            <app-photo [photo]="photo" />
-            @if (photo.credit) {
-              <figcaption>
-                @if (photo.sourceUrl) {
-                  <a [href]="photo.sourceUrl" target="_blank" rel="noopener">{{ photo.credit }}</a>
-                } @else {
-                  {{ photo.credit }}
-                }
-                @if (photo.license) {, {{ photo.license }}}
-              </figcaption>
-            }
-          </figure>
-        }
-      </div>
-    }
-    <div class="card-head">
-      <div class="title">
-        <h2>
-          <span class="icon" aria-hidden="true">{{ vm.icon }}</span>{{ vm.place.name }}
-        </h2>
-        @if (vm.place.nameLocal) {
-          <span class="local">{{ vm.place.nameLocal }}</span>
-        }
-      </div>
-      <button
-        type="button"
-        class="fav"
-        [class.on]="vm.favorite"
-        [attr.aria-pressed]="vm.favorite"
-        [attr.aria-label]="vm.favorite ? 'Убрать из избранного' : 'В избранное'"
-        (click)="toggleFavorite(vm.place.id)"
-      >
-        {{ vm.favorite ? '♥' : '♡' }}
-      </button>
-    </div>
-
-    <div class="meta">
-      @if (vm.place.priority === 'must') {
-        <span class="badge must">Must</span>
-      }
-      @if (vm.custom) {
-        <span class="badge">Моя</span>
-      }
-      <span>{{ vm.categoryLabel }}</span>
-      <span>{{ vm.areaName }}@if (!cityId() && vm.cityName !== vm.areaName) {, {{ vm.cityName }}}</span>
-      @if (vm.duration) {
-        <span>{{ vm.duration }}</span>
-      }
-      @if (vm.hours) {
-        <span>{{ vm.hours }}</span>
-      } @else {
-        <span class="faint">часы не проверены</span>
-      }
-    </div>
-
-    @if (vm.address) {
-      <p class="extra">{{ vm.address }}</p>
-    }
-    @if (vm.place.description) {
-      <p class="extra">{{ vm.place.description }}</p>
-    }
-
-    <div class="actions">
-      <div class="seg" role="group" aria-label="Статус точки">
-        @for (action of statusActions; track action.value) {
-          <button
-            type="button"
-            [class.on]="vm.status === action.value"
-            [attr.aria-pressed]="vm.status === action.value"
-            (click)="toggleStatus(vm, action.value)"
-          >
-            {{ action.label }}
-          </button>
-        }
-      </div>
-      <span class="links">
-        <button type="button" class="link" (click)="openEditor(vm.place)">Изменить</button>
-        @if (vm.website) {
-          <a class="link" [href]="vm.website" target="_blank" rel="noopener">Сайт ↗</a>
-        }
-        <a class="link" [href]="vm.mapsUrl" target="_blank" rel="noopener">На карте ↗</a>
-      </span>
-    </div>
-    @if (vm.sources) {
-      <p class="source">Данные: {{ vm.sources }}</p>
-    }
-  </article>
+  <app-place-card
+    [vm]="vm"
+    [showStatus]="true"
+    (details)="sheetId.set(vm.place.id)"
+    (photo)="openPhoto(vm, $event)"
+    (favorite)="toggleFavorite(vm.place.id)"
+    (status)="toggleStatus(vm, $event)"
+  />
 } @empty {
   @if (hasFilters()) {
     <p class="empty">По этим фильтрам ничего не нашлось.</p>
@@ -180,6 +96,13 @@
   } @empty {
     <p class="empty">Для этого района фотолокаций пока нет.</p>
   }
+}
+
+@if (sheetId(); as id) {
+  <app-place-sheet [placeId]="id" (closed)="sheetId.set(null)" />
+}
+@if (viewer(); as v) {
+  <app-photo-viewer [photos]="v.vm.photos" [index]="v.index" [title]="v.vm.place.name" (closed)="viewer.set(null)" />
 }
 
 @if (editor(); as ed) {

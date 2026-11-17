@@ -11,10 +11,18 @@ import { addDays, formatDay, formatShort, relativeDay, todayIso } from '../../co
 import { FUJI, FujiLabel, FUJI_HOURS, fujiLabel } from '../../core/utils/fuji';
 import { haversineKm } from '../../core/utils/geo';
 import { DayBookingLine, bookingsForDay, nightsWithoutHotel } from '../../core/utils/booking-utils';
-import { formatMinutes, routeTotals, tripDates } from '../../core/utils/route-utils';
+import { directionsUrl, distanceKm, formatMinutes, routeTotals, tripDates } from '../../core/utils/route-utils';
 import { cityOnDay } from '../../core/utils/trip-utils';
 import { DayEntry } from '../../core/utils/weather-aggregate';
 import { weatherInfo } from '../../core/utils/weather-codes';
+import { Coordinates, PlacePhoto } from '../../core/models';
+import { PlaceVm, PlaceViewService } from '../../core/services/place-view.service';
+import { PhotoImg } from '../../shared/photo-img';
+import { PlaceCard } from '../../shared/place/place-card';
+import { PhotoViewer } from '../../shared/place/photo-viewer';
+import { PlaceSheet } from '../places/place-sheet';
+import { PART_LABEL, PartOfDay, estimateTravelMin, formatClock, layoutDay, parseClock, partOfDay, segmentDays } from '../../core/utils/day-timeline';
+import { sunTimes } from '../../core/utils/sun-times';
 import { DayRoutePicker } from './day-route-picker';
 
 /** Fuji is only worth showing for places within this distance. */
@@ -67,8 +75,34 @@ interface Warning {
   move?: { routeId: string; to: string; label: string };
 }
 
+interface StopVm {
+  vm: PlaceVm;
+  /** Planned start, e.g. "09:30". */
+  time: string;
+  /** The previous stop, as the start of the route to this place. */
+  from: Coordinates | null;
+  /** "утро", "день" or "вечер": shown only where the part of the day changes. */
+  partLabel: string | null;
+  routeTitle: string | null;
+}
+
+interface SegmentVm {
+  key: string;
+  name: string;
+  range: string;
+  from: string;
+  to: string;
+}
+
 interface DayVm {
   date: string;
+  number: number;
+  open: boolean;
+  photo: PlacePhoto | null;
+  sun: string | null;
+  notes: string;
+  mapUrl: string | null;
+  stops: StopVm[];
   label: string;
   relative: string;
   tags: string[];
@@ -96,7 +130,7 @@ interface StripItem {
 
 @Component({
   selector: 'app-days-page',
-  imports: [RouterLink, DayRoutePicker],
+  imports: [RouterLink, DayRoutePicker, PlaceCard, PlaceSheet, PhotoViewer, PhotoImg],
   templateUrl: './days-page.html',
   styleUrl: './days-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -106,11 +140,15 @@ export class DaysPage {
   private readonly tripState = inject(TripStateStore);
   private readonly userState = inject(UserStateStore);
   private readonly bookingSvc = inject(BookingService);
+  private readonly placeView = inject(PlaceViewService);
   protected readonly weather = inject(WeatherService);
 
   protected readonly today = todayIso();
   protected readonly trip = this.tripState.trip;
-  protected readonly expanded = signal<string | null>(null);
+  protected readonly openDates = signal<Set<string>>(new Set());
+  protected readonly segmentKey = signal<string | null>(null);
+  protected readonly sheet = signal<{ id: string; from: Coordinates | null } | null>(null);
+  protected readonly viewer = signal<{ vm: PlaceVm; index: number } | null>(null);
   protected readonly pickerDate = signal<string | null>(null);
 
   protected readonly dates = computed(() => {
@@ -146,8 +184,9 @@ export class DaysPage {
 
     effect(() => {
       const dates = this.dates();
-      if (untracked(this.expanded) === null && dates.includes(this.today)) {
-        untracked(() => this.expanded.set(this.today));
+      // the day that matters is open at the start: today during the trip, otherwise the first day
+      if (dates.length && untracked(this.openDates).size === 0) {
+        untracked(() => this.openDates.set(new Set([dates.includes(this.today) ? this.today : dates[0]])));
       }
     });
   }
@@ -222,8 +261,22 @@ export class DaysPage {
       if (index === 0) tags.push('Первый день');
       if (index === dates.length - 1 && dates.length > 1) tags.push('Последний день');
 
+      const city = cityId ? this.content.getCity(cityId) : undefined;
+      const coords = cityId ? this.content.getCityCoordinates(cityId) : undefined;
+      const sun = coords ? sunTimes(date, coords.lat, coords.lng, city?.timezone ?? 'UTC') : null;
+      const stops = this.timeline(trip.id, date);
+      const NOTE: Record<string, string> = { 'flight-arr': 'прилёт', 'flight-dep': 'вылет', 'hotel-in': 'заселение', 'hotel-out': 'выезд' };
+      const lines = bookingsForDay(bookings, date);
+
       return {
         date,
+        number: index + 1,
+        open: this.openDates().has(date),
+        photo: city?.photo ?? null,
+        sun: sun ? `${sun.sunrise}–${sun.sunset}` : null,
+        notes: [...new Set(lines.map(l => NOTE[l.kind]).filter(Boolean))].join(', '),
+        mapUrl: this.mapUrl(stops),
+        stops,
         label: formatDay(date),
         relative: relativeDay(date, this.today),
         tags,
@@ -241,6 +294,22 @@ export class DaysPage {
     });
   });
 
+  /** Days grouped by city: shown as tabs when the trip goes through more than one place. */
+  protected readonly segments = computed<SegmentVm[]>(() =>
+    segmentDays(this.dates().map(date => ({ date, cityId: this.dayCity(date) }))).map(seg => ({
+      key: `${seg.cityId}|${seg.from}`,
+      name: this.content.getCity(seg.cityId)?.name ?? '',
+      range: seg.from === seg.to ? formatShort(seg.from) : `${formatShort(seg.from)} – ${formatShort(seg.to)}`,
+      from: seg.from,
+      to: seg.to,
+    })),
+  );
+
+  protected readonly shownDays = computed(() => {
+    const seg = this.segments().find(x => x.key === this.segmentKey());
+    return seg ? this.days().filter(d => d.date >= seg.from && d.date <= seg.to) : this.days();
+  });
+
   protected readonly climateNotice = computed(() => {
     const horizon = this.weather.horizon();
     const first = this.dates().find(d => horizon && d > horizon && d >= this.today);
@@ -254,7 +323,24 @@ export class DaysPage {
 
   // ---- actions -----------------------------------------------------------
   protected toggle(date: string): void {
-    this.expanded.update(current => (current === date ? null : date));
+    this.openDates.update(set => {
+      const next = new Set(set);
+      if (next.has(date)) next.delete(date);
+      else next.add(date);
+      return next;
+    });
+  }
+
+  protected openSheet(stop: StopVm): void {
+    this.sheet.set({ id: stop.vm.place.id, from: stop.from });
+  }
+
+  protected openPhoto(vm: PlaceVm, index: number): void {
+    this.viewer.set({ vm, index });
+  }
+
+  protected toggleFavorite(placeId: string): void {
+    this.userState.toggleFavorite(placeId);
   }
 
   protected assign(date: string, routeId: string): void {
@@ -272,7 +358,7 @@ export class DaysPage {
     if (!trip) return;
     this.userState.unassignRoute(trip.id, routeId, from);
     this.userState.assignRoute(trip.id, routeId, to);
-    this.expanded.set(to);
+    this.openDates.update(set => new Set(set).add(to));
   }
 
   protected reload(): void {
@@ -281,6 +367,63 @@ export class DaysPage {
   }
 
   // ---- helpers -----------------------------------------------------------
+  /**
+   * The stops of the day's routes, one after another with a time for each: the route's start (or 09:00),
+   * the time at each place, and the way between them (as given in the route, or estimated from the distance).
+   */
+  private timeline(tripId: string, date: string): StopVm[] {
+    const out: StopVm[] = [];
+    let cursor: number | null = null;
+    let previousPart: PartOfDay | null = null;
+    let last: Coordinates | null = null;
+    const routes = this.userState.getAssignedRouteIds(tripId, date).flatMap(id => {
+      const r = this.content.getRoute(id);
+      return r ? [r] : [];
+    });
+
+    for (const route of routes) {
+      const stops = route.stops.flatMap(stop => {
+        const place = this.content.getPlace(stop.placeId);
+        return place ? [{ stop, place }] : [];
+      });
+      if (!stops.length) continue;
+
+      const startAt = Math.max(cursor === null ? 0 : cursor + 30, parseClock(route.recommendedStartTime, 9 * 60));
+      const slots = layoutDay(
+        stops.map((x, i) => {
+          const next = stops[i + 1]?.place;
+          return {
+            durationMin: x.stop.recommendedDurationMin ?? x.place.recommendedDurationMin ?? 60,
+            travelToNextMin: x.stop.transportToNext?.durationMin ?? (next ? estimateTravelMin(distanceKm(x.place.coordinates, next.coordinates)) : 0),
+          };
+        }),
+        startAt,
+      );
+
+      stops.forEach((x, i) => {
+        const part = partOfDay(slots[i].start);
+        out.push({
+          vm: this.placeView.vm(x.place),
+          time: formatClock(slots[i].start),
+          from: i === 0 ? last : stops[i - 1].place.coordinates,
+          partLabel: part !== previousPart ? PART_LABEL[part] : null,
+          routeTitle: i === 0 ? route.title : null,
+        });
+        previousPart = part;
+      });
+      last = stops[stops.length - 1].place.coordinates;
+      cursor = slots[slots.length - 1].end;
+    }
+    return out;
+  }
+
+  /** The day's places on one map: a route through them, or just the place when there is one. */
+  private mapUrl(stops: StopVm[]): string | null {
+    const points = stops.map(x => x.vm.place.coordinates);
+    if (points.length === 1) return stops[0].vm.mapsUrl;
+    return directionsUrl(points, 'walking')?.url ?? null;
+  }
+
   /** Where the user is that day: the first city of the first route, else the trip's main city. */
   private dayCity(date: string): string | undefined {
     const trip = this.trip();
