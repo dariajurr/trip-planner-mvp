@@ -20,9 +20,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 20
+    "recommendedDurationMin": 20,
+    "description": "Знаменитые ворота с большим красным бумажным фонарём у входа на подход к храму Сэнсо-дзи. Одна из самых узнаваемых точек Асакусы и популярное место для фотографий."
   },
   {
     "id": "senso-ji",
@@ -48,15 +49,16 @@
         "from": "06:30",
         "to": "17:00"
       },
-      "note": "Main hall hours approximate; working draft."
+      "note": "Часы работы главного зала указаны ориентировочно; это рабочий черновик."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Один из главных буддийских храмов Токио и центральная достопримечательность Асакусы. На территории находятся главные ворота, пагода, главный зал и несколько небольших храмовых построек."
   },
   {
     "id": "asakusa-shrine",
     "name": "Asakusa Shrine",
     "category": "shrine",
-    "priority": "must",
+    "priority": "optional",
     "areaId": "asakusa",
     "coordinates": {
       "lat": 35.7147,
@@ -73,9 +75,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 20
+    "recommendedDurationMin": 20,
+    "description": "Синтоистское святилище рядом с храмом Сэнсо-дзи. Его удобно посетить во время прогулки по территории храмового комплекса Асакусы."
   },
   {
     "id": "nakamise-dori",
@@ -98,9 +101,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Торговая улица, ведущая от ворот Каминаримон к храму Сэнсо-дзи. Здесь находятся сувенирные лавки и небольшие магазины с традиционными японскими товарами и местными закусками."
   },
   {
     "id": "asakusa-culture-tourist-information-center",
@@ -124,11 +128,13 @@
       ],
       "openingHours": {
         "from": "09:00",
-        "to": "20:00"
+        "to": "22:00"
       },
-      "note": "Observation deck hours may differ; working draft."
+      "note": "Бесплатная смотровая терраса открыта до 22:00; сам информационный центр работает с 09:00 до 20:00.",
+      "hoursText": "Информационный центр: 09:00–20:00 · Бесплатная смотровая терраса: 09:00–22:00"
     },
-    "recommendedDurationMin": 30
+    "recommendedDurationMin": 30,
+    "description": "Туристический информационный центр напротив Каминаримон. На верхнем этаже есть бесплатная смотровая терраса с видом на Асакусу, храм Сэнсо-дзи и в ясную погоду — на Tokyo Skytree."
   },
   {
     "id": "sumida-park",
@@ -151,9 +157,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 20
+    "recommendedDurationMin": 20,
+    "description": "Парк вдоль реки Сумида. Подходит для спокойной прогулки и фотографий с видом на реку и башню Tokyo Skytree."
   },
   {
     "id": "kappabashi",
@@ -178,9 +185,10 @@
         "from": "09:00",
         "to": "17:00"
       },
-      "note": "Individual shops vary; working draft."
+      "note": "Часы работы отдельных магазинов различаются. Указанный диапазон подходит для предварительного планирования; расписание нужных магазинов проверь ближе к дате посещения."
     },
-    "recommendedDurationMin": 75
+    "recommendedDurationMin": 75,
+    "description": "Торговая улица с магазинами кухонной утвари, посуды, ножей, инвентаря для ресторанов и реалистичных пластиковых образцов еды. Интересна даже без планов на покупки."
   },
   {
     "id": "ameyoko",
@@ -203,9 +211,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 90,
+    "description": "Оживлённая торговая улица между станциями Уэно и Окатимати. Здесь расположены продуктовые лавки, магазины одежды, косметики, сувениров и небольшие заведения."
   },
   {
     "id": "akihabara-electric-town",
@@ -228,9 +237,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 120
+    "recommendedDurationMin": 120,
+    "description": "Торговый район, известный электроникой, техникой, аниме, мангой, видеоиграми и товарами для коллекционеров. Удобен для короткой прогулки рядом с гостиницей."
   },
   {
     "id": "radio-kaikan",
@@ -253,9 +263,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Многоэтажный торговый центр в Акихабаре с магазинами коллекционных фигурок, карточек, моделей, аниме-товаров и товаров для хобби."
   },
   {
     "id": "chureito-pagoda",
@@ -278,9 +289,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Пятиъярусная пагода на территории парка Аракураяма Сэнгэн. С площадки открывается один из самых известных видов на пагоду и гору Фудзи; для подъёма нужно преодолеть лестницу."
   },
   {
     "id": "arakurayama-sengen-park",
@@ -303,9 +315,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Парк на склоне горы в Фудзиёсида, известный панорамными видами на Фудзи и пагоду Тюрейто. Основная точка маршрута для фотографий; учитывай подъём по лестнице."
   },
   {
     "id": "honcho-street-fujiyoshida",
@@ -328,9 +341,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Улица в центре Фудзиёсида, откуда при ясной погоде открывается эффектный вид на Фудзи между городскими зданиями. Для фотографий оставайся на тротуаре и не выходи на проезжую часть."
   },
   {
     "id": "kawaguchiko",
@@ -353,9 +367,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Озеро Кавагути — одно из Пяти озёр Фудзи. На берегах есть прогулочные участки и точки, откуда в ясную погоду хорошо видна гора."
   },
   {
     "id": "oishi-park",
@@ -378,9 +393,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Парк на северном берегу озера Кавагути с прогулочной зоной и сезонными цветочными посадками. В ясную погоду отсюда открывается вид на Фудзи через озеро."
   },
   {
     "id": "kabukicho",
@@ -403,9 +419,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 90,
+    "description": "Развлекательный квартал в Синдзюку с неоновыми вывесками, ресторанами, барами, караоке и ночной жизнью. Лучше всего раскрывается после наступления темноты."
   },
   {
     "id": "kabukicho-ichibangai",
@@ -428,9 +445,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 30
+    "recommendedDurationMin": 30,
+    "description": "Улица и известная арка с неоновой вывеской у входа в Кабукитё. Популярная фототочка и удобный ориентир для прогулки по кварталу."
   },
   {
     "id": "golden-gai",
@@ -453,9 +471,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Небольшой квартал узких переулков с маленькими барами и тесными заведениями. Особенно атмосферно вечером; учитывай, что часть баров рассчитана на постоянных гостей и может не принимать случайных посетителей."
   },
   {
     "id": "omoide-yokocho",
@@ -478,9 +497,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Узкие переулки рядом со станцией Синдзюку с небольшими заведениями и традиционной атмосферой старого Токио. Можно заглянуть на короткую прогулку или поесть."
   },
   {
     "id": "tokyo-metropolitan-government-building",
@@ -502,35 +522,25 @@
         "sat",
         "sun"
       ],
-      "openingHours": null,
-      "note": "Opening hours require verification."
-    },
-    "recommendedDurationMin": 60
-  },
-  {
-    "id": "tsukiji-outer-market",
-    "name": "Tsukiji Outer Market",
-    "category": "market",
-    "priority": "optional",
-    "areaId": "tsukiji",
-    "coordinates": {
-      "lat": 35.6655,
-      "lng": 139.7708
-    },
-    "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
+      "openingHours": {
+        "from": "09:30",
+        "to": "22:00"
+      },
+      "specialDates": [
+        {
+          "date": "2026-12-07",
+          "available": true,
+          "openingHours": {
+            "from": "09:30",
+            "to": "22:00"
+          },
+          "note": "Южная смотровая площадка запланирована к работе с 09:30 до 22:00; северная — с 09:30 до 17:30."
+        }
       ],
-      "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Бесплатная смотровая площадка. Официальное расписание зависит от даты и доступной площадки; перед посещением проверь актуальный календарь."
     },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 60,
+    "description": "Здание Токийской администрации со смотровыми площадками на верхних этажах. Вход на смотровую площадку бесплатный; расписание и доступность северной и южной площадок зависят от даты."
   },
   {
     "id": "ginza",
@@ -553,9 +563,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 120
+    "recommendedDurationMin": 120,
+    "description": "Элегантный торговый район Токио с универмагами, флагманскими магазинами, архитектурой, галереями и ресторанами. Подходит для прогулки и знакомства с современной городской частью Токио."
   },
   {
     "id": "ginza-six",
@@ -578,16 +589,17 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Крупный торговый комплекс в Гиндзе с магазинами, ресторанами и общественными пространствами. На крыше расположен сад GINZA SIX Garden, который можно посетить бесплатно."
   },
   {
     "id": "tokyo-station",
     "name": "Tokyo Station",
     "category": "landmark",
-    "priority": "optional",
-    "areaId": "ginza",
+    "priority": "must",
+    "areaId": "marunouchi",
     "coordinates": {
       "lat": 35.6812,
       "lng": 139.7671
@@ -603,16 +615,17 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Главный железнодорожный вокзал с историческим кирпичным фасадом со стороны Маруноути и большими общественными пространствами внутри. В маршруте это самостоятельная архитектурная достопримечательность; сбор штампов здесь не планируется."
   },
   {
     "id": "marunouchi",
     "name": "Marunouchi",
     "category": "district",
-    "priority": "optional",
-    "areaId": "ginza",
+    "priority": "must",
+    "areaId": "marunouchi",
     "coordinates": {
       "lat": 35.6815,
       "lng": 139.764
@@ -628,9 +641,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Деловой и торговый район между вокзалом Токио и Гиндзой. Здесь стоит прогуляться по площади перед вокзалом и улицам Naka-dori и Gyoko-dori, где в декабре устанавливают сезонные украшения и рождественские площадки."
   },
   {
     "id": "tokyo-tower",
@@ -653,9 +667,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 90,
+    "description": "Знаменитая красно-белая телебашня Токио. В маршрут входит внешний осмотр башни и фотографии с окружающих улиц, из парка Сиба и от храма Дзодзёдзи. Платные смотровые этажи исключены."
   },
   {
     "id": "zojo-ji",
@@ -678,9 +693,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Буддийский храм в районе Сиба, известный сочетанием традиционной храмовой архитектуры и вида на Токийскую башню. Одна из самых выразительных фототочек района."
   },
   {
     "id": "shiba-park",
@@ -703,9 +719,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Большой городской парк вокруг храмового района Дзодзёдзи и Токийской башни. Подходит для прогулки и бесплатных фотографий башни с разных ракурсов."
   },
   {
     "id": "atago-shrine",
@@ -728,9 +745,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Синтоистское святилище на возвышенности в центре Токио. Известно крутой каменной лестницей, которую называют «лестницей успеха». Это небольшой дополнительный крюк от основного маршрута."
   },
   {
     "id": "tokyo-tower-7-eleven",
@@ -753,9 +771,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 15
+    "recommendedDurationMin": 15,
+    "description": "Небольшая фототочка, откуда можно снять контрастный кадр с вывеской 7-Eleven и Токийской башней на заднем плане. Не задерживайся у входа и не мешай посетителям магазина и прохожим."
   },
   {
     "id": "tokyo-tower-stairway",
@@ -778,9 +797,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 15
+    "recommendedDurationMin": 15,
+    "description": "Фототочка с лестницей возле подземной парковки Токийской башни. Подходить можно только с общедоступной территории; нельзя заходить на парковку или в закрытые зоны. Доступ может быть ограничен."
   },
   {
     "id": "tsurugaoka-hachimangu",
@@ -802,10 +822,14 @@
         "sat",
         "sun"
       ],
-      "openingHours": null,
-      "note": "Opening hours require verification."
+      "openingHours": {
+        "from": "06:00",
+        "to": "20:00"
+      },
+      "note": "Территория святилища открыта с 06:00 до 20:00. Приём для молитв указан с 08:30 до 16:30; отдельные часы работы стойки с амулетами опубликованы неясно."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Главное синтоистское святилище Камакуры, расположенное в конце протяжённого подхода от центра города. На территории есть лестницы, ворота, пруды и несколько храмовых построек."
   },
   {
     "id": "komachi-dori",
@@ -828,9 +852,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 90,
+    "description": "Популярная торговая улица между станцией Камакура и храмом Цуругаока Хатимангу. Здесь расположены небольшие магазины, сувенирные лавки и места, где можно попробовать местную еду."
   },
   {
     "id": "hasedera",
@@ -856,9 +881,14 @@
         "from": "08:00",
         "to": "17:00"
       },
-      "note": "December working draft."
+      "shopHours": {
+        "from": "10:00",
+        "to": "16:00"
+      },
+      "note": "С декабря по март последний вход — в 16:30. Сувенирный магазин Nagomi работает с 10:00 до 16:00."
     },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 90,
+    "description": "Буддийский храм Хасэдэра, известный большой статуей Каннон, садом и видами на город и побережье Камакуры. Зимой важно учитывать время последнего входа и отдельный график сувенирной лавки."
   },
   {
     "id": "great-buddha-kamakura",
@@ -880,10 +910,18 @@
         "sat",
         "sun"
       ],
-      "openingHours": null,
-      "note": "Opening hours require verification."
+      "openingHours": {
+        "from": "08:00",
+        "to": "17:00"
+      },
+      "shopHours": {
+        "from": "08:30",
+        "to": "16:45"
+      },
+      "note": "С октября по март последний вход — в 16:45. Храмовая канцелярия и магазин работают с 08:30 до 16:45."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Большая бронзовая статуя Будды Амида на территории храма Котоку-ин — одна из самых известных достопримечательностей Камакуры. Для осмотра территории и статуи требуется отдельное время."
   },
   {
     "id": "shichirigahama",
@@ -906,9 +944,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Прибрежный район с пляжем и железнодорожной линией Энодэн. В ясную погоду отсюда можно увидеть Фудзи; особенно красиво ближе к закату."
   },
   {
     "id": "inamuragasaki",
@@ -931,9 +970,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Мыс и прибрежный парк между Камакурой и Эносима. При ясной погоде отсюда открывается вид на Фудзи и остров Эносима; хорошая дополнительная остановка на закате."
   },
   {
     "id": "yokohama-chinatown",
@@ -956,9 +996,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 90,
+    "description": "Крупный китайский квартал с яркими воротами, магазинами, пекарнями и многочисленными заведениями китайской кухни. Подходит для прогулки и еды."
   },
   {
     "id": "yamashita-park",
@@ -981,9 +1022,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Прибрежный парк с открытым видом на порт Йокогамы, корабли и набережную. Удобен для неспешной прогулки между Китайским кварталом и районом складов."
   },
   {
     "id": "red-brick-warehouse",
@@ -1006,9 +1048,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Исторические кирпичные складские здания у воды, внутри которых сейчас находятся магазины, кафе, выставочные пространства и сезонные мероприятия."
   },
   {
     "id": "minato-mirai",
@@ -1031,40 +1074,16 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 90
-  },
-  {
-    "id": "marine-tower",
-    "name": "Yokohama Marine Tower",
-    "category": "viewpoint",
-    "priority": "optional",
-    "areaId": "yokohama",
-    "coordinates": {
-      "lat": 35.443,
-      "lng": 139.6503
-    },
-    "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
-      "openingHours": null,
-      "note": "Opening hours require verification."
-    },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 90,
+    "description": "Современный прибрежный район Йокогамы с набережными, торговыми центрами, музеями и городской архитектурой. Подходит для вечерней прогулки вдоль воды."
   },
   {
     "id": "oi-flea-market",
     "name": "Tokyo City Flea Market at Oi Racecourse",
     "category": "market",
-    "priority": "must",
+    "priority": "optional",
     "areaId": "oi",
     "coordinates": {
       "lat": 35.5967,
@@ -1073,21 +1092,30 @@
     "schedule": {
       "weekdays": null,
       "openingHours": null,
-      "shopHours": null,
       "specialDates": [
+        {
+          "date": "2026-12-05",
+          "available": true,
+          "openingHours": {
+            "from": "08:45",
+            "to": "14:15"
+          },
+          "note": "Listed event date; outdoor event may be cancelled or changed due to weather."
+        },
         {
           "date": "2026-12-06",
           "available": true,
           "openingHours": {
-            "from": "09:00",
-            "to": "14:30"
+            "from": "08:45",
+            "to": "14:15"
           },
-          "note": "Working draft; confirm event date and hours before trip."
+          "note": "Listed event date; outdoor event may be cancelled or changed due to weather."
         }
       ],
-      "note": "Special event; verify before use."
+      "note": "В текущем календаре мероприятия указаны 5 и 6 декабря 2026 года, 08:45–14:15. Рынок проходит под открытым небом и может быть отменён или изменён из-за погоды. Повторно проверь информацию непосредственно перед посещением."
     },
-    "recommendedDurationMin": 150
+    "recommendedDurationMin": 150,
+    "description": "Большой блошиный рынок на территории ипподрома Oi. Здесь можно искать японские винтажные постеры, старую рекламу, иллюстрированные открытки, печатную графику и другие бумажные коллекционные вещи. Ассортимент зависит от продавцов и конкретного дня, поэтому наличие таких товаров не гарантировано."
   },
   {
     "id": "gotokuji",
@@ -1117,9 +1145,10 @@
         "from": "08:00",
         "to": "15:00"
       },
-      "note": "Working draft."
+      "note": "Территория храма открыта с 06:00 до 17:00; храмовый магазин и стойка сувениров — с 08:00 до 15:00. Если планируешь купить манэки-нэко, приходи до 15:00."
     },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 90,
+    "description": "Буддийский храм Готокудзи, известный многочисленными фигурками манэки-нэко — японских кошек, приглашающих удачу. Обязательно оставь время на территорию и сувенирную лавку: она закрывается раньше самого храма."
   },
   {
     "id": "shibuya-crossing",
@@ -1142,9 +1171,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 30
+    "recommendedDurationMin": 30,
+    "description": "Знаменитый перекрёсток Сибуя, где пешеходные потоки одновременно пересекают улицу со всех сторон. Особенно впечатляет вечером, когда загораются неоновые вывески."
   },
   {
     "id": "hachiko",
@@ -1167,37 +1197,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 15
-  },
-  {
-    "id": "shibuya-sky",
-    "name": "Shibuya Sky",
-    "category": "viewpoint",
-    "priority": "must",
-    "areaId": "shibuya",
-    "coordinates": {
-      "lat": 35.658,
-      "lng": 139.7016
-    },
-    "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
-      "openingHours": {
-        "from": "10:00",
-        "to": "22:30"
-      },
-      "note": "Working draft; booking may be required/recommended."
-    },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 15,
+    "description": "Памятник собаке Хатико рядом со станцией Сибуя. Известная точка встречи и короткая остановка во время прогулки по району."
   },
   {
     "id": "center-gai",
@@ -1220,9 +1223,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Оживлённая торговая и развлекательная улица в Сибуе с магазинами, кафе, игровыми залами и яркими вывесками."
   },
   {
     "id": "shibuya-parco",
@@ -1245,9 +1249,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Торговый центр с магазинами моды, поп-культуры, игр и развлечений. Внутри находятся тематические магазины, в том числе Nintendo TOKYO."
   },
   {
     "id": "nintendo-tokyo",
@@ -1270,9 +1275,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Официальный магазин Nintendo с играми, аксессуарами, одеждой и товарами по известным игровым сериям. Находится внутри Shibuya PARCO."
   },
   {
     "id": "loft-shibuya",
@@ -1295,9 +1301,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 45
+    "recommendedDurationMin": 45,
+    "description": "Большой магазин товаров для дома, канцелярии, дизайна, подарков и повседневных мелочей. Может быть интересен для поиска японской бумаги, блокнотов и необычных сувениров."
   },
   {
     "id": "tower-records-shibuya",
@@ -1320,9 +1327,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Крупный музыкальный магазин с винилом, CD, музыкальными изданиями, товарами артистов и тематическими разделами японской и зарубежной музыки."
   },
   {
     "id": "meiji-jingu",
@@ -1344,10 +1352,18 @@
         "sat",
         "sun"
       ],
-      "openingHours": null,
-      "note": "Opening hours require verification."
+      "openingHours": {
+        "from": "06:40",
+        "to": "16:00"
+      },
+      "shopHours": {
+        "from": "09:00",
+        "to": "16:00"
+      },
+      "note": "В декабре территория открыта с 06:40 до 16:00. Здания святилища, сувенирные стойки и стойки с амулетами работают меньше; точные часы могут меняться."
     },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 90,
+    "description": "Крупное синтоистское святилище в лесном массиве рядом с Харадзюку. К нему ведут широкие прогулочные дорожки и большие тории. В декабре территория закрывается рано, поэтому лучше посещать утром."
   },
   {
     "id": "takeshita-street",
@@ -1370,9 +1386,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 90,
+    "description": "Знаменитая пешеходная улица Харадзюку с магазинами одежды, аксессуаров, косметики, сувениров и уличной едой. Обычно многолюдна, особенно днём и в выходные."
   },
   {
     "id": "omotesando",
@@ -1395,9 +1412,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 90
+    "recommendedDurationMin": 90,
+    "description": "Широкий проспект с деревьями, современной архитектурой, бутиками, кафе и дизайнерскими магазинами. Подходит для прогулки между Харадзюку и Аоямой."
   },
   {
     "id": "cat-street",
@@ -1420,9 +1438,10 @@
         "sun"
       ],
       "openingHours": null,
-      "note": "Opening hours require verification."
+      "note": "Часы работы нужно дополнительно уточнить."
     },
-    "recommendedDurationMin": 60
+    "recommendedDurationMin": 60,
+    "description": "Пешеходная улица и сеть небольших переулков между районами Харадзюку и Сибуя. Здесь расположены независимые магазины, винтажные бутики и кафе; название не означает, что улица посвящена кошкам."
   },
   {
     "id": "shibuya",
@@ -1438,8 +1457,805 @@
     "schedule": {
       "weekdays": null,
       "openingHours": null,
-      "note": "Whole-area stop: shopping and wandering."
+      "note": "Посещение всего района: прогулка и магазины."
     },
-    "recommendedDurationMin": 180
+    "recommendedDurationMin": 180,
+    "description": "Большой торговый и развлекательный район вокруг станции Сибуя. Здесь можно гулять по магазинам, улицам с неоновыми вывесками и небольшим переулкам; маршрут удобно завершить вечером."
+  },
+  {
+    "id": "shinohara-maruyoshi-fuurin",
+    "name": "Shinohara Maruyoshi Fuurin",
+    "category": "shopping",
+    "priority": "must",
+    "areaId": "ueno",
+    "description": "Небольшой магазин традиционных японских стеклянных колокольчиков фурин в торговой галерее Satake Shopping Street. Здесь планируется купить готовый колокольчик; мастер-класс и изготовление своими руками не нужны.",
+    "coordinates": {
+      "lat": 35.706691,
+      "lng": 139.7812159
+    },
+    "schedule": {
+      "weekdays": [
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "10:30",
+        "to": "18:00"
+      },
+      "note": "Обычные часы работы — 10:30–18:00; как правило, по понедельникам магазин закрыт, возможны исключения и временные закрытия. Перед визитом проверь календарь магазина."
+    },
+    "recommendedDurationMin": 25,
+    "address": "4-25-10 Taito, Taito City, Tokyo 110-0016, Japan",
+    "nameLocal": "篠原まるよし風鈴",
+    "website": "https://www.edo-fuurin.com/en/shop",
+    "tags": [
+      "craft",
+      "wind-chime",
+      "shopping"
+    ],
+    "sources": [
+      "https://www.edo-fuurin.com/en",
+      "https://www.edo-fuurin.com/en/shop"
+    ]
+  },
+  {
+    "id": "ueno-christmas-advent-hakamagoshi",
+    "name": "Tokyo Christmas Advent — Hakamagoshi Plaza",
+    "category": "event",
+    "priority": "optional",
+    "areaId": "ueno",
+    "description": "Одна из двух отдельных площадок рождественского фестиваля Tokyo Christmas Advent в Уэно. Находится возле памятника Сайго Такамори и входа со стороны Keisei Ueno. Вход на территорию свободный; еда и покупки оплачиваются отдельно.",
+    "coordinates": {
+      "lat": 35.71225,
+      "lng": 139.7741
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "12:00",
+        "to": "23:00"
+      },
+      "specialDates": [
+        {
+          "date": "2026-12-01",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "23:00"
+          },
+          "note": "Tokyo Christmas Advent at Hakamagoshi Plaza; event season 2026-11-06 to 2026-12-25."
+        },
+        {
+          "date": "2026-12-02",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "23:00"
+          },
+          "note": "Tokyo Christmas Advent at Hakamagoshi Plaza; event season 2026-11-06 to 2026-12-25."
+        },
+        {
+          "date": "2026-12-03",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "23:00"
+          },
+          "note": "Tokyo Christmas Advent at Hakamagoshi Plaza; event season 2026-11-06 to 2026-12-25."
+        },
+        {
+          "date": "2026-12-04",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "23:00"
+          },
+          "note": "Tokyo Christmas Advent at Hakamagoshi Plaza; event season 2026-11-06 to 2026-12-25."
+        },
+        {
+          "date": "2026-12-05",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "23:00"
+          },
+          "note": "Tokyo Christmas Advent at Hakamagoshi Plaza; event season 2026-11-06 to 2026-12-25."
+        },
+        {
+          "date": "2026-12-06",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "23:00"
+          },
+          "note": "Tokyo Christmas Advent at Hakamagoshi Plaza; event season 2026-11-06 to 2026-12-25."
+        },
+        {
+          "date": "2026-12-07",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "23:00"
+          },
+          "note": "Tokyo Christmas Advent at Hakamagoshi Plaza; event season 2026-11-06 to 2026-12-25."
+        }
+      ],
+      "note": "С 6 ноября по 25 декабря 2026 года, ежедневно с 12:00 до 23:00. Работа может измениться из-за погоды или корректировок мероприятия."
+    },
+    "recommendedDurationMin": 45,
+    "address": "Ueno Onshi Park, Hakamagoshi Plaza, Taito City, Tokyo, Japan",
+    "nameLocal": "東京クリスマスアドベント 袴腰広場",
+    "website": "https://christmas-advent.jp/tokyo-ueno/",
+    "tags": [
+      "christmas",
+      "market",
+      "illumination"
+    ],
+    "sources": [
+      "https://christmas-advent.jp/tokyo-ueno/"
+    ]
+  },
+  {
+    "id": "ueno-christmas-advent-shinobazu",
+    "name": "Tokyo Christmas Advent — Shinobazu Pond Area",
+    "category": "event",
+    "priority": "optional",
+    "areaId": "ueno",
+    "description": "Вторая отдельная площадка рождественского фестиваля Tokyo Christmas Advent вокруг пруда Синобадзу. Её удобно посетить после Hakamagoshi Plaza, если захочется посмотреть обе зоны с вечерней подсветкой.",
+    "coordinates": {
+      "lat": 35.71045,
+      "lng": 139.772
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "15:00",
+        "to": "22:00"
+      },
+      "specialDates": [
+        {
+          "date": "2026-12-01",
+          "available": true,
+          "openingHours": {
+            "from": "15:00",
+            "to": "22:00"
+          },
+          "note": "Shinobazu Pond event zone; Friday–Sunday 12:00–22:00, Monday–Thursday 15:00–22:00."
+        },
+        {
+          "date": "2026-12-02",
+          "available": true,
+          "openingHours": {
+            "from": "15:00",
+            "to": "22:00"
+          },
+          "note": "Shinobazu Pond event zone; Friday–Sunday 12:00–22:00, Monday–Thursday 15:00–22:00."
+        },
+        {
+          "date": "2026-12-03",
+          "available": true,
+          "openingHours": {
+            "from": "15:00",
+            "to": "22:00"
+          },
+          "note": "Shinobazu Pond event zone; Friday–Sunday 12:00–22:00, Monday–Thursday 15:00–22:00."
+        },
+        {
+          "date": "2026-12-04",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "22:00"
+          },
+          "note": "Shinobazu Pond event zone; Friday–Sunday 12:00–22:00, Monday–Thursday 15:00–22:00."
+        },
+        {
+          "date": "2026-12-05",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "22:00"
+          },
+          "note": "Shinobazu Pond event zone; Friday–Sunday 12:00–22:00, Monday–Thursday 15:00–22:00."
+        },
+        {
+          "date": "2026-12-06",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "22:00"
+          },
+          "note": "Shinobazu Pond event zone; Friday–Sunday 12:00–22:00, Monday–Thursday 15:00–22:00."
+        },
+        {
+          "date": "2026-12-07",
+          "available": true,
+          "openingHours": {
+            "from": "15:00",
+            "to": "22:00"
+          },
+          "note": "Shinobazu Pond event zone; Friday–Sunday 12:00–22:00, Monday–Thursday 15:00–22:00."
+        }
+      ],
+      "note": "С 18 ноября по 25 декабря 2026 года. Пн–чт: 15:00–22:00; пт–вс и праздничные дни: 12:00–22:00."
+    },
+    "recommendedDurationMin": 45,
+    "address": "Ueno Onshi Park, Shinobazu Pond, Taito City, Tokyo, Japan",
+    "nameLocal": "東京クリスマスアドベント 不忍池エリア",
+    "website": "https://christmas-advent.jp/tokyo-ueno/",
+    "tags": [
+      "christmas",
+      "illumination",
+      "market"
+    ],
+    "sources": [
+      "https://christmas-advent.jp/tokyo-ueno/"
+    ]
+  },
+  {
+    "id": "marunouchi-station-square",
+    "name": "Marunouchi Station Square",
+    "category": "landmark",
+    "priority": "must",
+    "areaId": "marunouchi",
+    "description": "Открытая площадь перед историческим фасадом вокзала Токио со стороны Маруноути. Бесплатная точка для осмотра здания и фотографий.",
+    "coordinates": {
+      "lat": 35.68125,
+      "lng": 139.76735
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Открытая общественная площадь; доступ не зависит от часов работы магазинов."
+    },
+    "recommendedDurationMin": 20,
+    "address": "Marunouchi Station Square, Chiyoda City, Tokyo, Japan",
+    "nameLocal": "丸の内駅前広場",
+    "tags": [
+      "architecture",
+      "photo",
+      "free"
+    ]
+  },
+  {
+    "id": "kitte-garden",
+    "name": "KITTE Garden",
+    "category": "viewpoint",
+    "priority": "optional",
+    "areaId": "marunouchi",
+    "description": "Бесплатный сад на крыше шестого этажа комплекса KITTE. Отсюда видны исторический фасад вокзала Токио и железнодорожные пути. Площадка находится под открытым небом и может закрываться из-за плохой погоды.",
+    "coordinates": {
+      "lat": 35.67985,
+      "lng": 139.76455
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "11:00",
+        "to": "23:00"
+      },
+      "note": "Будни: 11:00–23:00; выходные и праздничные дни: 11:00–22:00. В плохую погоду сад могут закрыть."
+    },
+    "recommendedDurationMin": 20,
+    "address": "KITTE Marunouchi, 2-7-2 Marunouchi, Chiyoda City, Tokyo, Japan",
+    "nameLocal": "KITTEガーデン",
+    "website": "https://marunouchi.jp-kitte.jp/gb/information.jsp",
+    "tags": [
+      "free-viewpoint",
+      "rooftop",
+      "photo"
+    ],
+    "sources": [
+      "https://marunouchi.jp-kitte.jp/gb/information.jsp"
+    ]
+  },
+  {
+    "id": "marunouchi-street-park",
+    "name": "Marunouchi Street Park — Winter Lights & Market",
+    "category": "event",
+    "priority": "optional",
+    "areaId": "marunouchi",
+    "description": "Сезонная прогулочная зона на улицах Marunouchi Naka-dori и Gyoko-dori. С 27 ноября на Gyoko-dori запланированы рождественская ёлка и зона примерно с 15 торговыми точками с едой; на Naka-dori — зимние террасы, подсветка и временные торговые павильоны.",
+    "coordinates": {
+      "lat": 35.68065,
+      "lng": 139.76325
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "11:00",
+        "to": "22:00"
+      },
+      "specialDates": [
+        {
+          "date": "2026-12-01",
+          "available": true,
+          "openingHours": {
+            "from": "11:00",
+            "to": "22:00"
+          },
+          "note": "Зимнее мероприятие Marunouchi Street Park 2026 на общественных улицах."
+        },
+        {
+          "date": "2026-12-02",
+          "available": true,
+          "openingHours": {
+            "from": "11:00",
+            "to": "22:00"
+          },
+          "note": "Зимнее мероприятие Marunouchi Street Park 2026 на общественных улицах."
+        },
+        {
+          "date": "2026-12-03",
+          "available": true,
+          "openingHours": {
+            "from": "11:00",
+            "to": "22:00"
+          },
+          "note": "Зимнее мероприятие Marunouchi Street Park 2026 на общественных улицах."
+        },
+        {
+          "date": "2026-12-04",
+          "available": true,
+          "openingHours": {
+            "from": "11:00",
+            "to": "22:00"
+          },
+          "note": "Зимнее мероприятие Marunouchi Street Park 2026 на общественных улицах."
+        },
+        {
+          "date": "2026-12-05",
+          "available": true,
+          "openingHours": {
+            "from": "11:00",
+            "to": "22:00"
+          },
+          "note": "Зимнее мероприятие Marunouchi Street Park 2026 на общественных улицах."
+        },
+        {
+          "date": "2026-12-06",
+          "available": true,
+          "openingHours": {
+            "from": "11:00",
+            "to": "22:00"
+          },
+          "note": "Зимнее мероприятие Marunouchi Street Park 2026 на общественных улицах."
+        },
+        {
+          "date": "2026-12-07",
+          "available": true,
+          "openingHours": {
+            "from": "11:00",
+            "to": "22:00"
+          },
+          "note": "Зимнее мероприятие Marunouchi Street Park 2026 на общественных улицах."
+        }
+      ],
+      "note": "Мероприятие проходит с 12 ноября по 25 декабря 2026 года, 11:00–22:00. Рождественские торговые точки и ёлка на Gyoko-dori запланированы с 27 ноября."
+    },
+    "recommendedDurationMin": 60,
+    "address": "Marunouchi Naka-dori and Gyoko-dori, Chiyoda City, Tokyo, Japan",
+    "nameLocal": "丸の内ストリートパーク",
+    "website": "https://marunouchi-streetpark.com/",
+    "tags": [
+      "christmas",
+      "illumination",
+      "market",
+      "photo"
+    ],
+    "sources": [
+      "https://marunouchi-streetpark.com/"
+    ]
+  },
+  {
+    "id": "ginza-six-garden",
+    "name": "GINZA SIX Garden",
+    "category": "viewpoint",
+    "priority": "optional",
+    "areaId": "ginza",
+    "description": "Бесплатный сад на крыше торгового комплекса GINZA SIX. Подходит для короткой остановки во время прогулки по Гиндзе. Может закрываться из-за плохой погоды или частных мероприятий.",
+    "coordinates": {
+      "lat": 35.66985,
+      "lng": 139.76315
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "07:00",
+        "to": "23:00"
+      },
+      "note": "Сад могут закрыть без предварительного уведомления из-за плохой погоды или частного мероприятия."
+    },
+    "recommendedDurationMin": 20,
+    "address": "GINZA SIX, 6-10-1 Ginza, Chuo City, Tokyo, Japan",
+    "nameLocal": "GINZA SIX ガーデン",
+    "website": "https://ginza6.tokyo/hours/",
+    "tags": [
+      "free-viewpoint",
+      "rooftop",
+      "photo"
+    ],
+    "sources": [
+      "https://ginza6.tokyo/hours/"
+    ]
+  },
+  {
+    "id": "tokyo-tower-christmas-market",
+    "name": "TOKYO TOWER Christmas Market 2026",
+    "category": "event",
+    "priority": "optional",
+    "areaId": "minato",
+    "description": "Сезонная рождественская ярмарка на площади прямо перед Токийской башней. Вход на территорию бесплатный; еда и покупки оплачиваются отдельно. Посещение платных смотровых этажей башни в план не входит.",
+    "coordinates": {
+      "lat": 35.65835,
+      "lng": 139.7452
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "12:00",
+        "to": "22:00"
+      },
+      "specialDates": [
+        {
+          "date": "2026-12-01",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "22:00"
+          },
+          "note": "Рождественский рынок TOKYO TOWER 2026; вход бесплатный."
+        },
+        {
+          "date": "2026-12-02",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "22:00"
+          },
+          "note": "Рождественский рынок TOKYO TOWER 2026; вход бесплатный."
+        },
+        {
+          "date": "2026-12-03",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "22:00"
+          },
+          "note": "Рождественский рынок TOKYO TOWER 2026; вход бесплатный."
+        },
+        {
+          "date": "2026-12-04",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "22:00"
+          },
+          "note": "Рождественский рынок TOKYO TOWER 2026; вход бесплатный."
+        },
+        {
+          "date": "2026-12-05",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "22:00"
+          },
+          "note": "Рождественский рынок TOKYO TOWER 2026; вход бесплатный."
+        },
+        {
+          "date": "2026-12-06",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "22:00"
+          },
+          "note": "Рождественский рынок TOKYO TOWER 2026; вход бесплатный."
+        },
+        {
+          "date": "2026-12-07",
+          "available": true,
+          "openingHours": {
+            "from": "12:00",
+            "to": "22:00"
+          },
+          "note": "Рождественский рынок TOKYO TOWER 2026; вход бесплатный."
+        }
+      ],
+      "note": "С 13 ноября по 25 декабря 2026 года, ежедневно с 12:00 до 22:00; последний заказ — в 21:30. Вход на рынок бесплатный."
+    },
+    "recommendedDurationMin": 60,
+    "address": "Tokyo Tower Main Entrance Plaza, 4-2-8 Shibakoen, Minato City, Tokyo 105-0011, Japan",
+    "nameLocal": "東京タワー クリスマスマーケット",
+    "website": "https://christmasmarket.jp/202611-tokyotower/",
+    "tags": [
+      "christmas",
+      "market",
+      "illumination"
+    ],
+    "sources": [
+      "https://christmasmarket.jp/202611-tokyotower/"
+    ]
+  },
+  {
+    "id": "tennozu-isle",
+    "name": "Tennozu Isle",
+    "category": "district",
+    "priority": "must",
+    "areaId": "tennozu",
+    "description": "Прибрежный арт-район с переоборудованными складскими зданиями, уличным искусством, прогулочными дорожками вдоль каналов, кафе и творческими пространствами. По открытым общественным улицам можно гулять бесплатно.",
+    "coordinates": {
+      "lat": 35.621,
+      "lng": 139.75
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Открытый район; у отдельных магазинов, галерей и музеев собственные часы работы и условия входа."
+    },
+    "recommendedDurationMin": 30,
+    "address": "2 Higashi-Shinagawa, Shinagawa City, Tokyo, Japan",
+    "nameLocal": "天王洲アイル",
+    "website": "https://www.gotokyo.org/en/spot/10/",
+    "tags": [
+      "art",
+      "waterfront",
+      "photo"
+    ],
+    "sources": [
+      "https://www.gotokyo.org/en/spot/10/",
+      "https://www.japan.travel/en/japans-local-treasures/shinagawas-art-island/"
+    ]
+  },
+  {
+    "id": "tennozu-bond-street",
+    "name": "Tennozu BOND Street",
+    "category": "street",
+    "priority": "must",
+    "areaId": "tennozu",
+    "description": "Фотогеничная улица бывших складов с настенными росписями, переоборудованными промышленными зданиями, кафе и дизайнерскими магазинами. Подходит для прогулки на свежем воздухе и фотографий.",
+    "coordinates": {
+      "lat": 35.62155,
+      "lng": 139.74855
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Улица находится под открытым небом; часы работы магазинов различаются."
+    },
+    "recommendedDurationMin": 40,
+    "address": "2-1 Higashi-Shinagawa, Shinagawa City, Tokyo 140-0002, Japan",
+    "nameLocal": "ボンドストリート",
+    "website": "https://www.e-tennoz.com/en/areaguidance/bldg_bond.html",
+    "tags": [
+      "street-art",
+      "warehouse",
+      "photo"
+    ],
+    "sources": [
+      "https://www.e-tennoz.com/en/areaguidance/bldg_bond.html"
+    ]
+  },
+  {
+    "id": "tennozu-boardwalk",
+    "name": "Tennozu Canal Boardwalk",
+    "category": "viewpoint",
+    "priority": "optional",
+    "areaId": "tennozu",
+    "description": "Бесплатная прогулочная дорожка вдоль канала в районе Sea Fort Square и складского квартала. Подходит для видов на воду и спокойной фотопрогулки.",
+    "coordinates": {
+      "lat": 35.6206,
+      "lng": 139.7491
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": null,
+      "note": "Общественная прогулочная зона под открытым небом; посещение зависит от погоды."
+    },
+    "recommendedDurationMin": 35,
+    "address": "Sea Fort Square and canal promenades, Higashi-Shinagawa, Tokyo, Japan",
+    "nameLocal": "天王洲運河ボードウォーク",
+    "website": "https://www.tokyo-monorail.co.jp/english/guidance/tennouzuairu/index.html",
+    "tags": [
+      "waterfront",
+      "free-viewpoint",
+      "photo"
+    ],
+    "sources": [
+      "https://www.tokyo-monorail.co.jp/english/guidance/tennouzuairu/index.html",
+      "https://www.e-tennoz.com/en/enjoytennoz/dateplan.html"
+    ]
+  },
+  {
+    "id": "pigment-tokyo",
+    "name": "PIGMENT TOKYO",
+    "category": "shopping",
+    "priority": "optional",
+    "areaId": "tennozu",
+    "description": "Специализированный магазин художественных материалов: пигменты, японская бумага, тушь, кисти и принадлежности для живописи. Это не магазин винтажных постеров или печатной графики; посещай его, только если интересны сами материалы.",
+    "coordinates": {
+      "lat": 35.62085,
+      "lng": 139.75065
+    },
+    "schedule": {
+      "weekdays": [
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "11:00",
+        "to": "19:00"
+      },
+      "note": "Работает с 11:00 до 19:00; по понедельникам закрыт, кроме случаев, когда понедельник — государственный праздник. Проверь возможные сезонные изменения."
+    },
+    "recommendedDurationMin": 40,
+    "address": "TERRADA Harbor One Bldg. 1F, 2-5-5 Higashi-Shinagawa, Shinagawa City, Tokyo 140-0002, Japan",
+    "nameLocal": "PIGMENT TOKYO",
+    "website": "https://pigment.tokyo/en/pages/about",
+    "tags": [
+      "art",
+      "shopping",
+      "materials"
+    ],
+    "sources": [
+      "https://pigment.tokyo/en/pages/about"
+    ]
+  },
+  {
+    "id": "terrada-art-complex",
+    "name": "TERRADA ART COMPLEX",
+    "category": "museum",
+    "priority": "optional",
+    "areaId": "tennozu",
+    "description": "Комплекс галерей современного искусства в бывших складских зданиях. Это дополнительная остановка: перед визитом нужно проверить расписание каждой конкретной галереи, поскольку у них нет единого графика и многие закрыты по воскресеньям или понедельникам.",
+    "coordinates": {
+      "lat": 35.62125,
+      "lng": 139.7485
+    },
+    "schedule": {
+      "weekdays": null,
+      "openingHours": null,
+      "note": "Единого расписания для всего комплекса нет. Каждая галерея устанавливает часы самостоятельно; согласно текущим данным, многие закрыты по воскресеньям и понедельникам."
+    },
+    "recommendedDurationMin": 45,
+    "address": "1-33-10 and 1-32-8 Higashi-Shinagawa, Shinagawa City, Tokyo, Japan",
+    "nameLocal": "寺田アートコンプレックス",
+    "website": "https://www.terrada-art-complex.com/exhibition/en.html",
+    "tags": [
+      "art",
+      "gallery",
+      "warehouse"
+    ],
+    "sources": [
+      "https://www.terrada-art-complex.com/exhibition/en.html"
+    ]
+  },
+  {
+    "id": "shibuya-hikarie-sky-lobby",
+    "name": "Shibuya Hikarie 11F Sky Lobby",
+    "category": "viewpoint",
+    "priority": "optional",
+    "areaId": "shibuya",
+    "description": "Бесплатная общественная зона на 11-м этаже здания Shibuya Hikarie с видом в сторону станции Сибуя и перекрёстка Scramble Crossing. Это не платная смотровая SHIBUYA SKY; доступ и часы работы лучше повторно проверить в день посещения.",
+    "coordinates": {
+      "lat": 35.65975,
+      "lng": 139.7035
+    },
+    "schedule": {
+      "weekdays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "openingHours": {
+        "from": "07:00",
+        "to": "24:00"
+      },
+      "note": "В актуальных туристических справочниках указано время доступа 07:00–24:00. На официальном сайте здания отдельное расписание Sky Lobby не опубликовано, поэтому проверь доступ в день посещения."
+    },
+    "recommendedDurationMin": 20,
+    "address": "Shibuya Hikarie, 2-21-1 Shibuya, Shibuya City, Tokyo, Japan",
+    "nameLocal": "渋谷ヒカリエ 11F スカイロビー",
+    "website": "https://www.hikarie.jp/facilities/",
+    "tags": [
+      "free-viewpoint",
+      "night-view",
+      "photo"
+    ],
+    "sources": [
+      "https://www.hikarie.jp/facilities/",
+      "https://nightscape.tokyo/en/shibuya/shibuya-hikarie/"
+    ]
   }
 ]
