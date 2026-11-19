@@ -116,5 +116,11 @@
       "lng": 139.75
     },
     "description": "Прибрежный арт-район с бывшими складскими зданиями, настенными росписями, улицей BOND Street, магазином PIGMENT TOKYO и прогулочными дорожками вдоль каналов."
+  },
+  {
+    "id": "hanedakuko",
+    "cityId": "tokyo",
+    "name": "Hanedakuko",
+    "nameLocal": "羽田空港"
   }
 ]
