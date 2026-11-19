@@ -10,15 +10,7 @@
       "lng": 139.796
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -36,15 +28,7 @@
       "lng": 139.7967
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "06:30",
         "to": "17:00"
@@ -65,15 +49,7 @@
       "lng": 139.798
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -91,15 +67,7 @@
       "lng": 139.7968
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -117,15 +85,7 @@
       "lng": 139.7966
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "09:00",
         "to": "22:00"
@@ -147,15 +107,7 @@
       "lng": 139.803
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -173,14 +125,7 @@
       "lng": 139.7887
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat"],
       "openingHours": {
         "from": "09:00",
         "to": "17:00"
@@ -201,15 +146,7 @@
       "lng": 139.7744
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -227,15 +164,7 @@
       "lng": 139.7731
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -253,15 +182,7 @@
       "lng": 139.7717
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -279,15 +200,7 @@
       "lng": 138.8036
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -305,15 +218,7 @@
       "lng": 138.8032
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -331,15 +236,7 @@
       "lng": 138.807
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -357,15 +254,7 @@
       "lng": 138.755
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -383,15 +272,7 @@
       "lng": 138.748
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -409,15 +290,7 @@
       "lng": 139.702
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -435,15 +308,7 @@
       "lng": 139.7005
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -461,15 +326,7 @@
       "lng": 139.705
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -487,15 +344,7 @@
       "lng": 139.6995
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -513,15 +362,7 @@
       "lng": 139.6917
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "09:30",
         "to": "22:00"
@@ -553,15 +394,7 @@
       "lng": 139.765
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -579,15 +412,7 @@
       "lng": 139.7632
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -605,15 +430,7 @@
       "lng": 139.7671
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -631,15 +448,7 @@
       "lng": 139.764
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -657,15 +466,7 @@
       "lng": 139.7454
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -683,15 +484,7 @@
       "lng": 139.748
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -709,15 +502,7 @@
       "lng": 139.75
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -735,15 +520,7 @@
       "lng": 139.7485
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -761,15 +538,7 @@
       "lng": 139.7485
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -787,15 +556,7 @@
       "lng": 139.7445
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -813,15 +574,7 @@
       "lng": 139.5563
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "06:00",
         "to": "20:00"
@@ -842,15 +595,7 @@
       "lng": 139.5509
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -868,15 +613,7 @@
       "lng": 139.533
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "08:00",
         "to": "17:00"
@@ -901,15 +638,7 @@
       "lng": 139.5358
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "08:00",
         "to": "17:00"
@@ -934,15 +663,7 @@
       "lng": 139.512
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -960,15 +681,7 @@
       "lng": 139.5305
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -986,15 +699,7 @@
       "lng": 139.6455
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1012,15 +717,7 @@
       "lng": 139.65
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1038,15 +735,7 @@
       "lng": 139.6425
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1064,15 +753,7 @@
       "lng": 139.6328
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1128,15 +809,7 @@
       "lng": 139.647
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "06:00",
         "to": "17:00"
@@ -1161,15 +834,7 @@
       "lng": 139.7005
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1187,15 +852,7 @@
       "lng": 139.7005
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1213,15 +870,7 @@
       "lng": 139.699
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1239,15 +888,7 @@
       "lng": 139.6985
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1265,15 +906,7 @@
       "lng": 139.698
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1291,15 +924,7 @@
       "lng": 139.6986
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1317,15 +942,7 @@
       "lng": 139.698
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1343,15 +960,7 @@
       "lng": 139.6993
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "06:40",
         "to": "16:00"
@@ -1376,15 +985,7 @@
       "lng": 139.7054
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1402,15 +1003,7 @@
       "lng": 139.7123
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1428,15 +1021,7 @@
       "lng": 139.7055
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Часы работы нужно дополнительно уточнить."
     },
@@ -1474,14 +1059,7 @@
       "lng": 139.7812159
     },
     "schedule": {
-      "weekdays": [
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "10:30",
         "to": "18:00"
@@ -1492,11 +1070,7 @@
     "address": "4-25-10 Taito, Taito City, Tokyo 110-0016, Japan",
     "nameLocal": "篠原まるよし風鈴",
     "website": "https://www.edo-fuurin.com/en/shop",
-    "tags": [
-      "craft",
-      "wind-chime",
-      "shopping"
-    ],
+    "tags": ["craft", "wind-chime", "shopping"],
     "sources": [
       "https://www.edo-fuurin.com/en",
       "https://www.edo-fuurin.com/en/shop"
@@ -1514,15 +1088,7 @@
       "lng": 139.7741
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "12:00",
         "to": "23:00"
@@ -1598,14 +1164,8 @@
     "address": "Ueno Onshi Park, Hakamagoshi Plaza, Taito City, Tokyo, Japan",
     "nameLocal": "東京クリスマスアドベント 袴腰広場",
     "website": "https://christmas-advent.jp/tokyo-ueno/",
-    "tags": [
-      "christmas",
-      "market",
-      "illumination"
-    ],
-    "sources": [
-      "https://christmas-advent.jp/tokyo-ueno/"
-    ]
+    "tags": ["christmas", "market", "illumination"],
+    "sources": ["https://christmas-advent.jp/tokyo-ueno/"]
   },
   {
     "id": "ueno-christmas-advent-shinobazu",
@@ -1619,15 +1179,7 @@
       "lng": 139.772
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "15:00",
         "to": "22:00"
@@ -1703,14 +1255,8 @@
     "address": "Ueno Onshi Park, Shinobazu Pond, Taito City, Tokyo, Japan",
     "nameLocal": "東京クリスマスアドベント 不忍池エリア",
     "website": "https://christmas-advent.jp/tokyo-ueno/",
-    "tags": [
-      "christmas",
-      "illumination",
-      "market"
-    ],
-    "sources": [
-      "https://christmas-advent.jp/tokyo-ueno/"
-    ]
+    "tags": ["christmas", "illumination", "market"],
+    "sources": ["https://christmas-advent.jp/tokyo-ueno/"]
   },
   {
     "id": "marunouchi-station-square",
@@ -1724,26 +1270,14 @@
       "lng": 139.76735
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Открытая общественная площадь; доступ не зависит от часов работы магазинов."
     },
     "recommendedDurationMin": 20,
     "address": "Marunouchi Station Square, Chiyoda City, Tokyo, Japan",
     "nameLocal": "丸の内駅前広場",
-    "tags": [
-      "architecture",
-      "photo",
-      "free"
-    ]
+    "tags": ["architecture", "photo", "free"]
   },
   {
     "id": "kitte-garden",
@@ -1757,15 +1291,7 @@
       "lng": 139.76455
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "11:00",
         "to": "23:00"
@@ -1776,14 +1302,8 @@
     "address": "KITTE Marunouchi, 2-7-2 Marunouchi, Chiyoda City, Tokyo, Japan",
     "nameLocal": "KITTEガーデン",
     "website": "https://marunouchi.jp-kitte.jp/gb/information.jsp",
-    "tags": [
-      "free-viewpoint",
-      "rooftop",
-      "photo"
-    ],
-    "sources": [
-      "https://marunouchi.jp-kitte.jp/gb/information.jsp"
-    ]
+    "tags": ["free-viewpoint", "rooftop", "photo"],
+    "sources": ["https://marunouchi.jp-kitte.jp/gb/information.jsp"]
   },
   {
     "id": "marunouchi-street-park",
@@ -1797,15 +1317,7 @@
       "lng": 139.76325
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "11:00",
         "to": "22:00"
@@ -1881,15 +1393,8 @@
     "address": "Marunouchi Naka-dori and Gyoko-dori, Chiyoda City, Tokyo, Japan",
     "nameLocal": "丸の内ストリートパーク",
     "website": "https://marunouchi-streetpark.com/",
-    "tags": [
-      "christmas",
-      "illumination",
-      "market",
-      "photo"
-    ],
-    "sources": [
-      "https://marunouchi-streetpark.com/"
-    ]
+    "tags": ["christmas", "illumination", "market", "photo"],
+    "sources": ["https://marunouchi-streetpark.com/"]
   },
   {
     "id": "ginza-six-garden",
@@ -1903,15 +1408,7 @@
       "lng": 139.76315
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "07:00",
         "to": "23:00"
@@ -1922,14 +1419,8 @@
     "address": "GINZA SIX, 6-10-1 Ginza, Chuo City, Tokyo, Japan",
     "nameLocal": "GINZA SIX ガーデン",
     "website": "https://ginza6.tokyo/hours/",
-    "tags": [
-      "free-viewpoint",
-      "rooftop",
-      "photo"
-    ],
-    "sources": [
-      "https://ginza6.tokyo/hours/"
-    ]
+    "tags": ["free-viewpoint", "rooftop", "photo"],
+    "sources": ["https://ginza6.tokyo/hours/"]
   },
   {
     "id": "tokyo-tower-christmas-market",
@@ -1943,15 +1434,7 @@
       "lng": 139.7452
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "12:00",
         "to": "22:00"
@@ -2027,14 +1510,8 @@
     "address": "Tokyo Tower Main Entrance Plaza, 4-2-8 Shibakoen, Minato City, Tokyo 105-0011, Japan",
     "nameLocal": "東京タワー クリスマスマーケット",
     "website": "https://christmasmarket.jp/202611-tokyotower/",
-    "tags": [
-      "christmas",
-      "market",
-      "illumination"
-    ],
-    "sources": [
-      "https://christmasmarket.jp/202611-tokyotower/"
-    ]
+    "tags": ["christmas", "market", "illumination"],
+    "sources": ["https://christmasmarket.jp/202611-tokyotower/"]
   },
   {
     "id": "tennozu-isle",
@@ -2048,15 +1525,7 @@
       "lng": 139.75
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Открытый район; у отдельных магазинов, галерей и музеев собственные часы работы и условия входа."
     },
@@ -2064,11 +1533,7 @@
     "address": "2 Higashi-Shinagawa, Shinagawa City, Tokyo, Japan",
     "nameLocal": "天王洲アイル",
     "website": "https://www.gotokyo.org/en/spot/10/",
-    "tags": [
-      "art",
-      "waterfront",
-      "photo"
-    ],
+    "tags": ["art", "waterfront", "photo"],
     "sources": [
       "https://www.gotokyo.org/en/spot/10/",
       "https://www.japan.travel/en/japans-local-treasures/shinagawas-art-island/"
@@ -2086,15 +1551,7 @@
       "lng": 139.74855
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Улица находится под открытым небом; часы работы магазинов различаются."
     },
@@ -2102,14 +1559,8 @@
     "address": "2-1 Higashi-Shinagawa, Shinagawa City, Tokyo 140-0002, Japan",
     "nameLocal": "ボンドストリート",
     "website": "https://www.e-tennoz.com/en/areaguidance/bldg_bond.html",
-    "tags": [
-      "street-art",
-      "warehouse",
-      "photo"
-    ],
-    "sources": [
-      "https://www.e-tennoz.com/en/areaguidance/bldg_bond.html"
-    ]
+    "tags": ["street-art", "warehouse", "photo"],
+    "sources": ["https://www.e-tennoz.com/en/areaguidance/bldg_bond.html"]
   },
   {
     "id": "tennozu-boardwalk",
@@ -2123,15 +1574,7 @@
       "lng": 139.7491
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": null,
       "note": "Общественная прогулочная зона под открытым небом; посещение зависит от погоды."
     },
@@ -2139,11 +1582,7 @@
     "address": "Sea Fort Square and canal promenades, Higashi-Shinagawa, Tokyo, Japan",
     "nameLocal": "天王洲運河ボードウォーク",
     "website": "https://www.tokyo-monorail.co.jp/english/guidance/tennouzuairu/index.html",
-    "tags": [
-      "waterfront",
-      "free-viewpoint",
-      "photo"
-    ],
+    "tags": ["waterfront", "free-viewpoint", "photo"],
     "sources": [
       "https://www.tokyo-monorail.co.jp/english/guidance/tennouzuairu/index.html",
       "https://www.e-tennoz.com/en/enjoytennoz/dateplan.html"
@@ -2161,14 +1600,7 @@
       "lng": 139.75065
     },
     "schedule": {
-      "weekdays": [
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "11:00",
         "to": "19:00"
@@ -2179,14 +1611,8 @@
     "address": "TERRADA Harbor One Bldg. 1F, 2-5-5 Higashi-Shinagawa, Shinagawa City, Tokyo 140-0002, Japan",
     "nameLocal": "PIGMENT TOKYO",
     "website": "https://pigment.tokyo/en/pages/about",
-    "tags": [
-      "art",
-      "shopping",
-      "materials"
-    ],
-    "sources": [
-      "https://pigment.tokyo/en/pages/about"
-    ]
+    "tags": ["art", "shopping", "materials"],
+    "sources": ["https://pigment.tokyo/en/pages/about"]
   },
   {
     "id": "terrada-art-complex",
@@ -2208,14 +1634,8 @@
     "address": "1-33-10 and 1-32-8 Higashi-Shinagawa, Shinagawa City, Tokyo, Japan",
     "nameLocal": "寺田アートコンプレックス",
     "website": "https://www.terrada-art-complex.com/exhibition/en.html",
-    "tags": [
-      "art",
-      "gallery",
-      "warehouse"
-    ],
-    "sources": [
-      "https://www.terrada-art-complex.com/exhibition/en.html"
-    ]
+    "tags": ["art", "gallery", "warehouse"],
+    "sources": ["https://www.terrada-art-complex.com/exhibition/en.html"]
   },
   {
     "id": "shibuya-hikarie-sky-lobby",
@@ -2229,15 +1649,7 @@
       "lng": 139.7035
     },
     "schedule": {
-      "weekdays": [
-        "mon",
-        "tue",
-        "wed",
-        "thu",
-        "fri",
-        "sat",
-        "sun"
-      ],
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
       "openingHours": {
         "from": "07:00",
         "to": "24:00"
@@ -2248,17 +1660,13 @@
     "address": "Shibuya Hikarie, 2-21-1 Shibuya, Shibuya City, Tokyo, Japan",
     "nameLocal": "渋谷ヒカリエ 11F スカイロビー",
     "website": "https://www.hikarie.jp/facilities/",
-    "tags": [
-      "free-viewpoint",
-      "night-view",
-      "photo"
-    ],
+    "tags": ["free-viewpoint", "night-view", "photo"],
     "sources": [
       "https://www.hikarie.jp/facilities/",
       "https://nightscape.tokyo/en/shibuya/shibuya-hikarie/"
     ]
   },
-   {
+  {
     "id": "the-tourist-hotel-&-cafe-akihabara",
     "name": "The Tourist Hotel & Cafe Akihabara",
     "category": "hotel",
@@ -2269,17 +1677,17 @@
       "lat": 35.700972758104896,
       "lng": 139.7771112576728
     },
+    "schedule": {
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "openingHours": null
+    },
     "address": "1 Chome-6-6 Taito, Taito City, Tokyo 110-0016, Япония",
     "nameLocal": "ザ・ツーリストホテル&カフェ秋葉原",
     "website": "https://www.tourist-hotel.com/akihabara/",
-    "tags": [
-      "hotel"
-    ],
-    "sources": [
-      "https://www.tourist-hotel.com/akihabara/"
-    ]
+    "tags": ["hotel"],
+    "sources": ["https://www.tourist-hotel.com/akihabara/"]
   },
-   {
+  {
     "id": "haneda-airport",
     "name": "Международный аэропорт Токио (Ханеда)",
     "category": "airport",
@@ -2290,14 +1698,14 @@
       "lat": 35.54908014179503,
       "lng": 139.77831613350492
     },
+    "schedule": {
+      "weekdays": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "openingHours": null
+    },
     "address": "Hanedakuko, Ota City, Tokyo 144-0041, Япония",
     "nameLocal": "羽田空港",
     "website": "https://tokyo-haneda.com/",
-    "tags": [
-      "airport"
-    ],
-    "sources": [
-      "https://tokyo-haneda.com/"
-    ]
+    "tags": ["airport"],
+    "sources": ["https://tokyo-haneda.com/"]
   }
 ]
