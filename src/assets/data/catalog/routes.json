@@ -1,44 +1,15 @@
 [
   {
     "id": "asakusa-kappabashi-ueno-akihabara",
-    "title": "Asakusa → Kappabashi → Ueno → Akihabara",
+    "title": "Фурин → Каппабаси → Асакуса → Уэно",
     "icon": "⛩️",
+    "description": "Начни с магазина Shinohara Maruyoshi Fuurin: здесь можно купить готовый стеклянный колокольчик фурин, мастер-класс не нужен. Затем отправляйся на улицу Каппабаси, пока открыты магазины, после — в Асакусу и Уэно. Две площадки рождественского фестиваля в Уэно можно посетить вечером по желанию. В среду, 2 декабря, Hakamagoshi Plaza работает с 12:00 до 23:00, а зона у пруда Синобадзу — с 15:00 до 22:00. Акихабару оставляем отдельной короткой прогулкой рядом с гостиницей, чтобы не перегружать этот день.",
     "stops": [
       {
-        "placeId": "kaminarimon",
+        "placeId": "shinohara-maruyoshi-fuurin",
         "order": 1,
         "priority": "must",
-        "recommendedDurationMin": 20,
-        "transportToNext": {
-          "type": "walk",
-          "durationMin": 5
-        }
-      },
-      {
-        "placeId": "senso-ji",
-        "order": 2,
-        "priority": "must",
-        "recommendedDurationMin": 60,
-        "transportToNext": {
-          "type": "walk",
-          "durationMin": 5
-        }
-      },
-      {
-        "placeId": "nakamise-dori",
-        "order": 3,
-        "priority": "must",
-        "recommendedDurationMin": 45,
-        "transportToNext": {
-          "type": "walk",
-          "durationMin": 10
-        }
-      },
-      {
-        "placeId": "asakusa-culture-tourist-information-center",
-        "order": 4,
-        "priority": "must",
-        "recommendedDurationMin": 30,
+        "recommendedDurationMin": 25,
         "transportToNext": {
           "type": "walk",
           "durationMin": 15
@@ -46,29 +17,99 @@
       },
       {
         "placeId": "kappabashi",
-        "order": 5,
+        "order": 2,
         "priority": "must",
         "recommendedDurationMin": 75,
         "transportToNext": {
+          "type": "walk",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "kaminarimon",
+        "order": 3,
+        "priority": "must",
+        "recommendedDurationMin": 15,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 2
+        }
+      },
+      {
+        "placeId": "asakusa-culture-tourist-information-center",
+        "order": 4,
+        "priority": "optional",
+        "recommendedDurationMin": 25,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 2
+        }
+      },
+      {
+        "placeId": "nakamise-dori",
+        "order": 5,
+        "priority": "must",
+        "recommendedDurationMin": 35,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 3
+        }
+      },
+      {
+        "placeId": "senso-ji",
+        "order": 6,
+        "priority": "must",
+        "recommendedDurationMin": 50,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 3
+        }
+      },
+      {
+        "placeId": "asakusa-shrine",
+        "order": 7,
+        "priority": "optional",
+        "recommendedDurationMin": 20,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
+      {
+        "placeId": "sumida-park",
+        "order": 8,
+        "priority": "optional",
+        "recommendedDurationMin": 25,
+        "transportToNext": {
           "type": "train",
-          "durationMin": 20
+          "durationMin": 15
         }
       },
       {
         "placeId": "ameyoko",
-        "order": 6,
+        "order": 9,
         "priority": "must",
-        "recommendedDurationMin": 90,
+        "recommendedDurationMin": 50,
         "transportToNext": {
-          "type": "train",
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "ueno-christmas-advent-hakamagoshi",
+        "order": 10,
+        "priority": "optional",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
           "durationMin": 10
         }
       },
       {
-        "placeId": "akihabara-electric-town",
-        "order": 7,
-        "priority": "must",
-        "recommendedDurationMin": 120
+        "placeId": "ueno-christmas-advent-shinobazu",
+        "order": 11,
+        "priority": "optional",
+        "recommendedDurationMin": 45
       }
     ],
     "tags": [
@@ -77,32 +118,33 @@
       "photo",
       "city"
     ],
-    "recommendedStartTime": "10:00",
-    "recommendedEndTime": "20:00",
-    "recommendedDurationMin": 600
+    "recommendedStartTime": "10:30",
+    "recommendedEndTime": "21:30",
+    "recommendedDurationMin": 540
   },
   {
     "id": "fuji-day",
-    "title": "Fuji Day: Chureito → Fujiyoshida → Kawaguchiko",
+    "title": "День у Фудзи: парк Аракураяма → пагода Тюрейто → улица Хон-тё",
     "icon": "🗻",
+    "description": "Поездка зависит от погоды и видимости Фудзи. Главные точки — парк Аракураяма Сэнгэн, пагода Тюрейто и вид на гору с улицы Хон-тё. Озеро Кавагути и парк Оиси — дополнительные остановки: включай их, только если Фудзи хорошо видна и переезды укладываются в день. Переноси этот маршрут на день с наиболее ясным прогнозом.",
     "stops": [
       {
-        "placeId": "chureito-pagoda",
+        "placeId": "arakurayama-sengen-park",
         "order": 1,
         "priority": "must",
-        "recommendedDurationMin": 60,
+        "recommendedDurationMin": 45,
         "transportToNext": {
           "type": "walk",
           "durationMin": 10
         }
       },
       {
-        "placeId": "arakurayama-sengen-park",
+        "placeId": "chureito-pagoda",
         "order": 2,
         "priority": "must",
         "recommendedDurationMin": 45,
         "transportToNext": {
-          "type": "walk",
+          "type": "train",
           "durationMin": 20
         }
       },
@@ -110,7 +152,7 @@
         "placeId": "honcho-street-fujiyoshida",
         "order": 3,
         "priority": "must",
-        "recommendedDurationMin": 60,
+        "recommendedDurationMin": 50,
         "transportToNext": {
           "type": "train",
           "durationMin": 30
@@ -122,8 +164,8 @@
         "priority": "optional",
         "recommendedDurationMin": 60,
         "transportToNext": {
-          "type": "walk",
-          "durationMin": 15
+          "type": "bus",
+          "durationMin": 25
         }
       },
       {
@@ -140,19 +182,30 @@
     ],
     "recommendedStartTime": "06:00",
     "recommendedEndTime": "18:00",
-    "recommendedDurationMin": 720,
+    "recommendedDurationMin": 600,
     "weatherDependent": true
   },
   {
     "id": "kabukicho-shinjuku",
-    "title": "Shinjuku + Kabukicho",
+    "title": "Синдзюку и Кабукитё — вечерняя прогулка",
     "icon": "🌃",
+    "description": "При желании начни с бесплатной смотровой площадки в здании Токийской администрации: расписание и доступность северной или южной площадки меняются в зависимости от даты. Затем прогуляйся по Кабукитё, улице Итибангай и переулкам Голден-Гай. Омоидэ Ёкотё — дополнительная остановка по настроению.",
     "stops": [
       {
-        "placeId": "kabukicho",
+        "placeId": "tokyo-metropolitan-government-building",
         "order": 1,
+        "priority": "optional",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 20
+        }
+      },
+      {
+        "placeId": "kabukicho",
+        "order": 2,
         "priority": "must",
-        "recommendedDurationMin": 90,
+        "recommendedDurationMin": 45,
         "transportToNext": {
           "type": "walk",
           "durationMin": 5
@@ -160,39 +213,29 @@
       },
       {
         "placeId": "kabukicho-ichibangai",
-        "order": 2,
+        "order": 3,
         "priority": "must",
-        "recommendedDurationMin": 30,
+        "recommendedDurationMin": 25,
         "transportToNext": {
           "type": "walk",
-          "durationMin": 10
+          "durationMin": 8
         }
       },
       {
         "placeId": "golden-gai",
-        "order": 3,
+        "order": 4,
         "priority": "must",
         "recommendedDurationMin": 60,
         "transportToNext": {
           "type": "walk",
-          "durationMin": 10
+          "durationMin": 8
         }
       },
       {
         "placeId": "omoide-yokocho",
-        "order": 4,
-        "priority": "optional",
-        "recommendedDurationMin": 45,
-        "transportToNext": {
-          "type": "walk",
-          "durationMin": 25
-        }
-      },
-      {
-        "placeId": "tokyo-metropolitan-government-building",
         "order": 5,
-        "priority": "must",
-        "recommendedDurationMin": 60
+        "priority": "optional",
+        "recommendedDurationMin": 40
       }
     ],
     "tags": [
@@ -200,111 +243,194 @@
       "photo",
       "city"
     ],
-    "recommendedStartTime": "16:30",
+    "recommendedStartTime": "16:00",
     "recommendedEndTime": "23:00",
-    "recommendedDurationMin": 390
+    "recommendedDurationMin": 420
   },
   {
     "id": "ginza-tokyo-tower",
-    "title": "Tsukiji → Ginza → Tokyo Tower",
+    "title": "Акихабара → вокзал Токио → Маруноути → Гиндза → Токийская башня",
     "icon": "🏙️",
+    "description": "От Акихабары до вокзала Токио можно дойти пешком примерно за 25–30 минут или доехать на JR. Обязательная часть маршрута: вокзал Токио, район Маруноути, Гиндза, храм Дзодзёдзи, парк Сиба и внешний осмотр Токийской башни. Сады KITTE и GINZA SIX — бесплатные видовые площадки. Рождественский рынок на площади перед башней можно посетить дополнительно: вход свободный. Платные смотровые площадки в маршрут не входят.",
     "stops": [
       {
-        "placeId": "tsukiji-outer-market",
+        "placeId": "tokyo-station",
         "order": 1,
-        "priority": "optional",
-        "recommendedDurationMin": 90,
+        "priority": "must",
+        "recommendedDurationMin": 60,
         "transportToNext": {
           "type": "walk",
-          "durationMin": 20
+          "durationMin": 3
         }
       },
       {
-        "placeId": "ginza",
+        "placeId": "marunouchi-station-square",
         "order": 2,
         "priority": "must",
-        "recommendedDurationMin": 120,
-        "transportToNext": {
-          "type": "walk",
-          "durationMin": 10
-        }
-      },
-      {
-        "placeId": "ginza-six",
-        "order": 3,
-        "priority": "optional",
-        "recommendedDurationMin": 60,
-        "transportToNext": {
-          "type": "train",
-          "durationMin": 15
-        }
-      },
-      {
-        "placeId": "marunouchi",
-        "order": 4,
-        "priority": "optional",
-        "recommendedDurationMin": 60,
-        "transportToNext": {
-          "type": "train",
-          "durationMin": 20
-        }
-      },
-      {
-        "placeId": "tokyo-tower",
-        "order": 5,
-        "priority": "must",
-        "recommendedDurationMin": 90,
-        "transportToNext": {
-          "type": "walk",
-          "durationMin": 10
-        }
-      },
-      {
-        "placeId": "zojo-ji",
-        "order": 6,
-        "priority": "must",
-        "recommendedDurationMin": 45,
+        "recommendedDurationMin": 20,
         "transportToNext": {
           "type": "walk",
           "durationMin": 5
         }
       },
       {
-        "placeId": "shiba-park",
-        "order": 7,
-        "priority": "must",
-        "recommendedDurationMin": 45
-      }
-    ],
-    "tags": [
-      "shopping",
-      "photo",
-      "city"
-    ],
-    "recommendedStartTime": "09:30",
-    "recommendedEndTime": "20:00",
-    "recommendedDurationMin": 630
-  },
-  {
-    "id": "kamakura-yokohama",
-    "title": "Kamakura → Enoden → Yokohama",
-    "icon": "🌊",
-    "stops": [
+        "placeId": "kitte-garden",
+        "order": 3,
+        "priority": "optional",
+        "recommendedDurationMin": 20,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
       {
-        "placeId": "tsurugaoka-hachimangu",
-        "order": 1,
-        "priority": "must",
-        "recommendedDurationMin": 60,
+        "placeId": "marunouchi-street-park",
+        "order": 4,
+        "priority": "optional",
+        "recommendedDurationMin": 45,
         "transportToNext": {
           "type": "walk",
           "durationMin": 10
         }
       },
       {
+        "placeId": "marunouchi",
+        "order": 5,
+        "priority": "must",
+        "recommendedDurationMin": 25,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "ginza",
+        "order": 6,
+        "priority": "must",
+        "recommendedDurationMin": 90,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "ginza-six",
+        "order": 7,
+        "priority": "optional",
+        "recommendedDurationMin": 40,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 2
+        }
+      },
+      {
+        "placeId": "ginza-six-garden",
+        "order": 8,
+        "priority": "optional",
+        "recommendedDurationMin": 20,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 20
+        }
+      },
+      {
+        "placeId": "atago-shrine",
+        "order": 9,
+        "priority": "optional",
+        "recommendedDurationMin": 25,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "zojo-ji",
+        "order": 10,
+        "priority": "must",
+        "recommendedDurationMin": 40,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 7
+        }
+      },
+      {
+        "placeId": "shiba-park",
+        "order": 11,
+        "priority": "must",
+        "recommendedDurationMin": 25,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "tokyo-tower",
+        "order": 12,
+        "priority": "must",
+        "recommendedDurationMin": 30,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 2
+        }
+      },
+      {
+        "placeId": "tokyo-tower-christmas-market",
+        "order": 13,
+        "priority": "optional",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
+      {
+        "placeId": "tokyo-tower-7-eleven",
+        "order": 14,
+        "priority": "optional",
+        "recommendedDurationMin": 15,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "tokyo-tower-stairway",
+        "order": 15,
+        "priority": "optional",
+        "recommendedDurationMin": 10
+      }
+    ],
+    "tags": [
+      "shopping",
+      "photo",
+      "city",
+      "night"
+    ],
+    "recommendedStartTime": "10:00",
+    "recommendedEndTime": "21:30",
+    "recommendedDurationMin": 600
+  },
+  {
+    "id": "kamakura-yokohama",
+    "title": "Камакура — основной маршрут на день",
+    "icon": "🌊",
+    "description": "Основная часть дня посвящена Камакуре: храм Цуругаока Хатимангу и торговая улица Комати-дори, затем район Хасэ с храмом Хасэдэра и Большим Буддой, после — побережье Ситиригахама и линия Энодэн. Инамурагасаки можно добавить по желанию. Не стоит обязательно включать Йокогаму в этот же маршрут.",
+    "stops": [
+      {
+        "placeId": "tsurugaoka-hachimangu",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 50,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
         "placeId": "komachi-dori",
         "order": 2,
         "priority": "must",
-        "recommendedDurationMin": 90,
+        "recommendedDurationMin": 60,
         "transportToNext": {
           "type": "train",
           "durationMin": 20
@@ -314,10 +440,10 @@
         "placeId": "hasedera",
         "order": 3,
         "priority": "must",
-        "recommendedDurationMin": 90,
+        "recommendedDurationMin": 60,
         "transportToNext": {
           "type": "walk",
-          "durationMin": 15
+          "durationMin": 10
         }
       },
       {
@@ -327,7 +453,7 @@
         "recommendedDurationMin": 45,
         "transportToNext": {
           "type": "train",
-          "durationMin": 20
+          "durationMin": 15
         }
       },
       {
@@ -336,25 +462,47 @@
         "priority": "must",
         "recommendedDurationMin": 45,
         "transportToNext": {
-          "type": "train",
-          "durationMin": 60
-        }
-      },
-      {
-        "placeId": "yokohama-chinatown",
-        "order": 6,
-        "priority": "must",
-        "recommendedDurationMin": 90,
-        "transportToNext": {
           "type": "walk",
           "durationMin": 15
         }
       },
       {
-        "placeId": "yamashita-park",
-        "order": 7,
+        "placeId": "inamuragasaki",
+        "order": 6,
         "priority": "optional",
-        "recommendedDurationMin": 45,
+        "recommendedDurationMin": 30
+      }
+    ],
+    "tags": [
+      "day-trip",
+      "nature",
+      "photo"
+    ],
+    "recommendedStartTime": "08:00",
+    "recommendedEndTime": "17:00",
+    "recommendedDurationMin": 540
+  },
+  {
+    "id": "yokohama-evening",
+    "title": "Йокогама — необязательное продолжение дня",
+    "icon": "🌃",
+    "description": "Добавляй Йокогаму после Камакуры, только если останутся силы и время. Китайский квартал, парк Ямасита, Красные кирпичные склады и район Минато Мирай удобно объединить в прогулку вдоль набережной. Платные смотровые площадки и платный рождественский рынок в маршрут не включены.",
+    "stops": [
+      {
+        "placeId": "yokohama-chinatown",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 12
+        }
+      },
+      {
+        "placeId": "yamashita-park",
+        "order": 2,
+        "priority": "optional",
+        "recommendedDurationMin": 30,
         "transportToNext": {
           "type": "walk",
           "durationMin": 15
@@ -362,81 +510,93 @@
       },
       {
         "placeId": "red-brick-warehouse",
-        "order": 8,
+        "order": 3,
         "priority": "optional",
-        "recommendedDurationMin": 60,
+        "recommendedDurationMin": 45,
         "transportToNext": {
           "type": "walk",
-          "durationMin": 20
+          "durationMin": 2
         }
       },
       {
         "placeId": "minato-mirai",
-        "order": 9,
+        "order": 4,
         "priority": "optional",
-        "recommendedDurationMin": 90
+        "recommendedDurationMin": 45
       }
     ],
     "tags": [
-      "day-trip",
-      "nature",
       "photo",
-      "city"
+      "city",
+      "night",
+      "day-trip"
     ],
-    "recommendedStartTime": "08:00",
+    "recommendedStartTime": "17:00",
     "recommendedEndTime": "22:00",
-    "recommendedDurationMin": 840
+    "recommendedDurationMin": 300
   },
   {
-    "id": "oi-gotokuji-shibuya",
-    "title": "Oi Flea Market → Gotokuji → Shibuya",
+    "id": "vintage-flea-market",
+    "title": "Блошиный рынок Oi → остров Тэннодзу",
     "icon": "🛍️",
+    "description": "Блошиный рынок Oi — дополнительное мероприятие, привязанное к конкретным датам; в календаре указаны 5 и 6 декабря 2026 года, 08:45–14:15. После рынка удобно доехать на монорельсе Токио одну остановку до острова Тэннодзу. Прогуляйся по BOND Street и вдоль канала. PIGMENT TOKYO — магазин художественных материалов, а не винтажных постеров или гравюр. Перед посещением галерей TERRADA проверь расписание каждой галереи: по воскресеньям и понедельникам многие из них закрыты.",
     "stops": [
       {
         "placeId": "oi-flea-market",
         "order": 1,
-        "priority": "must",
+        "priority": "optional",
         "recommendedDurationMin": 150,
         "transportToNext": {
           "type": "train",
-          "durationMin": 45
+          "durationMin": 5,
+          "note": "Tokyo Monorail: Oi Keibajo-mae to Tennozu Isle, one stop."
         }
       },
       {
-        "placeId": "gotokuji",
+        "placeId": "tennozu-isle",
         "order": 2,
         "priority": "must",
-        "recommendedDurationMin": 90,
-        "transportToNext": {
-          "type": "train",
-          "durationMin": 45
-        }
-      },
-      {
-        "placeId": "shibuya-crossing",
-        "order": 3,
-        "priority": "must",
-        "recommendedDurationMin": 30,
+        "recommendedDurationMin": 20,
         "transportToNext": {
           "type": "walk",
           "durationMin": 5
         }
       },
       {
-        "placeId": "hachiko",
-        "order": 4,
+        "placeId": "tennozu-bond-street",
+        "order": 3,
         "priority": "must",
-        "recommendedDurationMin": 15,
+        "recommendedDurationMin": 40,
         "transportToNext": {
           "type": "walk",
-          "durationMin": 10
+          "durationMin": 8
         }
       },
       {
-        "placeId": "shibuya-sky",
+        "placeId": "pigment-tokyo",
+        "order": 4,
+        "priority": "optional",
+        "recommendedDurationMin": 35,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
+      {
+        "placeId": "tennozu-boardwalk",
         "order": 5,
-        "priority": "must",
-        "recommendedDurationMin": 90
+        "priority": "optional",
+        "recommendedDurationMin": 35,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
+      {
+        "placeId": "terrada-art-complex",
+        "order": 6,
+        "priority": "optional",
+        "recommendedDurationMin": 45
       }
     ],
     "tags": [
@@ -445,74 +605,24 @@
       "photo",
       "city"
     ],
-    "recommendedStartTime": "08:00",
-    "recommendedEndTime": "22:00",
-    "recommendedDurationMin": 840
+    "recommendedStartTime": "08:45",
+    "recommendedEndTime": "18:00",
+    "recommendedDurationMin": 540
   },
   {
-    "id": "meiji-harajuku-omotesando",
-    "title": "Meiji Jingu → Harajuku → Omotesando",
-    "icon": "🛍️",
+    "id": "oi-gotokuji-shibuya",
+    "title": "Готокудзи → Сибуя",
+    "icon": "🐈",
+    "description": "Начни с храма Готокудзи, поскольку сувенирная лавка закрывается в 15:00. Затем отправляйся в Сибую: перекрёсток Сибуя, памятник Хатико и бесплатная смотровая зона Sky Lobby в здании Hikarie. Платная площадка SHIBUYA SKY исключена. Это более короткий маршрут; при планировании полного дня на западе Токио его можно объединить с прогулкой по Мэйдзи и Харадзюку.",
     "stops": [
       {
-        "placeId": "meiji-jingu",
+        "placeId": "gotokuji",
         "order": 1,
         "priority": "must",
-        "recommendedDurationMin": 90,
+        "recommendedDurationMin": 75,
         "transportToNext": {
-          "type": "walk",
-          "durationMin": 15
-        }
-      },
-      {
-        "placeId": "takeshita-street",
-        "order": 2,
-        "priority": "must",
-        "recommendedDurationMin": 90,
-        "transportToNext": {
-          "type": "walk",
-          "durationMin": 20
-        }
-      },
-      {
-        "placeId": "cat-street",
-        "order": 3,
-        "priority": "optional",
-        "recommendedDurationMin": 60,
-        "transportToNext": {
-          "type": "walk",
-          "durationMin": 10
-        }
-      },
-      {
-        "placeId": "omotesando",
-        "order": 4,
-        "priority": "must",
-        "recommendedDurationMin": 90
-      }
-    ],
-    "tags": [
-      "culture",
-      "shopping",
-      "city"
-    ],
-    "recommendedStartTime": "10:00",
-    "recommendedEndTime": "17:00",
-    "recommendedDurationMin": 420
-  },
-  {
-    "id": "shibuya",
-    "title": "Shibuya",
-    "icon": "🏙️",
-    "stops": [
-      {
-        "placeId": "hachiko",
-        "order": 1,
-        "priority": "must",
-        "recommendedDurationMin": 15,
-        "transportToNext": {
-          "type": "walk",
-          "durationMin": 5
+          "type": "train",
+          "durationMin": 25
         }
       },
       {
@@ -522,44 +632,199 @@
         "recommendedDurationMin": 30,
         "transportToNext": {
           "type": "walk",
-          "durationMin": 10
+          "durationMin": 3
         }
       },
       {
-        "placeId": "shibuya-sky",
+        "placeId": "hachiko",
         "order": 3,
         "priority": "must",
-        "recommendedDurationMin": 90,
-        "transportToNext": {
-          "type": "walk",
-          "durationMin": 10
-        }
-      },
-      {
-        "placeId": "center-gai",
-        "order": 4,
-        "priority": "optional",
-        "recommendedDurationMin": 60,
-        "transportToNext": {
-          "type": "walk",
-          "durationMin": 10
-        }
-      },
-      {
-        "placeId": "shibuya-parco",
-        "order": 5,
-        "priority": "optional",
-        "recommendedDurationMin": 60,
+        "recommendedDurationMin": 15,
         "transportToNext": {
           "type": "walk",
           "durationMin": 5
         }
       },
       {
-        "placeId": "nintendo-tokyo",
+        "placeId": "shibuya-hikarie-sky-lobby",
+        "order": 4,
+        "priority": "optional",
+        "recommendedDurationMin": 20,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
+      {
+        "placeId": "center-gai",
+        "order": 5,
+        "priority": "optional",
+        "recommendedDurationMin": 40,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
+      {
+        "placeId": "shibuya-parco",
         "order": 6,
         "priority": "optional",
         "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 2
+        }
+      },
+      {
+        "placeId": "nintendo-tokyo",
+        "order": 7,
+        "priority": "optional",
+        "recommendedDurationMin": 30,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 3
+        }
+      },
+      {
+        "placeId": "loft-shibuya",
+        "order": 8,
+        "priority": "optional",
+        "recommendedDurationMin": 30,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "tower-records-shibuya",
+        "order": 9,
+        "priority": "optional",
+        "recommendedDurationMin": 30
+      }
+    ],
+    "tags": [
+      "shopping",
+      "photo",
+      "night",
+      "city"
+    ],
+    "recommendedStartTime": "09:00",
+    "recommendedEndTime": "21:00",
+    "recommendedDurationMin": 540
+  },
+  {
+    "id": "meiji-harajuku-omotesando",
+    "title": "Мэйдзи Дзингу → Харадзюку → Омотэсандо",
+    "icon": "⛩️",
+    "description": "Начни с храма Мэйдзи Дзингу: в декабре территория закрывается рано, ориентировочно в 16:00. Затем пройди по улице Такэсита, при желании сверни на Cat Street и продолжи прогулку по Омотэсандо. Этот маршрут можно объединить с прогулкой по Сибуе.",
+    "stops": [
+      {
+        "placeId": "meiji-jingu",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "takeshita-street",
+        "order": 2,
+        "priority": "must",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "cat-street",
+        "order": 3,
+        "priority": "optional",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
+      {
+        "placeId": "omotesando",
+        "order": 4,
+        "priority": "must",
+        "recommendedDurationMin": 60
+      }
+    ],
+    "tags": [
+      "culture",
+      "shopping",
+      "city"
+    ],
+    "recommendedStartTime": "09:30",
+    "recommendedEndTime": "17:30",
+    "recommendedDurationMin": 420
+  },
+  {
+    "id": "shibuya",
+    "title": "Сибуя — короткая вечерняя прогулка",
+    "icon": "🏙️",
+    "description": "Самостоятельный короткий маршрут по Сибуе. В него входит бесплатная смотровая зона Sky Lobby на 11-м этаже здания Hikarie — альтернатива платной площадке SHIBUYA SKY.",
+    "stops": [
+      {
+        "placeId": "hachiko",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 15,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 3
+        }
+      },
+      {
+        "placeId": "shibuya-crossing",
+        "order": 2,
+        "priority": "must",
+        "recommendedDurationMin": 30,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "shibuya-hikarie-sky-lobby",
+        "order": 3,
+        "priority": "optional",
+        "recommendedDurationMin": 20,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
+      {
+        "placeId": "center-gai",
+        "order": 4,
+        "priority": "optional",
+        "recommendedDurationMin": 40,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
+      {
+        "placeId": "shibuya-parco",
+        "order": 5,
+        "priority": "optional",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 2
+        }
+      },
+      {
+        "placeId": "nintendo-tokyo",
+        "order": 6,
+        "priority": "optional",
+        "recommendedDurationMin": 30,
         "transportToNext": {
           "type": "walk",
           "durationMin": 5
@@ -569,7 +834,7 @@
         "placeId": "tower-records-shibuya",
         "order": 7,
         "priority": "optional",
-        "recommendedDurationMin": 60
+        "recommendedDurationMin": 30
       }
     ],
     "tags": [
@@ -583,46 +848,146 @@
     "recommendedDurationMin": 360
   },
   {
-    "id": "vintage-flea-market",
-    "title": "Vintage & Flea Market",
-    "icon": "🛒",
+    "id": "akihabara-evening",
+    "title": "Акихабара — короткая прогулка рядом с гостиницей",
+    "icon": "🎮",
+    "description": "В вечер прилёта 1 декабря ограничься короткой прогулкой по району рядом с гостиницей: после заселения большинство магазинов уже будет закрыто. Radio Kaikan оставь на другой вечер, если захочешь отдельно пройтись по магазинам.",
     "stops": [
       {
-        "placeId": "oi-flea-market",
+        "placeId": "akihabara-electric-town",
         "order": 1,
         "priority": "must",
-        "recommendedDurationMin": 150,
+        "recommendedDurationMin": 40,
         "transportToNext": {
-          "type": "train",
-          "durationMin": 45
+          "type": "walk",
+          "durationMin": 5
         }
       },
       {
-        "placeId": "gotokuji",
+        "placeId": "radio-kaikan",
         "order": 2,
         "priority": "optional",
-        "recommendedDurationMin": 90
-      },
-      {
-        "placeId": "shibuya",
-        "order": 3,
-        "priority": "optional",
-        "recommendedDurationMin": 180
+        "recommendedDurationMin": 30
       }
     ],
     "tags": [
-      "vintage",
-      "shopping"
+      "shopping",
+      "night",
+      "city"
     ],
-    "recommendedStartTime": "08:00",
-    "recommendedEndTime": "18:00",
-    "recommendedDurationMin": 600
+    "recommendedStartTime": "22:00",
+    "recommendedEndTime": "23:00",
+    "recommendedDurationMin": 60
+  },
+  {
+    "id": "gotokuji-west-tokyo",
+    "title": "Готокудзи → Мэйдзи Дзингу → Харадзюку → Сибуя",
+    "icon": "🐈",
+    "description": "Полноценный день на западе Токио. Сначала посети Готокудзи, чтобы успеть в сувенирную лавку до 15:00, затем отправляйся в Мэйдзи Дзингу до закрытия территории в декабре. После — Харадзюку, Омотэсандо и завершение дня у перекрёстка Сибуя. Если день окажется насыщенным, исключи Cat Street и другие дополнительные остановки.",
+    "stops": [
+      {
+        "placeId": "gotokuji",
+        "order": 1,
+        "priority": "must",
+        "recommendedDurationMin": 75,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 30
+        }
+      },
+      {
+        "placeId": "meiji-jingu",
+        "order": 2,
+        "priority": "must",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "takeshita-street",
+        "order": 3,
+        "priority": "must",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 15
+        }
+      },
+      {
+        "placeId": "cat-street",
+        "order": 4,
+        "priority": "optional",
+        "recommendedDurationMin": 45,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
+      {
+        "placeId": "omotesando",
+        "order": 5,
+        "priority": "must",
+        "recommendedDurationMin": 60,
+        "transportToNext": {
+          "type": "train",
+          "durationMin": 10
+        }
+      },
+      {
+        "placeId": "shibuya-crossing",
+        "order": 6,
+        "priority": "must",
+        "recommendedDurationMin": 30,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 3
+        }
+      },
+      {
+        "placeId": "hachiko",
+        "order": 7,
+        "priority": "must",
+        "recommendedDurationMin": 15,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 5
+        }
+      },
+      {
+        "placeId": "shibuya-hikarie-sky-lobby",
+        "order": 8,
+        "priority": "optional",
+        "recommendedDurationMin": 20,
+        "transportToNext": {
+          "type": "walk",
+          "durationMin": 8
+        }
+      },
+      {
+        "placeId": "center-gai",
+        "order": 9,
+        "priority": "optional",
+        "recommendedDurationMin": 40
+      }
+    ],
+    "tags": [
+      "culture",
+      "shopping",
+      "photo",
+      "city",
+      "night"
+    ],
+    "recommendedStartTime": "09:00",
+    "recommendedEndTime": "21:00",
+    "recommendedDurationMin": 660
   },
   {
     "id": "tokyo-food-day",
-    "title": "Tokyo Food Day",
+    "title": "Гастрономическая прогулка по Токио",
     "icon": "🥢",
-    "description": "Discovery route for food options; restaurant data is intentionally postponed.",
+    "description": "Заготовка для будущего маршрута по местной кухне. Список ресторанов и гастрономических остановок пока отложен; маршрут не содержит подтверждённых заведений.",
     "stops": [],
     "tags": [
       "food"
