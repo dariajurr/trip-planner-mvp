@@ -851,22 +851,21 @@
     "id": "akihabara-evening",
     "title": "Акихабара — короткая прогулка рядом с гостиницей",
     "icon": "🎮",
-    "description": "В вечер прилёта 1 декабря ограничься короткой прогулкой по району рядом с гостиницей: после заселения большинство магазинов уже будет закрыто. Radio Kaikan оставь на другой вечер, если захочешь отдельно пройтись по магазинам.",
+    "description": "Мы поздно прилетим и доберемся до гостишки. В планах только еда, кофе и сон😴",
     "stops": [
       {
-        "placeId": "akihabara-electric-town",
+        "placeId": "haneda-Aeirport",
         "order": 1,
         "priority": "must",
-        "recommendedDurationMin": 40,
         "transportToNext": {
-          "type": "walk",
-          "durationMin": 5
+          "type": "train",
+          "durationMin": 50
         }
       },
       {
-        "placeId": "radio-kaikan",
+        "placeId": "The-Tourist-Hotel-&-Cafe-Akihabara",
         "order": 2,
-        "priority": "optional",
+        "priority": "must",
         "recommendedDurationMin": 30
       }
     ],
@@ -874,10 +873,7 @@
       "shopping",
       "night",
       "city"
-    ],
-    "recommendedStartTime": "22:00",
-    "recommendedEndTime": "23:00",
-    "recommendedDurationMin": 60
+    ]
   },
   {
     "id": "gotokuji-west-tokyo",
