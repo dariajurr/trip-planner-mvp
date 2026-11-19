@@ -2257,5 +2257,47 @@
       "https://www.hikarie.jp/facilities/",
       "https://nightscape.tokyo/en/shibuya/shibuya-hikarie/"
     ]
+  },
+   {
+    "id": "the-tourist-hotel-&-cafe-akihabara",
+    "name": "The Tourist Hotel & Cafe Akihabara",
+    "category": "hotel",
+    "priority": "must",
+    "areaId": "akihabara",
+    "description": "Наша гостишка с футонами на 7 ночей🤩 Время заезда: 15:00. Время выезда: 10:00.",
+    "coordinates": {
+      "lat": 35.700972758104896,
+      "lng": 139.7771112576728
+    },
+    "address": "1 Chome-6-6 Taito, Taito City, Tokyo 110-0016, Япония",
+    "nameLocal": "ザ・ツーリストホテル&カフェ秋葉原",
+    "website": "https://www.tourist-hotel.com/akihabara/",
+    "tags": [
+      "hotel"
+    ],
+    "sources": [
+      "https://www.tourist-hotel.com/akihabara/"
+    ]
+  },
+   {
+    "id": "haneda-airport",
+    "name": "Международный аэропорт Токио (Ханеда)",
+    "category": "airport",
+    "priority": "must",
+    "areaId": "hanedakuko",
+    "description": "Аэропорт нашего прилета и вылета из Токио",
+    "coordinates": {
+      "lat": 35.54908014179503,
+      "lng": 139.77831613350492
+    },
+    "address": "Hanedakuko, Ota City, Tokyo 144-0041, Япония",
+    "nameLocal": "羽田空港",
+    "website": "https://tokyo-haneda.com/",
+    "tags": [
+      "airport"
+    ],
+    "sources": [
+      "https://tokyo-haneda.com/"
+    ]
   }
 ]

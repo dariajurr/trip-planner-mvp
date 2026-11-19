@@ -18,6 +18,8 @@ export type PlaceCategory =
   | 'beach'
   | 'restaurant'
   | 'event'
+  | 'hotel'
+  | 'airport'
   | 'other';
 
 /** City is derived through areaId -> Area.cityId, it is not stored on the place. */

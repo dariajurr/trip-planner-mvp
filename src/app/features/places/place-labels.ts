@@ -14,6 +14,8 @@ export const CATEGORY_LABELS: Record<PlaceCategory, { icon: string; label: strin
   beach: { icon: '🏖️', label: 'Пляж' },
   restaurant: { icon: '🍜', label: 'Еда' },
   event: { icon: '🎟️', label: 'Событие' },
+  hotel: { icon: '🏨', label: 'Гостишка' },
+  airport: { icon: '✈️', label: 'Аэропорт' },
   other: { icon: '📌', label: 'Другое' },
 };
 

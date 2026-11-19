@@ -851,22 +851,21 @@
     "id": "akihabara-evening",
     "title": "Акихабара — короткая прогулка рядом с гостиницей",
     "icon": "🎮",
-    "description": "В вечер прилёта 1 декабря ограничься короткой прогулкой по району рядом с гостиницей: после заселения большинство магазинов уже будет закрыто. Radio Kaikan оставь на другой вечер, если захочешь отдельно пройтись по магазинам.",
+    "description": "Мы поздно прилетим и доберемся до гостишки. В планах только еда, кофе и сон😴",
     "stops": [
       {
-        "placeId": "akihabara-electric-town",
+        "placeId": "haneda-airport",
         "order": 1,
         "priority": "must",
-        "recommendedDurationMin": 40,
         "transportToNext": {
-          "type": "walk",
-          "durationMin": 5
+          "type": "train",
+          "durationMin": 50
         }
       },
       {
-        "placeId": "radio-kaikan",
+        "placeId": "the-tourist-hotel-&-cafe-akihabara",
         "order": 2,
-        "priority": "optional",
+        "priority": "must",
         "recommendedDurationMin": 30
       }
     ],
@@ -874,10 +873,7 @@
       "shopping",
       "night",
       "city"
-    ],
-    "recommendedStartTime": "22:00",
-    "recommendedEndTime": "23:00",
-    "recommendedDurationMin": 60
+    ]
   },
   {
     "id": "gotokuji-west-tokyo",
@@ -981,19 +977,6 @@
     ],
     "recommendedStartTime": "09:00",
     "recommendedEndTime": "21:00",
-    "recommendedDurationMin": 660
-  },
-  {
-    "id": "tokyo-food-day",
-    "title": "Гастрономическая прогулка по Токио",
-    "icon": "🥢",
-    "description": "Заготовка для будущего маршрута по местной кухне. Список ресторанов и гастрономических остановок пока отложен; маршрут не содержит подтверждённых заведений.",
-    "stops": [],
-    "tags": [
-      "food"
-    ],
-    "recommendedStartTime": "11:00",
-    "recommendedEndTime": "22:00",
     "recommendedDurationMin": 660
   }
 ]
