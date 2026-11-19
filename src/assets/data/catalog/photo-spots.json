@@ -1,7 +1,7 @@
 [
   {
     "id": "senso-ji-kaminarimon",
-    "title": "Kaminarimon",
+    "title": "Ворота Каминаримон",
     "areaId": "asakusa",
     "coordinates": {
       "lat": 35.711,
@@ -20,11 +20,12 @@
       "temple",
       "gate",
       "photo"
-    ]
+    ],
+    "description": "Сними большие ворота и красный фонарь со стороны подхода к храму. Утром обычно проще сделать кадр без плотного потока посетителей."
   },
   {
     "id": "senso-ji-main-hall",
-    "title": "Senso-ji Main Hall",
+    "title": "Главный зал Сэнсо-дзи",
     "areaId": "asakusa",
     "coordinates": {
       "lat": 35.7148,
@@ -42,11 +43,12 @@
     "tags": [
       "temple",
       "photo"
-    ]
+    ],
+    "description": "Фотография главного зала храма с площади перед ним; можно включить в кадр архитектурные детали и пагоду."
   },
   {
     "id": "asakusa-skytree-view",
-    "title": "Asakusa + Tokyo Skytree view",
+    "title": "Асакуса и Tokyo Skytree",
     "areaId": "asakusa",
     "coordinates": {
       "lat": 35.7146,
@@ -65,11 +67,12 @@
       "skytree",
       "river",
       "photo"
-    ]
+    ],
+    "description": "Ищи ракурс, в котором городской пейзаж Асакусы сочетается с башней Tokyo Skytree. Подходящая точка — со стороны реки или бесплатной террасы туристического центра."
   },
   {
     "id": "chureito-fuji",
-    "title": "Chureito + Fuji",
+    "title": "Пагода Тюрейто и Фудзи",
     "areaId": "fujiyoshida",
     "coordinates": {
       "lat": 35.5008,
@@ -83,18 +86,19 @@
       "fuji-day"
     ],
     "bestTime": "morning",
-    "weatherConditions": "Clear visibility strongly preferred.",
+    "weatherConditions": "Желательна ясная погода и хорошая видимость.",
     "difficulty": "medium",
     "estimatedDetourMin": 0,
     "tags": [
       "fuji",
       "pagoda",
       "iconic"
-    ]
+    ],
+    "description": "Классический вид на пагоду и гору Фудзи. Для удачного кадра важна хорошая видимость; в тумане и плотной облачности гора может быть скрыта."
   },
   {
     "id": "honcho-street-fuji",
-    "title": "Fujiyoshida Honcho Street + Fuji",
+    "title": "Улица Хон-тё и Фудзи",
     "areaId": "fujiyoshida",
     "coordinates": {
       "lat": 35.4865,
@@ -107,17 +111,18 @@
       "fuji-day"
     ],
     "bestTime": "morning",
-    "weatherConditions": "Clear visibility preferred.",
+    "weatherConditions": "Для хорошего кадра желательна ясная погода и хорошая видимость.",
     "difficulty": "easy",
     "estimatedDetourMin": 0,
     "tags": [
       "fuji",
       "street"
-    ]
+    ],
+    "description": "Городская улица с видом на Фудзи между зданиями. Фотографируй с тротуара, не выходи на проезжую часть и не мешай местным жителям."
   },
   {
     "id": "lake-kawaguchiko-fuji",
-    "title": "Lake Kawaguchiko + Fuji",
+    "title": "Озеро Кавагути и Фудзи",
     "areaId": "fujiyoshida",
     "coordinates": {
       "lat": 35.517,
@@ -130,17 +135,18 @@
       "fuji-day"
     ],
     "bestTime": "day",
-    "weatherConditions": "Clear visibility preferred.",
+    "weatherConditions": "Для хорошего кадра желательна ясная погода и хорошая видимость.",
     "difficulty": "easy",
     "estimatedDetourMin": 15,
     "tags": [
       "fuji",
       "lake"
-    ]
+    ],
+    "description": "Поищи отражение или открытый вид на Фудзи с берега озера. Кадр особенно зависит от облачности и видимости вершины."
   },
   {
     "id": "tokyo-tower-7-eleven",
-    "title": "Tokyo Tower + 7-Eleven",
+    "title": "Токийская башня и 7-Eleven",
     "areaId": "minato",
     "coordinates": {
       "lat": 35.6519,
@@ -159,13 +165,14 @@
     "tags": [
       "tokyo-tower",
       "night"
-    ]
+    ],
+    "description": "Композиция с вывеской магазина на переднем плане и Токийской башней на заднем. Не блокируй вход, не мешай покупателям и прохожим."
   },
   {
     "id": "tokyo-tower-stairway",
-    "title": "Tokyo Tower stairway photo",
+    "title": "Лестница возле Токийской башни",
     "areaId": "minato",
-    "description": "Public/legal approach only; do not enter restricted parking areas. Confirm current access rules.",
+    "description": "Фототочка с лестницей возле подземной парковки Токийской башни. Подходить можно только с общедоступной территории; нельзя заходить на парковку или в закрытые зоны. Перед посещением проверь правила доступа.",
     "coordinates": {
       "lat": 35.658,
       "lng": 139.7445
@@ -188,7 +195,7 @@
   },
   {
     "id": "zojo-ji-tokyo-tower",
-    "title": "Zojo-ji + Tokyo Tower",
+    "title": "Храм Дзодзёдзи и Токийская башня",
     "areaId": "minato",
     "coordinates": {
       "lat": 35.6575,
@@ -207,11 +214,12 @@
     "tags": [
       "tokyo-tower",
       "temple"
-    ]
+    ],
+    "description": "Сочетание традиционной архитектуры храма и современной башни на заднем плане. Хорошо подходит для съёмки в мягком вечернем свете."
   },
   {
     "id": "hasedera-kamakura",
-    "title": "Hasedera",
+    "title": "Храм Хасэдэра",
     "areaId": "kamakura",
     "coordinates": {
       "lat": 35.3126,
@@ -229,11 +237,12 @@
     "tags": [
       "kamakura",
       "temple"
-    ]
+    ],
+    "description": "Сними храмовую территорию, статуи и садовые виды. На осмотр стоит заложить время, чтобы не ограничиваться одной фотографией у входа."
   },
   {
     "id": "shichirigahama-fuji",
-    "title": "Shichirigahama + Fuji",
+    "title": "Ситиригахама и Фудзи",
     "areaId": "kamakura",
     "coordinates": {
       "lat": 35.3067,
@@ -246,18 +255,19 @@
       "kamakura-yokohama"
     ],
     "bestTime": "golden-hour",
-    "weatherConditions": "Clear visibility preferred.",
+    "weatherConditions": "Для хорошего кадра желательна ясная погода и хорошая видимость.",
     "difficulty": "easy",
     "estimatedDetourMin": 0,
     "tags": [
       "kamakura",
       "ocean",
       "fuji"
-    ]
+    ],
+    "description": "Побережье, линия Энодэн и, при ясной погоде, Фудзи на горизонте. Лучше планировать на закат, но видимость горы важнее времени суток."
   },
   {
     "id": "kabukicho-neon",
-    "title": "Kabukicho neon",
+    "title": "Неоновые вывески Кабукитё",
     "areaId": "kabukicho",
     "coordinates": {
       "lat": 35.694,
@@ -277,11 +287,12 @@
       "kabukicho",
       "neon",
       "night"
-    ]
+    ],
+    "description": "Вечерний кадр с неоновыми вывесками и городской атмосферой Кабукитё. Снимай с общественных тротуаров и не фотографируй посетителей крупным планом без согласия."
   },
   {
     "id": "golden-gai-lanterns",
-    "title": "Golden Gai lantern streets",
+    "title": "Фонарики и переулки Голден-Гай",
     "areaId": "kabukicho",
     "coordinates": {
       "lat": 35.6945,
@@ -300,11 +311,12 @@
       "golden-gai",
       "lanterns",
       "night"
-    ]
+    ],
+    "description": "Узкие переулки с вывесками, фонарями и небольшими барами. Учитывай частный характер заведений и не заходи внутрь ради фотографии без разрешения."
   },
   {
     "id": "shibuya-crossing",
-    "title": "Shibuya Crossing",
+    "title": "Перекрёсток Сибуя",
     "areaId": "shibuya",
     "coordinates": {
       "lat": 35.6595,
@@ -323,22 +335,25 @@
     "tags": [
       "shibuya",
       "crossing"
-    ]
+    ],
+    "description": "Сними пешеходный поток с уровня улицы или с разрешённой обзорной точки. Вечером неон и движение делают сцену особенно выразительной."
   },
   {
     "id": "shibuya-night",
-    "title": "Shibuya night cityscape",
+    "title": "Перекрёсток Сибуя со стороны Hikarie",
     "areaId": "shibuya",
     "coordinates": {
       "lat": 35.658,
       "lng": 139.7016
     },
     "placeIds": [
-      "shibuya-sky"
+      "shibuya-crossing",
+      "shibuya-hikarie-sky-lobby"
     ],
     "routeIds": [
       "shibuya",
-      "oi-gotokuji-shibuya"
+      "oi-gotokuji-shibuya",
+      "gotokuji-west-tokyo"
     ],
     "bestTime": "night",
     "difficulty": "easy",
@@ -347,11 +362,12 @@
       "shibuya",
       "night",
       "skyline"
-    ]
+    ],
+    "description": "Бесплатный вид на перекрёсток Сибуя из Sky Lobby на 11-м этаже. Ракурс находится ниже и дальше от перекрёстка, чем с платной крыши SHIBUYA SKY."
   },
   {
     "id": "meiji-jingu-torii",
-    "title": "Meiji Jingu torii",
+    "title": "Тории святилища Мэйдзи Дзингу",
     "areaId": "harajuku",
     "coordinates": {
       "lat": 35.6764,
@@ -361,7 +377,8 @@
       "meiji-jingu"
     ],
     "routeIds": [
-      "meiji-harajuku-omotesando"
+      "meiji-harajuku-omotesando",
+      "gotokuji-west-tokyo"
     ],
     "bestTime": "morning",
     "difficulty": "easy",
@@ -369,11 +386,12 @@
     "tags": [
       "meiji-jingu",
       "torii"
-    ]
+    ],
+    "description": "Сними большие деревянные ворота на фоне лесной дорожки. Утром обычно спокойнее; помни, что это действующее святилище."
   },
   {
     "id": "takeshita-street",
-    "title": "Takeshita Street",
+    "title": "Улица Такэсита",
     "areaId": "harajuku",
     "coordinates": {
       "lat": 35.6702,
@@ -383,7 +401,8 @@
       "takeshita-street"
     ],
     "routeIds": [
-      "meiji-harajuku-omotesando"
+      "meiji-harajuku-omotesando",
+      "gotokuji-west-tokyo"
     ],
     "bestTime": "day",
     "difficulty": "easy",
@@ -391,6 +410,209 @@
     "tags": [
       "harajuku",
       "street"
-    ]
+    ],
+    "description": "Яркая торговая улица Харадзюку с вывесками, витринами и потоком людей. Для более чистого кадра приходи пораньше."
+  },
+  {
+    "id": "ueno-christmas-advent-night",
+    "title": "Рождественская подсветка Уэно",
+    "areaId": "ueno",
+    "coordinates": {
+      "lat": 35.71045,
+      "lng": 139.772
+    },
+    "placeIds": [
+      "ueno-christmas-advent-hakamagoshi",
+      "ueno-christmas-advent-shinobazu"
+    ],
+    "routeIds": [
+      "asakusa-kappabashi-ueno-akihabara"
+    ],
+    "bestTime": "night",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "christmas",
+      "illumination",
+      "photo"
+    ],
+    "description": "После наступления темноты можно посетить обе отдельные площадки фестиваля: Hakamagoshi Plaza и зону у пруда Синобадзу."
+  },
+  {
+    "id": "kitte-garden-station-view",
+    "title": "Вокзал Токио с террасы KITTE Garden",
+    "areaId": "marunouchi",
+    "coordinates": {
+      "lat": 35.67985,
+      "lng": 139.76455
+    },
+    "placeIds": [
+      "tokyo-station",
+      "kitte-garden"
+    ],
+    "routeIds": [
+      "ginza-tokyo-tower"
+    ],
+    "bestTime": "day",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "tokyo-station",
+      "free-viewpoint",
+      "architecture",
+      "photo"
+    ],
+    "description": "Бесплатная видовая точка на крыше KITTE: отсюда можно снять исторический фасад вокзала и поезда. Терраса открытая и может закрываться из-за погоды."
+  },
+  {
+    "id": "marunouchi-christmas-lights",
+    "title": "Рождественские огни Маруноути",
+    "areaId": "marunouchi",
+    "coordinates": {
+      "lat": 35.68065,
+      "lng": 139.76325
+    },
+    "placeIds": [
+      "marunouchi-street-park",
+      "marunouchi"
+    ],
+    "routeIds": [
+      "ginza-tokyo-tower"
+    ],
+    "bestTime": "night",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "christmas",
+      "illumination",
+      "photo"
+    ],
+    "description": "Вечерняя прогулка по улицам Naka-dori и Gyoko-dori с сезонной подсветкой, украшениями и временными торговыми точками."
+  },
+  {
+    "id": "ginza-six-rooftop",
+    "title": "Сад на крыше GINZA SIX",
+    "areaId": "ginza",
+    "coordinates": {
+      "lat": 35.66985,
+      "lng": 139.76315
+    },
+    "placeIds": [
+      "ginza-six-garden"
+    ],
+    "routeIds": [
+      "ginza-tokyo-tower"
+    ],
+    "bestTime": "golden-hour",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "free-viewpoint",
+      "rooftop",
+      "photo"
+    ],
+    "description": "Бесплатная открытая площадка на крыше торгового центра. Подходит для короткой передышки и городских кадров; возможны закрытия из-за погоды."
+  },
+  {
+    "id": "tokyo-tower-christmas-night",
+    "title": "Рождественский рынок у Токийской башни",
+    "areaId": "minato",
+    "coordinates": {
+      "lat": 35.65835,
+      "lng": 139.7452
+    },
+    "placeIds": [
+      "tokyo-tower",
+      "tokyo-tower-christmas-market"
+    ],
+    "routeIds": [
+      "ginza-tokyo-tower"
+    ],
+    "bestTime": "night",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "tokyo-tower",
+      "christmas",
+      "market",
+      "photo"
+    ],
+    "description": "Вечерний кадр сезонного рынка на площади перед башней. Вход на территорию бесплатный; платные смотровые башни в маршрут не входят."
+  },
+  {
+    "id": "tennozu-bond-street-art",
+    "title": "Складская архитектура и уличное искусство Тэннодзу",
+    "areaId": "tennozu",
+    "coordinates": {
+      "lat": 35.62155,
+      "lng": 139.74855
+    },
+    "placeIds": [
+      "tennozu-bond-street"
+    ],
+    "routeIds": [
+      "vintage-flea-market"
+    ],
+    "bestTime": "day",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "street-art",
+      "warehouse",
+      "photo"
+    ],
+    "description": "Сними настенные росписи, переоборудованные складские здания и детали индустриальной архитектуры на BOND Street."
+  },
+  {
+    "id": "tennozu-canal-evening",
+    "title": "Вечерняя набережная канала Тэннодзу",
+    "areaId": "tennozu",
+    "coordinates": {
+      "lat": 35.6206,
+      "lng": 139.7491
+    },
+    "placeIds": [
+      "tennozu-boardwalk",
+      "tennozu-isle"
+    ],
+    "routeIds": [
+      "vintage-flea-market"
+    ],
+    "bestTime": "golden-hour",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "waterfront",
+      "canal",
+      "photo"
+    ],
+    "description": "Спокойная прогулка вдоль воды с видами на канал, мосты и складской квартал. Для фотографий подойдёт мягкий свет перед закатом."
+  },
+  {
+    "id": "shibuya-hikarie-free-view",
+    "title": "Бесплатный вид на Сибую из Hikarie",
+    "areaId": "shibuya",
+    "coordinates": {
+      "lat": 35.65975,
+      "lng": 139.7035
+    },
+    "placeIds": [
+      "shibuya-hikarie-sky-lobby",
+      "shibuya-crossing"
+    ],
+    "routeIds": [
+      "shibuya",
+      "oi-gotokuji-shibuya",
+      "gotokuji-west-tokyo"
+    ],
+    "bestTime": "night",
+    "difficulty": "easy",
+    "estimatedDetourMin": 0,
+    "tags": [
+      "shibuya",
+      "free-viewpoint",
+      "photo"
+    ],
+    "description": "Вид на перекрёсток Scramble Crossing из бесплатной общественной зоны Sky Lobby на 11-м этаже. Это не платная смотровая SHIBUYA SKY."
   }
 ]
