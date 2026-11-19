@@ -54,12 +54,6 @@
     "nameLocal": "港区"
   },
   {
-    "id": "tsukiji",
-    "cityId": "tokyo",
-    "name": "Tsukiji",
-    "nameLocal": "築地"
-  },
-  {
     "id": "kamakura",
     "cityId": "kamakura",
     "name": "Kamakura",
@@ -100,5 +94,27 @@
     "cityId": "tokyo",
     "name": "Omotesando",
     "nameLocal": "表参道"
+  },
+  {
+    "id": "marunouchi",
+    "cityId": "tokyo",
+    "name": "Marunouchi",
+    "nameLocal": "丸の内",
+    "coordinates": {
+      "lat": 35.6813,
+      "lng": 139.7652
+    },
+    "description": "Район вокруг вокзала Токио со стороны Маруноути: исторический фасад, площадь перед вокзалом, сад KITTE и сезонное оформление улиц зимой."
+  },
+  {
+    "id": "tennozu",
+    "cityId": "tokyo",
+    "name": "Tennozu Isle",
+    "nameLocal": "天王洲アイル",
+    "coordinates": {
+      "lat": 35.621,
+      "lng": 139.75
+    },
+    "description": "Прибрежный арт-район с бывшими складскими зданиями, настенными росписями, улицей BOND Street, магазином PIGMENT TOKYO и прогулочными дорожками вдоль каналов."
   }
 ]
